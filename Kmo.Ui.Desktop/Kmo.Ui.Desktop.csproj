@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F2245B92-EC4A-47D3-9CC4-D2AD90F548B1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Kmo.Ui.Desktop</RootNamespace>
+    <AssemblyName>Kmo.Ui.Desktop</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\_DATALAYER\Kmo.Models\Kmo.Models.csproj">
+      <Project>{ee4bb2b6-5c94-40a5-9d7b-b8938c47d143}</Project>
+      <Name>Kmo.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\_LIBS\Kmo.Libs\Kmo.Libs.csproj">
+      <Project>{bce3da02-22d3-4efc-9592-df7236a4a509}</Project>
+      <Name>Kmo.Libs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\_LIBS\Kmo.Services\Kmo.Services.csproj">
+      <Project>{8b8086fb-8aae-48cb-8b32-26ef79aed800}</Project>
+      <Name>Kmo.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\_MODULES\300-PMM\Kmo.Modules.300-PMM.UtlEcd\Kmo.Modules.300-PMM.UtlEcd.csproj">
+      <Project>{75f3ea10-96d4-4670-a4b6-c87ed8ff25ca}</Project>
+      <Name>Kmo.Modules.300-PMM.UtlEcd</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\_MODULES\650-SYS\Kmo.Modules.650-SYS.DocumentAndReport\Kmo.Modules.650-SYS.DocumentAndReport.csproj">
+      <Project>{6d7c4dd0-1f91-4b0c-8d28-7ceea88f8050}</Project>
+      <Name>Kmo.Modules.650-SYS.DocumentAndReport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\_MODULES\650-SYS\Kmo.Modules.650-SYS.LibraryManagement\Kmo.Modules.650-SYS.LibraryManagement.csproj">
+      <Project>{12505cfb-799f-4e2e-9b93-e50840be64af}</Project>
+      <Name>Kmo.Modules.650-SYS.LibraryManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\_MODULES\650-SYS\Kmo.Modules.650-SYS.ModuleManagement\Kmo.Modules.650-SYS.ModuleManagement.csproj">
+      <Project>{4fffc3d9-73cb-4dc5-adae-b8d4b0e4eab6}</Project>
+      <Name>Kmo.Modules.650-SYS.ModuleManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\_MODULES\650-SYS\Kmo.Modules.650-SYS.SystemParameters\Kmo.Modules.650-SYS.SystemParameters.csproj">
+      <Project>{19410e56-8c40-41e1-9ee9-d338812c9df0}</Project>
+      <Name>Kmo.Modules.650-SYS.SystemParameters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\_MODULES\650-SYS\Kmo.Modules.650-SYS.UserManagement\Kmo.Modules.650-SYS.UserManagement.csproj">
+      <Project>{43ba4043-e4be-414d-8512-f07474b5fdc2}</Project>
+      <Name>Kmo.Modules.650-SYS.UserManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\_MODULES\800-BDM\Kmo.Modules.800-BDM.ClientFactSheet\Kmo.Modules.800-BDM.ClientFactSheet.csproj">
+      <Project>{67816fb2-1144-48b1-85ee-a56ae7ec3c84}</Project>
+      <Name>Kmo.Modules.800-BDM.ClientFactSheet</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\_MODULES\810-BDC\Kmo.Modules.810-BDC.SuiteAvailabilityStatus\Kmo.Modules.810-BDC.SuiteAvailabilityStatus.csproj">
+      <Project>{436aa9df-b230-49f6-b143-37b8a6833d82}</Project>
+      <Name>Kmo.Modules.810-BDC.SuiteAvailabilityStatus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\_MODULES\900-CEO\Kmo.Modules.900-CEO.LetterOfOffer\Kmo.Modules.900-CEO.LetterOfOffer.csproj">
+      <Project>{7b711c02-c5cf-49fc-9639-c79c3ac2ac29}</Project>
+      <Name>Kmo.Modules.900-CEO.LetterOfOffer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

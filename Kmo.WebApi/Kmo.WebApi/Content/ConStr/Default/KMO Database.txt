@@ -1,0 +1,7 @@
+Data Source=172.168.1.106;
+Initial Catalog="KMO Database";
+Persist Security Info=True;
+User ID=sa;
+Password=sa;
+Encrypt=False;
+TrustServerCertificate=True;
