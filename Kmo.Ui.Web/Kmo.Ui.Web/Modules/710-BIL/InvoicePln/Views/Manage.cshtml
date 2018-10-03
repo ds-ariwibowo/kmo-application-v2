@@ -1,0 +1,887 @@
+﻿
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+    <h4 class="modal-title"><i class="icon-pencil font-dark"></i>&nbsp;<label id="titleModal" type="text" name="TitleModal" /> </h4>
+    <div class="caption font-sm">
+    </div>
+</div>
+        
+<form action="#" id="form_sample_2">
+    <div class="form-body">
+        <div class="modal-body">
+
+            <div class="portlet light bordered">
+                <div class="portlet-body">
+
+                    <table id="pln" class="dt-responsive" width="100%" hidden>
+                        <tbody>
+                            <tr>
+                                <td>
+
+                                    <div class="m-grid m-grid-responsive-xs m-grid-demo">
+                                        <div class="m-grid-row">
+                                            <div class="m-grid-col m-grid-col-middle m-grid-col-left m-grid-col-md-2 border-top border-left border-right border-bottom padding-left" style="background-color:white">
+                                                <img alt="" class="img-responsive" src="~/Theme/assets/layouts/layout4/img/png.jpg" /><br>
+                                                <textarea class="form-control" readonly disabled rows="4" id="addr" placeholder="Address"></textarea>                                                
+                                            </div>
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-center m-grid-col-md-3 border-top border-left border-right border-bottom padding-top padding-bottom"><h2><b>PLN</b> : Tagihan Listrik</h2>
+                                                <hr /><b>INV:PLN No.: 710-<label id="cInvPlnNo" class="bold"></label></b>                                    
+                                            </div>
+
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-center m-grid-col-md-2 border-top border-left border-right border-bottom padding-top padding-left  padding-bottom">
+                                                <h2><b>INVOICE<br /></b></h2><h3>PLN</h3></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group form-md-line-input">
+                                        <select class="form-control" id="ddlPeriod"></select>
+                                        <label id="lblPeriod" for="form_control_1">&nbsp;<b>Pilih Periode dan Suite</b></label>
+                                        <h4><label id="cPeriod" class="bold"></label></h4>                                      
+                                    </div>
+
+                                    <div class="m-grid m-grid-responsive-md m-grid-demo">
+                                        <div class="m-grid-row ">
+
+                                            <div class="m-grid-col m-grid-col-middle m-grid-col-left m-grid-col-md-1 border-top border-left border-right border-bottom">
+
+                                                <div class="m-grid m-grid-responsive-md m-grid-demo">
+
+                                                    <div class="m-grid-row">
+                                                        <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-2 border-right padding-left padding-right padding-top">
+                                                            <div class="form-group form-md-line-input">
+                                                                <input type="text" readonly disabled class="form-control" id="c21" placeholder="Client" value="">
+                                                                <textarea class="form-control" readonly disabled rows="3" id="c22" placeholder="Address"></textarea>
+                                                                <input type="text" readonly disabled class="form-control static-info col-sm-3" id="c221" placeholder="City">
+                                                                <input type="text" readonly disabled class="form-control static-info col-sm-3" id="c222" placeholder="Zip Code">
+                                                                <br />
+                                                                <input type="text" readonly disabled class="form-control" id="c23" placeholder="-" value="">
+                                                                <label for="form_control_1"><i>Kepada Yth :</i></label>
+                                                            </div>
+
+                                                        </div>
+
+                                                        <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-2 border-left border-right padding-left padding-right padding-top">
+                                                            <div class="form-group form-md-line-input">
+                                                                <input type="text" readonly disabled class="form-control" id="cSuite" placeholder="-" value="">
+                                                                <label for="form_control_1"><i>Suite No. :</i></label>
+                                                            </div>
+                                                            <div class="form-group form-md-line-input">
+															  <table width="100%">
+																 <tr>
+																 <td><div class="form-group form-md-line-input border-top border-right">
+																		<input type="text" readonly disabled class="form-control" id="cBatasDaya" placeholder="-" value="">
+																		<label for="form_control_1"><i>Batas Daya KVA :</i></label>
+																	</div></td>
+																  <td><div class="form-group form-md-line-input border-top padding-left">
+																		<input type="text" readonly disabled class="form-control" id="cGolTariff" placeholder="-" value="">
+																		<label for="form_control_1">&nbsp;<i>Golongan Tariff :</i></label>
+																	</div></td>
+																 </tr>
+															 </table>
+															</div>
+                                                           
+                                                        </div>
+
+                                                        <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-2 border-left padding-left padding-right padding-top">
+                                                            <div class="form-group form-md-line-input">
+                                                                <input type="text" readonly disabled class="form-control" id="cid" placeholder="-" value="">
+                                                                <label for="form_control_1"><i>CID :</i></label>
+                                                            </div>
+                                                            <div class="form-group form-md-line-input">
+                                                                <input type="text" readonly disabled class="form-control" id="cBiayaKwh" placeholder="-" value="">
+                                                                <label for="form_control_1"><i>Biaya Pemakaian: Rp/Kwh</i></label>
+                                                            </div>
+                                                           
+
+                                                        </div>
+
+                                                        <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-1 border-left padding-left padding-right padding-top">
+															<div class="form-group form-md-line-input">
+                                                                <input type="text" class="form-control date-picker" id="cInvPlnDate" name="name" placeholder="dd-MMM-yyyy" data-date-format="dd-M-yyyy">
+                                                                <label for="form_control_1"><b>Tgl. Invoice :</b></label>
+                                                            </div>
+                                                            <div class="form-group form-md-line-input">
+                                                                <input type="text" class="form-control date-picker" id="cTglJatuhTempo" name="name" placeholder="dd-MMM-yyyy" data-date-format="dd-M-yyyy">
+                                                                <label for="form_control_1"><b>Jatuh Tempo</b></label>
+                                                            </div> 
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <br />
+                                    <div class="m-grid m-grid-responsive-md m-grid-demo">
+                                        <h4><b>Non-AC</b></h4>
+                                        <div class="m-grid-row">
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-3 border-top border-left border-bottom padding-left padding-right">
+                                                           <div class="form-group form-md-line-input">
+                                                                <label for="form_control_1">Akhir</label>
+                                                            </div>
+                                                            <div class="form-group form-md-line-input">
+															  <table width="100%">
+																 <tr>
+																 <td><div class="form-group form-md-line-input border-right border-top">
+																	   <input type="text" class="form-control date-picker" readonly disabled id="cNonAcTglAkhir" name="name" placeholder="dd-MMM-yyyy" data-date-format="dd-M-yyyy">
+																		<label for="form_control_1"><i>Tanggal :</i></label>
+																	</div></td>
+																  <td><div class="form-group form-md-line-input border-top padding-left">
+																		<input type="text" readonly disabled class="form-control" id="cNonAcStandMtrAkhir" placeholder="-" value="">
+																		<label for="form_control_1">&nbsp;<i>Stand Meter :</i></label>
+																	</div></td>
+																 </tr>
+															 </table>
+															</div>
+                                              
+                                            </div>
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-1 border-top border-left border-bottom padding-left padding-right">
+
+                                                 <div class="form-group form-md-line-input">
+                                                                <label for="form_control_1">Awal</label>
+                                                            </div>
+                                                            <div class="form-group form-md-line-input">
+															  <table width="100%">
+																 <tr>
+																 <td><div class="form-group form-md-line-input border-right border-top">
+																	   <input type="text" class="form-control date-picker" readonly disabled id="cNonAcTglAwal" name="name" placeholder="dd-MMM-yyyy" data-date-format="dd-M-yyyy">
+																		<label for="form_control_1"><i>Tanggal :</i></label>
+																	</div></td>
+																  <td><div class="form-group form-md-line-input border-top padding-left">
+																		<input type="text" readonly disabled class="form-control" id="cNonAcStandMtrAwal" placeholder="-" value="">
+																		<label for="form_control_1">&nbsp;<i>Stand Meter :</i></label>
+																	</div></td>
+																 </tr>
+															 </table>
+															</div>
+
+                                            </div>
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-2 border-top border-left border-bottom padding-left padding-right">
+                                               <div class="form-group form-md-line-input">
+                                                                <label for="form_control_1">Kwh</label>
+                                                            </div>                                                          
+															<div class="form-group form-md-line-input">
+                                                          	<input type="text" readonly disabled class="form-control" id="cNonAcKwh" placeholder="-" value="">
+															</div>
+                                            </div>
+
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-1 border-top border-left border-bottom padding-left padding-right">
+												<div class="form-group form-md-line-input">
+                                                                <label for="form_control_1">Rp.</label>
+                                                            </div>                                                          
+															<div class="form-group form-md-line-input">
+                                                          	<input type="text" readonly disabled class="form-control bold" id="cNonAcKwhAmount" placeholder="-" value="">
+															</div>
+                                            </div>                                           
+
+                                        </div>
+                                    </div>
+                                          
+ <br />
+                                    <div class="m-grid m-grid-responsive-md m-grid-demo">
+                                        <h4><b>Air Conditioning</b></h4>
+                                        <div class="m-grid-row">
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-3 border-top border-left border-bottom padding-left padding-right">
+                                                           <div class="form-group form-md-line-input">
+                                                                <label for="form_control_1">Akhir</label>
+                                                            </div>
+                                                            <div class="form-group form-md-line-input">
+															  <table width="100%">
+																 <tr>
+																 <td><div class="form-group form-md-line-input border-right border-top">
+																	   <input type="text" class="form-control date-picker" readonly disabled id="cAcTglAkhir" name="name" placeholder="dd-MMM-yyyy" data-date-format="dd-M-yyyy">
+																		<label for="form_control_1"><i>Tanggal :</i></label>
+																	</div></td>
+																  <td><div class="form-group form-md-line-input border-top padding-left">
+																		<input type="text" readonly disabled class="form-control" id="cAcStandMtrAkhir" placeholder="-" value="">
+																		<label for="form_control_1">&nbsp;<i>Stand Meter :</i></label>
+																	</div></td>
+																 </tr>
+															 </table>
+															</div>
+                                              
+                                            </div>
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-1 border-top border-left border-bottom padding-left padding-right">
+
+                                                 <div class="form-group form-md-line-input">
+                                                                <label for="form_control_1">Awal</label>
+                                                            </div>
+                                                            <div class="form-group form-md-line-input">
+															  <table width="100%">
+																 <tr>
+																 <td><div class="form-group form-md-line-input border-right border-top ">
+																	   <input type="text" class="form-control date-picker" readonly disabled id="cAcTglAwal" name="name" placeholder="dd-MMM-yyyy" data-date-format="dd-M-yyyy">
+																		<label for="form_control_1"><i>Tanggal :</i></label>
+																	</div></td>
+																  <td><div class="form-group form-md-line-input border-top padding-left">
+																		<input type="text" readonly disabled class="form-control" id="cAcStandMtrAwal" placeholder="-" value="">
+																		<label for="form_control_1">&nbsp;<i>Stand Meter :</i></label>
+																	</div></td>
+																 </tr>
+															 </table>
+															</div>
+
+                                            </div>
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-2 border-top border-left border-bottom padding-left padding-right">
+                                               <div class="form-group form-md-line-input">
+                                                                <label for="form_control_1">Kwh</label>
+                                                            </div>                                                          
+															<div class="form-group form-md-line-input">
+                                                          	
+															 <table width="100%">
+																 <tr>
+																 <td><div class="form-group form-md-line-input border-right border-top ">
+																		<input type="text" readonly disabled class="form-control" id="cAcInKwh" placeholder="-" value="">
+																		<label for="form_control_1"><i>Indoor :</i></label>
+																	</div></td>
+																  <td><div class="form-group form-md-line-input border-right border-top padding-left">
+																		<input type="text" readonly disabled class="form-control" id="cAcOutKwh" placeholder="-" value="">
+																		<label for="form_control_1">&nbsp;<i>Outdoor :</i></label>
+																	</div></td>
+																	 <td><div class="form-group form-md-line-input border-top padding-left">
+																		<input type="text" readonly disabled class="form-control" id="cAcKwh" placeholder="-" value="">
+																		<label for="form_control_1">&nbsp;<i>AC :</i></label>
+																	</div></td>
+																 </tr>
+															 </table>
+															
+															</div>
+                                            </div>
+
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-1 border-top border-left border-bottom padding-left padding-right">
+												<div style="align-content:center"  class="form-group form-md-line-input">
+                                                                <label for="form_control_1">Rp.</label>
+                                                            </div>                                                          
+															<div class="form-group form-md-line-input">
+                                                          	<input type="text" readonly disabled class="form-control bold" id="cAcKwhAmount" placeholder="-" value="">
+															</div>
+                                            </div>                                           
+
+                                        </div>
+                                    </div>
+										  
+                                    <br />
+                                    <div class="m-grid m-grid-responsive-md m-grid-demo">
+                                        <div class="m-grid-row">
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-4 border-top border-left border-right border-bottom padding-left padding-right">
+                                                <div class="form-group form-md-line-input">
+                                                    <table style="border-color:#F3F4F6" width="100%">
+                                                        <tr class="border-bottom">
+                                                            <td colspan="4"><b>
+                                                             Pembayaran mohon ditransfer ke rekening di bawah ini :
+                                                        </b></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="4">&nbsp;</td>
+                                                        </tr>                                                       
+                                                        <tr>
+                                                            <td width="100px">Bank&nbsp;</td>
+                                                            <td width="5px">:</td>
+                                                            <td colspan="2">&nbsp;<label id="bank" class="bold"></label></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="100px">Beneficiary&nbsp;</td>
+                                                            <td width="5px">:</td>
+                                                            <td colspan="2">&nbsp;<label id="beneficiary" class="bold"></label></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="100px">Account No.&nbsp;</td>
+                                                            <td width="5px">:</td>
+                                                            <td colspan="2">&nbsp;<label id="accNo" class="bold"></label></td>
+                                                        </tr>                                                       
+                                                        <tr>
+                                                            <td colspan="4">&nbsp;</td>
+                                                        </tr>
+
+                                                        <tr class="border-bottom">
+                                                            <td colspan="4"><b>Persyaratan Pembayaran :</b></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="4">&nbsp;</td>
+                                                        </tr>
+														 <tr>
+                                                            <td width="30px" align="right" valign="top">1.&nbsp;&nbsp;</td>
+                                                            <td colspan="3">Mohon ditransfer ke rekening PT Primanusa Graha tertera di invoice ini.</td>
+                                                        </tr>
+														 <tr>
+                                                            <td width="30px" align="right" valign="top">2.&nbsp;&nbsp;</td>
+                                                            <td colspan="3">Pembayaran Sah apabila ada bukti transfer bank dan pembayaran sudah masuk ke rekening kami.</td>
+                                                        </tr>
+														 <tr>
+                                                            <td width="30px" align="right" valign="top">3.&nbsp;&nbsp;</td>
+                                                            <td colspan="3">Untuk pembayaran lewat tempo, akan dikenakan denda <label id="pctgInterestINV" class="bold"></label>% per bulan secara compound harian.</td>
+                                                        </tr>                                                       
+                                                        <tr>
+                                                            <td width="30px" align="right" valign="top">4.&nbsp;&nbsp;</td>
+                                                            <td colspan="3">Jika pemakaian tidak mencapai pemakaian minimum listrik, maka PT Primanusa Graha akan menagih sebesar pemakaian minimum listrik yang ditetapkan.</td>
+                                                        </tr>
+                                                        <tr class="border-bottom">
+                                                            <td colspan="4">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="4">
+                                                                <label class="mt-checkbox">
+                                                                    <b>Use Actual Price</b> (for ignore the minimum price)
+                                                                    <input type="checkbox" value="0" id="cbAp" />
+                                                                    <span></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                                                                   
+                                                </div>
+                                                </div>
+
+
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-3 border-top border-bottom border-right padding-left padding-right">
+                                                <div class="form-group form-md-line-input">
+                                                    <table style="border-color:#F3F4F6" width="100%" >
+                                                        <tr>
+                                                            <td align="right"><b>SUB TOTAL </b>:&nbsp;</td>
+                                                            <td width="160px" align="right">&nbsp;<h4><label id="subtotalPayment" class="bold"></label></h4></td>
+                                                        </tr>
+														 <tr>
+                                                            <td align="right">PPJ <label id="pctgPPJ"></label> %:&nbsp;</td>
+                                                            <td width="160px" align="right">&nbsp;<h4><label id="ppjAmount"></label></h4></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td align="right">Biaya Admin <label id="pctgAdminFee"></label> %:&nbsp;</td>
+                                                            <td width="160px" align="right">&nbsp;<h4><label id="adminAmount"></label></h4></td>
+                                                        </tr>
+														 <tr>
+                                                            <td align="right"><b>Total </b>:&nbsp;</td>
+                                                            <td width="160px" align="right">&nbsp;<h4><label id="totalPayment" class="bold"></label></h4></td>
+                                                        </tr>
+														 <tr>
+                                                            <td align="right">PPN <label id="pctgtaxINV"></label> % :&nbsp;</td>
+                                                            <td width="160px" align="right">&nbsp;<h4><label id="ppnAmount"></label></h4></td>
+                                                        </tr>
+                                                        <tr class="border-bottom">
+                                                            <td align="right">Materai :&nbsp;</td>
+                                                            <td width="160px" align="right">&nbsp;<h4><label id="materaiAmount"></label></h4></td>
+                                                        </tr>                                                       
+                                                        <tr>
+                                                            <td align="right"><b>GRAND TOTAL</b> :&nbsp;</td>
+                                                            <td width="160px" align="right">&nbsp;<h4><label id="grandTotal" class="bold"></label></h4></td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>                                         
+
+                                        </div>
+                                    </div>
+
+                                                                      
+                                </td>
+                            </tr>                                                    
+
+                        </tbody>
+                    </table>
+                  
+                </div>
+            </div>
+        </div>
+
+
+            <div class="modal-footer">
+                <label hidden id="invNo"></label>   
+                <label hidden id="currentDate">@DateTime.Now.ToString("dd-MMM-yyyy")</label> 
+                			
+                <label hidden id="hdnAcUsages"></label>  
+                <label hidden id="hdnNonAcUsages"></label> 
+
+                <label hidden id="hdnUsages"></label> 
+                <label hidden id="hdnAcUsagesPerFloor"></label> 
+                                
+                <label hidden id="month"></label> 
+                <label hidden id="year"></label> 
+                <label hidden id="floorId"></label> 
+                <label hidden id="suitId"></label> 
+                <input hidden readonly id="holdingCompanyId" type="text" name="HoldingCompanyId" value="@Kmo.Application.DefaultWebHoldingCompanyId" />
+                <label hidden id="clientId"></label> 
+                <label hidden id="invPlnId"></label>
+                <label hidden id="invPlnRev"></label> 
+
+                <label hidden id="invPlnDue"></label> 
+                <label hidden id="hdnMaterai"></label> 
+                <label hidden id="hdnpctgtaxINV"></label>
+                <label hidden id="hdnpctgInterestINV"></label>
+                <label hidden id="hdnpctgPPJ"></label> 
+                <label hidden id="hdnpctgAdminFee"></label>
+                <label hidden id="hdnpctgtaxINV"></label>
+                <label hidden id="hdnGolTariff"></label> 
+
+                <label hidden id="cfreeTax"></label>
+
+  			  <button id="submit" type="submit" value="Save" class="btn green-soft">
+                <i class="fa fa-check"></i> Submit
+                </button>
+                <button type="button" data-dismiss="modal" class="btn dark btn-outline"><i class="fa fa-close"></i> Cancel</button>
+
+            </div>
+        </div>
+
+</form>
+
+<script src="~/Theme/assets/pages/scripts/components-date-time-pickers.min.js" type="text/javascript"></script>
+<script src="~/Theme/assets/pages/scripts/form-validation-md.min.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+       
+    function formatDisplay(value) {
+        if (value !== '') {
+            return value.substr(0, 2) + '-' + value.substr(2, 4) + '-' + value.substr(6, 4);
+        }
+    }
+
+    function formatCurrency(total) {
+        var neg = false;
+        if (total < 0) {
+            neg = true;
+            total = Math.abs(total);
+        }
+        var cur = (neg ? "-" : '') + parseFloat(total, 10).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString();
+        return cur.substr(0, cur.length - 3);
+    }
+
+    function parseToNum(total) {
+        return Number(total.toString().replace(/[^0-9\.]+/g, ""));
+    }
+
+    var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+    function GetDueDate(str, n) {
+        var arr = str.split("-");
+        var month = months.indexOf(arr[1]);
+        var t = new Date(parseInt(arr[2]), month, parseInt(arr[0]));
+
+        var day = t.getDay(); // 0(sunday) - 6(saturday)
+        if (day >= 3)
+            n = n + 2;
+
+        t.setDate(t.getDate() + n);
+        var date = ((t.getDate() < 10) ? '0' + t.getDate() : t.getDate()) + "-" + months[parseInt((((t.getMonth() + 1) < 10) ? '0' + (t.getMonth() + 1) : (t.getMonth() + 1))) - 1] + "-" + t.getFullYear();
+        return date;
+    }
+
+    function parseJsonDate(jsonDate) {
+        var fullDate = new Date(parseInt(jsonDate.substr(6)));
+        var twoDigitMonth = (fullDate.getMonth() + 1) + ""; if (twoDigitMonth.length == 1) twoDigitMonth = "0" + twoDigitMonth;
+        var twoDigitDate = fullDate.getDate() + ""; if (twoDigitDate.length == 1) twoDigitDate = "0" + twoDigitDate;
+        var currentDate = twoDigitDate + "-" + months[fullDate.getMonth()] + "-" + fullDate.getFullYear();
+        return currentDate;
+    };      
+
+    function GetPeriodRek(str) {
+        var arr = str.split("-");
+        return arr[1] +'-'+arr[2];
+    }   
+
+    $("#cInvPlnDate").change(function () {
+
+        if ($('#cInvPlnDate').val() !== "") {
+            //$('#cInvPlnDateRek').val(GetPeriodRek($('#cInvPlnDate').val()));
+         
+           var dueDate = GetDueDate($('#cInvPlnDate').val(), parseInt($('#invPlnDue').text()));
+            $('#cTglJatuhTempo').val(dueDate);
+
+        } else {
+            //$('#cInvPlnDateRek').text("");
+            $('#cTglJatuhTempo').val("");
+        }
+    });
+
+
+    $("#ddlPeriod").change(function () {
+        $('#ddlPeriod :selected').each(function (i, selected) {
+            resetValue();
+            if ($(selected).val().length > 1) {
+                loadPeriod($(selected).val());
+            }
+        });
+    });    
+
+    function resetValue() {
+        $('#cInvPlnNo').text(formatDisplay("XXXXXXXXXX"));
+        $('#month').text("0");
+        $('#year').text("0");
+        $('#suitId').text("0");
+        $('#cid').val("");
+        $('#c21').val("");
+        $('#c22').val("");
+        $('#c221').val("");
+        $('#c222').val("");
+        $('#c23').val("");
+        $('#cSuite').val("");
+        $('#cBatasDaya').val("");
+        $('#cGolTariff').val("");
+        $('#cBiayaKwh').val("");
+        $('#cNonAcTglAkhir').val("");
+        $('#cNonAcStandMtrAkhir').val("");
+        $('#cNonAcTglAwal').val("");
+        $('#cNonAcStandMtrAwal').val("");
+        $('#cNonAcKwh').val("");
+        $('#cNonAcKwhAmount').val("0");
+        $('#cAcTglAkhir').val("");
+        $('#cAcStandMtrAkhir').val("");
+        $('#cAcTglAwal').val("");
+        $('#cAcStandMtrAwal').val("");
+        $('#cAcInKwh').val("");
+        $('#cAcOutKwh').val("");
+        $('#cAcKwh').val("");
+        $('#cAcKwhAmount').val("0");
+        $('#pctgInterestINV').text("0");
+        $('#subtotalPayment').text("0");
+        $('#pctgPPJ').text("0");
+        $('#ppjAmount').text("0");
+        $('#pctgAdminFee').text("0");
+        $('#adminAmount').text("0");
+        $('#totalPayment').text("0");
+        $('#pctgtaxINV').text("0");
+        $('#ppnAmount').text("0");
+        $('#materaiAmount').text("0");
+        $('#grandTotal').text("0");
+    }
+
+    function loadPeriod(selectedId) {     
+
+        if (selectedId.length == 10) {
+            $('#invPlnRev').text(selectedId.substr(0, 2));
+            $('#invPlnId').text(selectedId.substr(2, 8));           
+        }
+        else {
+            $('#month').text(selectedId.substr(0, 2));
+            $('#year').text(selectedId.substr(2, 4));
+            $('#floorId').text(selectedId.substr(6, 5));
+            $('#suitId').text(selectedId.substr(11, 5));
+            $('#clientId').text(selectedId.substr(16, 8));
+        }     
+
+		if (selectedId.length >= 0) {
+            $.ajax({
+                url: "/InvoicePln/GetPlnBill",
+                data: { month: parseInt($('#month').text()),
+                    year: parseInt($('#year').text()),
+                    floorId: $('#floorId').text(),
+                    suitId: parseInt( $('#suitId').text()),
+                    clientId: $('#clientId').text(),
+                    ////////////////////////////
+                    invPlnRev: $('#invPlnRev').text(),
+                    invPlnId: $('#invPlnId').text()
+                },
+                type: 'Get',
+                contentType: 'application/json',
+                cache: false,
+                success: function (data) {                  
+                    $.each(data, function (i, item) {                            
+                            if (i == 'Cid')
+                                $('#cid').val(item);
+                            if (i == 'SuiteName')
+                                $('#cSuite').val(item);
+                            if (i == 'NewAddress') {
+                                $('#c22').val("KMO Building, Suite " + item + "\n Jl. Kyai Maja No. 1");
+                                $('#c221').val("Jakarta");
+                                $('#c222').val("12120");
+                            }
+                            //if (i == 'CompanyAddress')
+                            //    $('#c22').val(item);
+                            //if (i == 'City')
+                            //    $('#c221').val(item);
+                            //if (i == 'ZipCode')
+                            //    $('#c222').val(item);
+
+                            if (i == 'CompanyName')
+                                $('#c21').val(item);                           
+                            if (i == 'Name')
+                                $('#c23').val(item);                          
+						                              
+                            if (i == 'SuiteCaptureDate') {
+                                if (item == null)
+                                {
+                                    bootbox.alert("Please input Suites UTL:ECD !");
+                                    $('#cNonAcTglAkhir').val("");
+                                    $('#cAcTglAkhir').val("");
+                                } else {
+                                    $('#cNonAcTglAkhir').val(parseJsonDate(item));
+                                    $('#cAcTglAkhir').val(parseJsonDate(item));
+                                }
+                            }
+                            if (i == 'LastSuiteCaptureDate') {                                
+                                if (item == null)
+                                {
+                                    $('#cNonAcTglAwal').val("");
+                                    $('#cAcTglAwal').val("");
+                                } else {
+                                    $('#cNonAcTglAwal').val(parseJsonDate(item));
+                                    $('#cAcTglAwal').val(parseJsonDate(item));
+                                }
+                            }
+				
+							if (i == 'LastAcReading')
+                                $('#cAcStandMtrAwal').val(formatCurrency(item));
+							if (i == 'AcReading')
+                                $('#cAcStandMtrAkhir').val(formatCurrency(item));
+							if (i == 'LastNonAcReading')
+                                $('#cNonAcStandMtrAwal').val(formatCurrency(item));
+							if (i == 'NonAcReading')
+                                $('#cNonAcStandMtrAkhir').val(formatCurrency(item));
+							
+							if (i == 'AcUsages') 
+							    $('#hdnAcUsages').text(item);
+							if (i == 'NonAcUsages')
+							    $('#hdnNonAcUsages').text(item);						
+														
+							if (i == 'ElectricityCapacity')
+							    $('#cBatasDaya').val(item);
+
+							if (i == 'TenantsTariffPerKWH')
+							    $('#cBiayaKwh').val(formatCurrency(item));
+
+							if (i == 'InvPlnRev')
+							    $('#invPlnRev').text(item);
+							if (i == 'InvPlnId')
+							    $('#invPlnId').text(item);
+							if (i == 'Month')
+							    $('#month').text(item);
+							if (i == 'Year')
+							    $('#year').text(item);
+							if (i == 'FloorId')
+							    $('#floorId').text(item);
+							if (i == 'SuitId')
+							    $('#suitId').text(item);
+							if (i == 'ClientId')
+							    $('#clientId').text(item);
+							if (i == 'FreeTax')
+							    $('#cfreeTax').text(item);
+
+							if (i == 'Usages')
+							    $('#hdnUsages').text(item);
+							if (i == 'AcUsagesPerFloor')
+							    $('#hdnAcUsagesPerFloor').text(item);							
+
+                        });
+                   
+                },
+                complete: function () {
+                    $('#cPeriod').text("UTL:ECD "+ months[parseInt($('#month').text())-1] + "-" + $('#year').text());
+                    $('#cInvPlnNo').text(formatDisplay($('#invPlnRev').text() + $('#invPlnId').text()));
+                
+                    $('#cGolTariff').val($('#hdnGolTariff').text());
+                    $('#pctgInterestINV').text($('#hdnpctgInterestINV').text());
+                    $('#pctgPPJ').text($('#hdnpctgPPJ').text());
+                    $('#pctgAdminFee').text($('#hdnpctgAdminFee').text());
+                    $('#pctgtaxINV').text($('#hdnpctgtaxINV').text());
+                    $('#materaiAmount').text(formatCurrency($('#hdnMaterai').text()));
+
+                    if ($('#cfreeTax').text() == '1')
+                        $('#pctgtaxINV').text("0");
+
+                    $('#cNonAcKwh').val(formatCurrency(parseToNum($('#cNonAcStandMtrAkhir').val()) - parseToNum($('#cNonAcStandMtrAwal').val())));
+                    $('#cNonAcKwhAmount').val(formatCurrency(parseToNum($('#cNonAcKwh').val()) * parseToNum($('#cBiayaKwh').val())));
+                    $('#cAcInKwh').val(formatCurrency(parseToNum($('#cAcStandMtrAkhir').val()) - parseToNum($('#cAcStandMtrAwal').val())));
+
+                    //$('#cAcOutKwh').val(formatCurrency(parseToNum($('#hdnAcUsages').text()) + parseToNum($('#hdnNonAcUsages').text())));
+                    $('#cAcOutKwh').val(formatCurrency(parseToNum($('#hdnAcUsages').text()) * parseToNum($('#hdnUsages').text()) / parseToNum($('#hdnAcUsagesPerFloor').text())));
+
+                    $('#cAcKwh').val(formatCurrency(parseToNum($('#cAcInKwh').val()) + parseToNum($('#cAcOutKwh').val())));
+                    $('#cAcKwhAmount').val(formatCurrency(parseToNum($('#cAcKwh').val()) * parseToNum($('#cBiayaKwh').val())));
+                    //
+                    viewGtotal();
+                  },
+                error: function (msg) {
+                    alert("something on Bill seems wrong");
+                }
+            });           
+        }       
+    }
+
+
+    function pad (str, max) {
+        str = str.toString();
+        return str.length < max ? pad(str + " ", max) : str;
+    }
+
+    // Calculate Total
+    function viewGtotal() {
+        var i = parseToNum($('#cNonAcKwhAmount').val());
+        var j = parseToNum($('#cAcKwhAmount').val());
+        if ((i == 'isNan') || (i == ''))
+            i = 0;
+        if ((j == 'isNan') || (j == ''))
+            j = 0;
+        $('#subtotalPayment').text(formatCurrency(i + j));
+        $('#ppjAmount').text(formatCurrency(parseToNum(parseToNum($('#pctgPPJ').text()) * parseToNum($('#subtotalPayment').text()) / 100)));
+
+        //$('#adminAmount').text(formatCurrency(parseToNum(parseToNum($('#pctgAdminFee').text()) * parseToNum($('#subtotalPayment').text()) / 100)));
+        $('#adminAmount').text(formatCurrency(parseToNum(parseToNum($('#pctgAdminFee').text()) * (parseToNum($('#ppjAmount').text()) + parseToNum($('#subtotalPayment').text())) / 100)));
+
+        $('#totalPayment').text(formatCurrency(parseToNum($('#subtotalPayment').text()) + parseToNum($('#adminAmount').text()) + parseToNum($('#ppjAmount').text())));
+        $('#ppnAmount').text(formatCurrency(parseToNum(parseToNum($('#pctgtaxINV').text()) * parseToNum($('#totalPayment').text()) / 100)));
+        $('#grandTotal').text(formatCurrency(parseToNum($('#totalPayment').text()) + parseToNum($('#ppnAmount').text()) + parseToNum($('#materaiAmount').text())));
+    }
+      
+    $(document).ready(function () {
+        App.startPageLoading({ animate: true });
+        
+        $('#pln').show();
+        
+        $('#cInvPlnNo').text(formatDisplay("XXXXXXXXXX"));
+        $('#cInvPlnDate').val($('#currentDate').text());
+        $('#invPlnDue').text("0");
+        $('#pctgInterestINV').text("0");          
+	    $('#subtotalPayment').text("0");
+		$('#pctgPPJ').text("0");
+        $('#ppjAmount').text("0");
+		$('#pctgAdminFee').text("0");
+        $('#adminAmount').text("0");
+        $('#totalPayment').text("0");
+		$('#pctgtaxINV').text("0");
+	    $('#ppnAmount').text("0");
+        $('#materaiAmount').text("0");
+        $('#grandTotal').text("0");
+        $('#cfreeTax').text("0");
+        //$('#cInvPlnDateRek').val(GetPeriodRek($('#cInvPlnDate').val()));
+               
+        $.ajax({
+            url: "/LeaseAgreement/GetGlobalOption",
+            type: 'Get',
+            contentType: 'application/json',
+            cache: false,
+            success: function (data) {               
+                $('#hdnpctgtaxINV').text(data.InvoiceTax);                
+                $('#hdnMaterai').text(data.Materai);               
+                $('#bank').text(data.InvoiceBank);
+                $('#beneficiary').text(data.InvoiceBankName);
+                $('#accNo').text(data.InvoiceBankAcc);
+                $('#addr').text(data.Address);
+                $('#hdnpctgInterestINV').text(data.InvoiceInterest * 100);
+                $('#hdnpctgPPJ').text(data.Ppj * 100);
+				$('#hdnpctgAdminFee').text(data.AdminFee * 100);
+				$('#hdnpctgtaxINV').text(data.InvoiceTax * 100);
+				$('#hdnGolTariff').text(data.GolListrik);
+				$('#invPlnDue').text(data.InvoicePLNDue);
+            },
+            complete: function () {
+                var dueDate = GetDueDate($('#cInvPlnDate').val(), parseInt($('#invPlnDue').text()));
+                $('#cTglJatuhTempo').val(dueDate);
+            },
+            error: function (msg) {
+                alert("something on load Global Option seems wrong");
+            }
+        });
+
+        var selectedId = $('#tempId').text();        
+        if (selectedId.length == 10) {
+            resetValue();
+            loadPeriod(selectedId);
+        }
+
+        if ($('#title').text() == 'Add INV-PLN') {
+            $('#cPeriod').hide();
+            $('#lblPeriod').show();
+            $('#ddlPeriod').show();
+         
+            // Load dll
+            var ddl = "<option value=" + 0 + ">-</option>";
+            $.ajax({
+                url: "/InvoicePln/GetAvailablePlnBill",
+                type: 'Get',
+                contentType: 'application/json',
+                cache: false,
+                success: function (data) {
+                    $.each(data, function (i, item) {
+                        ddl += "<option value='" + pad(item.Month, 2) + item.Year + pad(item.FloorId, 5) + pad(item.SuitId, 5) + item.ClientId + "'>UTL:ECD " + months[item.Month-1] + "-" + item.Year + ' (' + pad(item.FloorId, 5) + ' : ' + pad(item.SuiteName, 5) + ') - ' + item.CompanyName + "</option>";
+                    });
+                },
+                complete: function () {
+                    $("#ddlPeriod").append(ddl);
+                },
+                error: function (msg) {
+                    alert("something on load Pln Bill list seems wrong");
+                }
+            });
+            // end Load dll
+        }
+        else {
+            $('#lblPeriod').hide();
+            $('#ddlPeriod').hide();
+            $('#cPeriod').show();           
+        }
+
+        App.stopPageLoading();
+    });
+
+
+   
+    $("#submit").click(function () {
+		
+        if ($('#month').text().trim() == '0' || $('#month').text().trim() == '' || $('#month').text().trim() == 'null') {
+            bootbox.alert("Please select available PLN Billing !");
+            return;
+        }		
+       
+        if ($('#cNonAcTglAwal').val().trim() == '' || $('#cNonAcTglAkhir').val().trim() == '') {
+            bootbox.alert("Please input Suites UTL:ECD !");
+            return;
+        }
+        if ($('#cInvPlnDate').val().trim() == '') {
+            $("#cInvPlnDate").focus();
+            return;
+        }		
+		if ($('#cTglJatuhTempo').val().trim() == '') {
+            $("#cTglJatuhTempo").focus();
+            return;
+        }
+                     
+        var isUsedActualPrice = false;
+        if ($("#cbAp").is(":checked"))
+            isUsedActualPrice = true;
+
+        App.startPageLoading({ animate: true });
+             
+        var model = {
+            InvPlnId: $('#invPlnId').text(),
+            InvPlnRev: $('#invPlnRev').text(),
+            Month: parseInt($('#month').text()),
+            Year: parseInt($('#year').text()),
+            FloorId: $('#floorId').text(),
+            SuitId: parseInt($('#suitId').text()),
+            ClientId: $('#clientId').text(),
+            HoldingCompanyId: $('#holdingCompanyId').val(),
+            InvPlnSuiteName: $('#cSuite').val(),           
+            InvPlnDate: $('#cInvPlnDate').val(),
+            InvPlnDueDate: $('#cTglJatuhTempo').val(),           
+            InvPlnKwh: parseFloat(parseToNum($('#cBiayaKwh').val())),
+            InvPlnMaxKwh: parseFloat(parseToNum($('#cBatasDaya').val())), 
+            InvPlnNonAcLastStandMeter: parseFloat(parseToNum($('#cNonAcStandMtrAwal').val())),   
+            InvPlnNonAcCurrentStandMeter: parseFloat(parseToNum($('#cNonAcStandMtrAkhir').val())),
+            InvPlnAcLastStandMeter: parseFloat(parseToNum($('#cAcStandMtrAwal').val())),
+            InvPlnAcCurrentStandMeter: parseFloat(parseToNum($('#cAcStandMtrAkhir').val())),
+            InvPlnCaptureLastDate: $('#cAcTglAwal').val(), 
+            InvPlnCaptureCurrentDate: $('#cAcTglAkhir').val(), 
+            InvPlnOutdoorMeter: parseFloat(parseToNum($('#cAcOutKwh').val())),
+            InvPlnVoid: false,
+            UseActualPrice: isUsedActualPrice
+        };
+   
+        $.ajax({
+            type: "POST",
+            data: JSON.stringify(model),
+            url: "/InvoicePln/SubmitInvPln",
+            contentType: "application/json"
+        }).success(function (res) {                       
+        }).done(function (res) {
+            App.stopPageLoading();
+            window.location.reload(true);
+        });
+
+    });
+    
+  
+
+</script>

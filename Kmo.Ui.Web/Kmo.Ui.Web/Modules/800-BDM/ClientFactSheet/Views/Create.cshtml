@@ -1,0 +1,555 @@
+﻿@model Kmo.Libs.KmoJsonResult<IEnumerable<Kmo.Modules._800_BDM.ClientFactSheet.Models.ta_CLIENT>>
+
+@{
+
+    ViewBag.Title = "CFS";
+    ViewBag.ModuleHeaderBig = "CFS";
+    ViewBag.ModuleHeaderSmall = "Client Fact Sheet";
+    Layout = "~/Views/Shared/DefaultLayout.cshtml";
+    ViewBag.PageTitle = "";
+}
+
+@section PageLevelStyles
+{
+    <link href="~/Theme/assets/global/plugins/datatables/datatables.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Theme/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css" rel="stylesheet" type="text/css" />
+
+}
+
+
+<div class="portlet light bordered">
+    <div class="portlet-title">
+        <div class="caption font-sm">
+            <i class="icon-pencil font-dark"></i> Add CFS           
+        </div>
+        <div class="actions">
+           
+            <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;"> </a>
+          
+        </div>
+    </div>
+    <div class="portlet-body">
+                     
+        <table id="user">
+            <tbody>
+               
+                <tr>
+                    <td>
+
+                        <table id="user" class="table table-bordered table-striped">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="m-grid m-grid-demo">
+                                            <div class="m-grid-row">
+                                                <div class="m-grid-col m-grid-col-middle m-grid-col-center m-grid-col-md-1 border-top border-left border-right border-bottom padding-left">@*<h3>PRIMANUSA</h3>*@
+                                                   <img alt="" class="img-responsive" src="~/Theme/assets/layouts/layout4/img/png.jpg" />
+                                                </div>
+                                                <div class="m-grid-col m-grid-col-top m-grid-col-center m-grid-col-md-3 border-top border-left border-right border-bottom padding-top padding-bottom"><h2><b>CFS</b></h2><p>Client Fact Sheet</p><hr /><b>No. : CFS-800-001-316-000</b></div>
+                                                <div class="m-grid-col m-grid-col-top m-grid-col-center m-grid-col-md-1 border-top border-left border-right border-bottom padding-top padding-bottom">Date<hr /><b>12-NOV-16</b></div>
+                                                <div class="m-grid-col m-grid-col-top m-grid-col-center m-grid-col-md-1 border-top border-left border-right border-bottom padding-top padding-bottom">Document<hr />Revision<hr />Page</div>
+                                                <div class="m-grid-col m-grid-col-top m-grid-col-center m-grid-col-md-1 border-top border-left border-right border-bottom padding-top padding-bottom">CFS-800<hr />1<hr />1 of 1</div>
+                                            </div>
+
+                                        </div>
+
+
+                                        <h5><b>1.0 Tenant</b></h5>
+                                        <div class="m-grid m-grid-demo">
+                                            <div class="m-grid-row ">
+
+                                                <div class="m-grid-col m-grid-col-middle m-grid-col-left m-grid-col-md-10 border-top border-left border-right border-bottom">
+
+                                                    <div class="m-grid m-grid-demo">
+                                                        <div class="m-grid-row">
+                                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-4 border-right border-bottom padding-left">
+                                                                <div class="form-group form-md-line-input has-info">
+                                                                    <input type="text" class="form-control" id="form_control_1" placeholder="input company name here">
+                                                                    <label for="form_control_1">Company Name</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-1 border-left border-bottom padding-left padding-tb-10 blue-dark">CID : <b>99-10-0213-16-00 </b></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="m-grid m-grid-demo">
+                                                        <div class="m-grid-row">
+                                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-5 padding-left ">
+
+                                                                <div class="form-group form-md-line-input has-info">
+                                                                    <textarea class="form-control" rows="3" placeholder="input address here"></textarea>
+                                                                    <label for="form_control_1">Address</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="m-grid m-grid-demo">
+                                                        <div class="m-grid-row">
+
+                                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-5 border-top border-right padding-left ">
+                                                                <div class="form-group form-md-line-input has-info">
+                                                                    <input type="text" class="form-control" id="form_control_1" placeholder="input city here">
+                                                                    <label for="form_control_1">City</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-3 border-top border-left border-right padding-left">
+                                                                <div class="form-group form-md-line-input has-info">
+                                                                    <input type="text" class="form-control" id="form_control_1" placeholder="input zip code here">
+                                                                    <label for="form_control_1">Zip Code</label>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-3 border-top border-left border-right padding-left">
+                                                                <div class="form-group form-md-line-input has-info">
+                                                                    <input type="text" class="form-control" id="form_control_1" placeholder="input no. telp here">
+                                                                    <label for="form_control_1">Telp.</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-3 border-top border-left padding-left">
+                                                                <div class="form-group form-md-line-input has-info">
+                                                                    <input type="text" class="form-control" id="form_control_1" placeholder="input no. fax here">
+                                                                    <label for="form_control_1">Fax</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <h5><b>2.0 PIC</b></h5>
+                                        <div class="m-grid m-grid-demo">
+                                            <div class="m-grid-row">
+                                                <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-3 border-top border-left border-right border-bottom padding-left">
+                                                    <div class="form-group form-md-line-input has-info">
+                                                        <input type="text" class="form-control" id="form_control_1" placeholder="Info name">
+                                                        <label for="form_control_1">Name</label>
+                                                    </div>
+                                                    <div class="form-group form-md-line-input has-info">
+                                                        <input type="text" class="form-control" id="form_control_1" placeholder="Info name">
+                                                        <label for="form_control_1">Name</label>
+                                                    </div>
+                                                    <div class="form-group form-md-line-input has-info">
+                                                        <input type="text" class="form-control" id="form_control_1" placeholder="Info name">
+                                                        <label for="form_control_1">Name</label>
+                                                    </div>
+                                                </div>
+                                                <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-2 border-top border-left border-right border-bottom padding-left">
+                                                    <div class="form-group form-md-line-input has-info">
+                                                        <input type="text" class="form-control" id="form_control_1" placeholder="Info position">
+                                                        <label for="form_control_1">Position</label>
+                                                    </div>
+                                                    <div class="form-group form-md-line-input has-info">
+                                                        <input type="text" class="form-control" id="form_control_1" placeholder="Info position">
+                                                        <label for="form_control_1">Position</label>
+                                                    </div>
+                                                    <div class="form-group form-md-line-input has-info">
+                                                        <input type="text" class="form-control" id="form_control_1" placeholder="Info position">
+                                                        <label for="form_control_1">Position</label>
+                                                    </div>
+                                                </div>
+                                                <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-2 border-top border-left border-right border-bottom padding-left">
+                                                    <div class="form-group form-md-line-input has-info">
+                                                        <input type="text" class="form-control" id="form_control_1" placeholder="Info mobile phone">
+                                                        <label for="form_control_1">Mobile phone</label>
+                                                    </div>
+                                                    <div class="form-group form-md-line-input has-info">
+                                                        <input type="text" class="form-control" id="form_control_1" placeholder="Info mobile phone">
+                                                        <label for="form_control_1">Mobile phone</label>
+                                                    </div>
+                                                    <div class="form-group form-md-line-input has-info">
+                                                        <input type="text" class="form-control" id="form_control_1" placeholder="Info mobile phone">
+                                                        <label for="form_control_1">Mobile phone</label>
+                                                    </div>
+                                                </div>
+                                                <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-2 border-top border-left border-right border-bottom padding-left">
+                                                    <div class="form-group form-md-line-input has-info">
+                                                        <input type="text" class="form-control" id="form_control_1" placeholder="Info email">
+                                                        <label for="form_control_1">Email</label>
+                                                    </div>
+                                                    <div class="form-group form-md-line-input has-info">
+                                                        <input type="text" class="form-control" id="form_control_1" placeholder="Info email">
+                                                        <label for="form_control_1">Email</label>
+                                                    </div>
+                                                    <div class="form-group form-md-line-input has-info">
+                                                        <input type="text" class="form-control" id="form_control_1" placeholder="Info email">
+                                                        <label for="form_control_1">Email</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+                                        <h5><b>3.0 Line Of Business</b></h5>
+                                        <div class="m-grid m-grid-demo">
+                                            <div class="m-grid-row">
+                                                <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-2 border-top border-left border-bottom padding-left">
+
+                                                    <div class="form-group form-md-checkboxes has-info">
+                                                        <div class="mt-checkbox-list">
+                                                            <label class="mt-checkbox">
+                                                                10 = Banking / Finance
+                                                                <input type="checkbox" value="1" name="test" />
+                                                                <span></span>
+                                                            </label>
+                                                            <label class="mt-checkbox">
+                                                                14 = Manufacturers
+                                                                <input type="checkbox" value="1" name="test" />
+                                                                <span></span>
+                                                            </label>
+
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                                <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-2 border-top border-bottom">
+
+
+                                                    <div class="form-group form-md-checkboxes has-info">
+                                                        <div class="mt-checkbox-list">
+                                                            <label class="mt-checkbox">
+                                                                11 = Services / Consultant
+                                                                <input type="checkbox" value="1" name="test" />
+                                                                <span></span>
+                                                            </label>
+                                                            <label class="mt-checkbox">
+                                                                15 = Foods
+                                                                <input type="checkbox" value="1" name="test" />
+                                                                <span></span>
+                                                            </label>
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-2 border-top border-bottom">
+
+                                                    <div class="form-group form-md-checkboxes has-info">
+                                                        <div class="mt-checkbox-list">
+                                                            <label class="mt-checkbox">
+                                                                12 = IT Related Business
+                                                                <input type="checkbox" value="1" name="test" />
+                                                                <span></span>
+                                                            </label>
+                                                            <label class="mt-checkbox">
+                                                                80 = BUMN
+                                                                <input type="checkbox" value="1" name="test" />
+                                                                <span></span>
+                                                            </label>
+
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                                <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-2 border-top border-right border-bottom">
+
+                                                    <div class="form-group form-md-checkboxes has-info">
+                                                        <div class="mt-checkbox-list">
+                                                            <label class="mt-checkbox">
+                                                                13 = Contractor
+                                                                <input type="checkbox" value="1" name="test" />
+                                                                <span></span>
+                                                            </label>
+                                                            <label class="mt-checkbox">
+                                                                99 = Other :
+                                                                <input type="checkbox" value="1" name="test" />
+                                                                <span></span>
+                                                            </label>
+
+                                                            <div class="form-group form-md-line-input has-info">
+                                                                <input type="text" class="form-control" id="form_control_1" placeholder="input others">
+
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                      
+                                                    <h5><b>4.0 Area & Date</b></h5>
+                                                    <div class="m-grid m-grid-demo">
+                                                        <div class="m-grid-row">
+                                                            <div class="m-grid-col m-grid-col-middle m-grid-col-left m-grid-col-md-1 border-top border-left border-right border-bottom padding-left">
+                                                                <div class="form-group form-md-line-input has-info">
+                                                                    <input type="text" class="form-control" id="form_control_1" placeholder="input here">
+                                                                    <label for="form_control_1">Required Space Area (M2)</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-1 border-top border-left border-right border-bottom padding-top padding-bottom  padding-left">
+                                                                <div class="form-group form-md-line-input has-info">
+                                                                    <input type="text" class="form-control" id="form_control_1" placeholder="input here">
+                                                                    <label for="form_control_1">Proposed Suite</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-1 border-top border-left border-right border-bottom padding-top padding-bottom  padding-left">
+                                                                <div class="form-group form-md-line-input has-info">
+                                                                    <input type="text" class="form-control" id="form_control_1" placeholder="input here">
+                                                                    <label for="form_control_1">Proposed Area (M2)</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-1 border-top border-left border-right border-bottom padding-top padding-bottom  padding-left">
+                                                                <div class="form-group form-md-line-input has-info">
+                                                                    <input type="text" class="form-control" id="form_control_1" placeholder="input here">
+                                                                    <label for="form_control_1">Rent Starting Date</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-1 border-top border-left border-right border-bottom padding-top padding-bottom  padding-left">
+                                                                <div class="form-group form-md-line-input has-info">
+                                                                    <input type="text" class="form-control" id="form_control_1" placeholder="input here">
+                                                                    <label for="form_control_1">Rent Period (Years)</label>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                              
+
+
+                                    
+
+                                        <div class="m-grid m-grid-demo">
+                                            <div class="m-grid-row">
+
+                                                <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-1 ">
+                                                    <h5><b>5.0 Parking</b></h5>
+                                                    <div class="m-grid m-grid-demo">
+                                                        <div class="m-grid-row">
+                                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-1 border-top border-left border-right border-bottom padding-left padding-top">
+                                                                
+                                                            
+                                                                <div class="form-inline">
+                                                                    <label>
+                                                                       Total Number of Reserved Parking, Cars &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+                                                                        <span></span>
+                                                                    </label>
+                                                                    <div class="form-group form-md-line-input has-info">
+                                                                        <input type="text" class="form-control" id="form_control_1" placeholder="input here">
+                                                                        <div class="form-control-focus"> </div>
+                                                                    </div>
+                                                                </div>
+                                                                @*<hr />*@
+                                                                <div class="form-inline">
+                                                                    <label>
+                                                                        Total Number of Un-Reserved Parking, Cars &nbsp;&nbsp;
+                                                                        <span></span>
+                                                                    </label>
+                                                                    <div class="form-group form-md-line-input has-info">
+                                                                        <input type="text" class="form-control" id="form_control_1" placeholder="input here">
+                                                                        <div class="form-control-focus"> </div>
+                                                                    </div>
+                                                                </div>
+                                                                @*<hr />*@
+                                                                <div class="form-inline">
+                                                                    <label>
+                                                                       Total Number of Parking, Motorbikes &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                                                        <span></span>
+                                                                    </label>
+                                                                    <div class="form-group form-md-line-input has-info">
+                                                                        <input type="text" class="form-control" id="form_control_1" placeholder="input here">
+                                                                        <div class="form-control-focus"> </div>
+                                                                    </div>
+                                                                </div><br/>
+                                                                @*<hr />*@
+                                                            </div>
+                                                           
+                                                         </div>
+                                                    </div>
+                                                    <h5><b>6.0 Communication</b></h5>
+                                                    <div class="m-grid m-grid-demo">
+                                                        <div class="m-grid-row">
+
+                                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-1 border-top border-left border-right border-bottom padding-left padding-top">
+                                                                <div class="form-inline">
+                                                                    <label>
+                                                                        Total Number of Telephone Lines Required &nbsp;&nbsp;
+                                                                        <span></span>
+                                                                    </label>
+                                                                    <div class="form-group form-md-line-input has-info">
+                                                                        <input type="text" class="form-control" id="form_control_1" placeholder="input here">
+                                                                        <div class="form-control-focus"> </div>
+                                                                    </div>
+                                                                </div>
+                                                               
+                                                                @*<hr/>*@
+
+                                                                <div class="form-group form-md-line-input has-info">
+                                                                    <label class="col-md-4 control-label" for="form_control_1">Internet Provider</label>
+                                                                    <div class="col-md-5">
+                                                                        <select class="form-control" id="form_control_1" >
+                                                                            <option value=""></option>
+                                                                            <option value="">Telkom</option>
+                                                                            <option value="">Excelcomindo</option>
+                                                                            <option value="">First Media</option>
+                                                                            <option value="">Biznet</option>
+                                                                            <option value="">Other</option>
+                                                                        </select>
+                                                                        <div class="form-control-focus"> </div>
+                                                                    </div>
+                                                                </div>
+                                                                <br/>
+                                                              
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+
+                                                <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-1 padding-left ">
+                                                  
+                                                      <h5><b>7.0 Referral</b></h5>
+
+                                                        <div class="m-grid m-grid-demo">
+                                                            <div class="m-grid-row">
+                                                                <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-1 border-top border-left border-right border-bottom padding-left">
+
+                                                                    <div class="form-inline">
+                                                                        <label class="mt-checkbox">
+                                                                            <input type="checkbox">KMO Rental Signage
+                                                                            <span></span>
+                                                                        </label>
+                                                                        <div class="form-group form-md-line-input has-info">
+                                                                            <input type="text" class="form-control" id="form_control_1" placeholder="input here">
+                                                                            <div class="form-control-focus"> </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-inline">
+                                                                        <label class="mt-checkbox">
+                                                                            <input type="checkbox">KMO Website &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                            <span></span>
+                                                                        </label>
+                                                                        <div class="form-group form-md-line-input has-info">
+                                                                            <input type="text" class="form-control" id="form_control_1" placeholder="input here">
+                                                                            <div class="form-control-focus"> </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-inline">
+                                                                        <label class="mt-checkbox">
+                                                                            <input type="checkbox">Newspaper Ad &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                            <span></span>
+                                                                        </label>
+                                                                        <div class="form-group form-md-line-input has-info">
+                                                                            <input type="text" class="form-control" id="form_control_1" placeholder="input here">
+                                                                            <div class="form-control-focus"> </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-inline">
+                                                                        <label class="mt-checkbox">
+                                                                            <input type="checkbox">Individual&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                            <span></span>
+                                                                        </label>
+                                                                        <div class="form-group form-md-line-input has-info">
+                                                                            <input type="text" class="form-control" id="form_control_1" placeholder="input here">
+                                                                            <div class="form-control-focus"> </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-inline">
+                                                                        <label class="mt-checkbox">
+                                                                            <input type="checkbox">Company&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                            <span></span>
+                                                                        </label>
+                                                                        <div class="form-group form-md-line-input has-info">
+                                                                            <input type="text" class="form-control" id="form_control_1" placeholder="input here">
+                                                                            <div class="form-control-focus"> </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-inline">
+                                                                        <label class="mt-checkbox">
+                                                                            <input type="checkbox">Other &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                            <span></span>
+                                                                        </label>
+                                                                        <div class="form-group form-md-line-input has-info">
+                                                                            <input type="text" class="form-control" id="form_control_1" placeholder="input here">
+                                                                            <div class="form-control-focus"> </div>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    
+
+
+                                                    <h5><b>8.0 Special Condition</b></h5>
+                                                    <div class="m-grid m-grid-demo">
+                                                        <div class="m-grid-row">
+
+                                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-1 border-top border-left border-right border-bottom padding-left padding-top">
+                                                                
+                                                                <div class="form-group form-md-line-input has-info">
+                                                                    <textarea class="form-control" rows="3" placeholder="input text here"></textarea>
+                                                                    <label for="form_control_1">input special condition here</label>
+                                                                </div>
+                                                             
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                           </div>
+
+                                                        </div>
+                                                    </div>
+
+                                                    <hr />
+                                                    <div class="form-actions">
+                                                        <div class="row">
+                                                            <div class="col-md-offset-3 col-md-9">
+                                                                <button type="submit" value="Save" class="btn blue">
+                                                                    <i class="fa fa-check"></i> Submit
+                                                                </button>
+                                                                <button type="button" onclick="location.href = '/Modules/800-BDM/ClientFactSheet/Index';" class="btn default">
+                                                                    <i class="fa fa-close"></i> Cancel
+                                                                </button>
+
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+
+                       
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+         
+
+                
+                @*<div class="m-grid m-grid-demo">
+                        <div class="m-grid-row">
+                            <div class="m-grid-col m-grid-col-order-2 m-grid-col-middle m-grid-col-center m-grid-col-md-3">m-grid-col-md-3</div>
+                            <div class="m-grid-col m-grid-col-middle m-grid-col-center m-grid-col-md-3">m-grid-col-md-3</div>
+                            <div class="m-grid-col m-grid-col-middle m-grid-col-center m-grid-col-md-3">m-grid-col-md-3</div>
+                            <div class="m-grid-col m-grid-col-middle m-grid-col-center m-grid-col-md-3">m-grid-col-md-3</div>
+                        </div>
+                    </div>*@
+
+        
+    </div>
+</div>
+
+

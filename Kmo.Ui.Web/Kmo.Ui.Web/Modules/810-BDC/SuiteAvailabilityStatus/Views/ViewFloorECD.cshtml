@@ -1,0 +1,181 @@
+﻿@model IEnumerable<Kmo.Modules._810_BDC.SuiteAvailabilityStatus.Models.ta_FLOORS_ECD_AcOutdoor1>
+
+@{
+    ViewBag.Title = "Utility : Electricity Consumption Distribution";
+    ViewBag.ModuleHeaderBig = "UTL:ECD";
+    ViewBag.ModuleHeaderSmall = "Utility : Electricity Consumption Distribution - Floor";
+    Layout = "~/Views/Shared/DefaultLayout.cshtml";
+    ViewBag.PageTitle = "Utility : Electricity Consumption Distribution";
+}
+
+@section PageLevelStyles
+{   
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+        <div class="portlet light bordered">
+
+            <div class="portlet-title">
+                <div class="caption font-dark">
+                    <i class="icon-layers font-blue-dark"></i>
+                    <span class="caption-subject font-blue-dark">
+                        <b>                           
+                                <a class="index" href="/UtlEcd/IndexUtlEcd">
+                                Manage UTL:ECD
+                                </a>  
+                            &nbsp;&nbsp;
+                            <i class="fa fa-angle-double-right"></i>&nbsp;
+                        </b>
+                        <i class="fa fa-flash"></i> UTL:ECD Floor Level <b>@ViewBag.FloorId</b></span>
+                </div>
+                <div class="actions">
+                    <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;"> </a>
+                </div>
+            </div>
+
+            <div class="portlet-body">
+                <table class="dt-responsive" width="100%">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="btn-group">
+                                    <a id="floorECD" class="manageFloorECD btn sbold blue-madison">
+                                        <i class="fa fa-plus"></i> Add UTL:ECD
+                                    </a>
+                                 
+                                </div>
+                            </td>                           
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+            
+                <table class="table table-striped table-bordered table-hover hidden-print dt-responsive" width="100%" id="suiteTbl">
+                    <thead>
+                        <tr>
+                            <th class="all" width="5%">Period</th>
+                            <th class="all">Date</th>
+                            <th class="all">Reading (kWh)</th>
+                            <th class="all">Usages (kWh)</th>
+                            <th class="all">Submit By</th>
+                            <th class="all">Status</th>
+                            <th class="all">Invoice Created On</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td><b>@item.Date.Month.ToString().PadLeft(2, '0') - @item.Date.Year.ToString()</b></td>
+                                <td><b>@item.Date.ToString("dd-MMM-yyyy")</b></td>
+                                <td><b>@item.Reading.ToString("N0")</b></td>
+                                <td><b>@item.Usages.ToString("N0")</b></td>
+                                <td>@item.UserId</td>
+                                <td>
+                                    @if (@item.PostInvoice.ToString() == "True")
+                                    {
+                                        <span class="label label-sm label-success"> Invoiced </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="label label-sm label-info"> WIP </span>
+                                    }
+                                </td>
+                                <td>
+                                    @if (@item.PostInvoiceDate.HasValue)
+                                    {
+                                        @item.PostInvoiceDate.Value.ToString("dd-MMM-yyyy");
+                                    }
+                                    else
+                                    {
+                                        <p>-</p>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+              
+                <label hidden id="floorId">@ViewBag.FloorId</label>
+                <input hidden readonly id="holdingCompanyId" type="text" name="HoldingCompanyId" value="@Kmo.Application.DefaultWebHoldingCompanyId" />
+              
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+@section ModalDefinition
+{
+
+<div class="modal fade display-hide" id="full" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-full">
+        <div class="modal-content" id="fullctx">
+
+        </div>
+    </div>
+</div>
+
+}
+
+@section PageLevelPlugins
+{          
+
+    <script type="text/javascript">
+              
+
+        var TableDatatablesManaged = function () {
+            var
+                p = function () {
+                  var e = $("#suiteTbl"); e.dataTable({
+                      language: { aria: { sortAscending: ": activate to sort column ascending", sortDescending: ": activate to sort column descending" }, emptyTable: "No data available in table", info: "Showing _START_ to _END_ of _TOTAL_ records", infoEmpty: "No records found", infoFiltered: "(filtered1 from _MAX_ total records)", lengthMenu: "Show _MENU_", search: "Search:", zeroRecords: "No matching records found", paginate: { previous: "Prev", next: "Next", last: "Last", first: "First" } }, footerCallback: function (e, t, a, r, o) {
+                          var n = this.api(), s = function (e) { return "string" == typeof e ? 1 * e.replace(/[\$,]/g, "") : "number" == typeof e ? e : 0 }; total = n.column(3).data().reduce(function (e, t) { return s(e) + s(t) }, 0), pageTotal = n.column(3, { page: "current" }).data().reduce(function (e, t) { return s(e) + s(t) }, 0), //$(n.column(3).footer()).html(pageTotal + " &nbsp;<b>(" + total + " Total M<sup>2</sup>)</b>"),
+                        total = n.column(4).data().reduce(function (e, t) { return s(e) + s(t) }, 0), pageTotal = n.column(4, { page: "current" }).data().reduce(function (e, t) { return s(e) + s(t) }, 0) //, $(n.column(4).footer()).html(pageTotal + " &nbsp;<b>(" + total + " Total kVA)</b>")
+                      }, bStateSave: !0, lengthMenu: [[5, 10, 15, 20, -1], [5, 10, 15, 20, "All"]], pageLength: 10, columnDefs: [{ }, { }], order: [[1, "asc"]]
+                  }); jQuery("#suiteTbl_wrapper"); e.find(".group-checkable").change(function () { var e = jQuery(this).attr("data-set"), t = jQuery(this).is(":checked"); jQuery(e).each(function () { t ? $(this).prop("checked", !0) : $(this).prop("checked", !1) }) })
+                }; return {
+                    init: function () {
+                        jQuery().dataTable && ( p())
+                    }
+                }
+        }();
+
+        jQuery(document).ready(function ()
+        {
+            TableDatatablesManaged.init()
+            App.startPageLoading({ animate: true });
+            $('#suiteTbl').show();
+            App.stopPageLoading();
+        });   
+
+        $('.manageFloorECD').click(function () {
+            App.startPageLoading({ animate: true });
+            $.ajax({
+                url: "/SuiteAvailabilityStatus/ManageFloorEcdPartialView",
+                type: 'Get',
+                success: function (msg) {
+                    $("#fullctx").empty().append(msg);
+                    $("#full").modal('toggle');
+                },
+                complete: function () {
+                    App.stopPageLoading();
+                    $('#titleModal').text("Submit UTL:ECD on Floor level " + $('#floorId').text());
+                },
+                error: function () {
+                    alert("something on Floor ECD seems wrong");
+                }
+            });
+        });
+       
+
+      
+     
+
+    </script>
+
+
+}

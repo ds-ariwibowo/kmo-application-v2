@@ -1,0 +1,825 @@
+﻿
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+    <h4 class="modal-title"><i class="icon-pencil font-dark"></i>&nbsp;<label id="titleModal" type="text" name="TitleModal" /> </h4>
+    <div class="caption font-sm">
+    </div>
+</div>
+
+<form action="#" id="form_sample_2">
+    <div class="form-body">
+        <div class="modal-body">
+
+            <div class="portlet light bordered">
+                <div class="portlet-body">
+
+                    <table id="Loo" class="dt-responsive" width="100%" hidden>
+                        <tbody>
+                            <tr>
+                                <td>
+
+                                    <div class="m-grid m-grid-responsive-xs m-grid-demo">
+                                        <div class="m-grid-row">
+                                            <div class="m-grid-col m-grid-col-middle m-grid-col-left m-grid-col-md-2 border-top border-left border-right border-bottom padding-left" style="background-color:white">
+                                                <img alt="" class="img-responsive" src="~/Theme/assets/layouts/layout4/img/png.jpg" /><br>
+                                                <textarea class="form-control" readonly disabled rows="4" id="addr" placeholder="Address"></textarea>
+                                            </div>
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-center m-grid-col-md-3 border-top border-left border-right border-bottom padding-top padding-bottom"><h3>Invoice : Rent and Service Charge</h3><hr /><b>No. : INV-RAS-710-<label id="invNo" class="bold"></label></b></div>
+
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-2 border-top border-left border-right border-bottom padding-top padding-left  padding-bottom">
+                                                <h3><b>INVOICE</b></h3>Rent and Service Charge<hr />
+                                                <div class="form-group form-md-line-input">
+                                                    <input type="text" class="form-control date-picker" id="cInvDate" name="name" placeholder="dd-MMM-yyyy" data-date-format="dd-M-yyyy">
+                                                    <label for="form_control_1"><b>Invoice Date</b></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <br />
+                                    <div class="m-grid m-grid-responsive-md m-grid-demo">
+                                        <div class="m-grid-row ">
+
+                                            <div class="m-grid-col m-grid-col-middle m-grid-col-left m-grid-col-md-1 border-top border-left border-right border-bottom">
+
+                                                <div class="m-grid m-grid-responsive-md m-grid-demo">
+
+                                                    <div class="m-grid-row">
+                                                        <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-2 border-right padding-left padding-right padding-top">
+                                                            <div class="form-group form-md-line-input">
+                                                                <input type="text" readonly disabled class="form-control" id="c21" placeholder="Client" value="">
+                                                                <textarea class="form-control" readonly disabled rows="3" id="c22" placeholder="Address"></textarea>
+                                                                <input type="text" readonly disabled class="form-control static-info col-sm-3" id="c221" placeholder="City">
+                                                                <input type="text" readonly disabled class="form-control static-info col-sm-3" id="c222" placeholder="Zip Code">
+                                                                <br />
+                                                                <input type="text" readonly disabled class="form-control" id="c23" placeholder="-" value="">
+                                                                <label for="form_control_1"><i>To :</i></label>
+                                                            </div>
+
+                                                        </div>
+
+                                                        <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-2 border-left border-right padding-left padding-right padding-top">
+                                                            <div class="form-group form-md-line-input">
+                                                                <input type="text" readonly disabled class="form-control" id="cSuite" placeholder="-" value="">
+                                                                <label for="form_control_1"><i>Suite No. :</i></label>
+                                                            </div>
+                                                            <div class="form-group form-md-line-input">
+                                                                <select class="form-control" id="ddlLoo" onchange="loadLOO(this.value);"></select>
+                                                                <input type="text" readonly disabled class="form-control" id="cLoo" placeholder="-" value="">
+                                                                <label for="form_control_1"><b>Contract No.:</b></label>
+                                                            </div>
+                                                            <div class="form-group form-md-line-input">
+                                                                <label for="form_control_1">Rental/Service Period :</label>
+                                                            </div>
+
+                                                        </div>
+
+                                                        <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-2 border-left padding-left padding-right padding-top">
+                                                            <div class="form-group form-md-line-input">
+                                                                <input type="text" readonly disabled class="form-control" id="cid" placeholder="-" value="">
+                                                                <label for="form_control_1"><i>CID :</i></label>
+                                                            </div>
+                                                            <div class="form-group form-md-line-input">
+                                                                <input type="text" class="form-control" id="cMemo" placeholder="-" value="">
+                                                                <label for="form_control_1"><b>Memorandum No.</b></label>
+                                                            </div>
+                                                            <div class="form-group form-md-line-input">
+                                                                <input type="text" class="form-control date-picker" readonly disabled id="cFrom" name="name" placeholder="dd-MMM-yyyy" data-date-format="dd-M-yyyy">
+                                                                <label for="form_control_1"><i>From</i></label>
+                                                            </div>
+
+                                                        </div>
+
+                                                        <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-2 border-left padding-left padding-right padding-top">
+                                                            <div class="form-group form-md-line-input">
+                                                                <input type="text" class="form-control date-picker" id="cPayDue" name="name" placeholder="dd-MMM-yyyy" data-date-format="dd-M-yyyy">
+                                                                <label for="form_control_1"><b>Payment Due :</b></label>
+                                                            </div>
+                                                            <div class="form-group form-md-line-input">
+                                                                <input type="text" class="form-control" id="cOther" placeholder="-" value="">
+                                                                <label for="form_control_1"><b>Others</b></label>
+                                                            </div>
+                                                            <div class="form-group form-md-line-input">
+                                                                <input type="text" class="form-control date-picker" readonly disabled id="cTo" name="name" placeholder="dd-MMM-yyyy" data-date-format="dd-M-yyyy">
+                                                                <label for="form_control_1"><i>To</i></label>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <br />
+                                    <div class="m-grid m-grid-responsive-md m-grid-demo">
+                                        <div class="m-grid-row">
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-3 border-top border-left border-bottom padding-left padding-right">
+
+                                                <div class="form-group form-md-line-input">
+                                                    <label for="form_control_1"><b>Description</b></label>
+                                                    <div class="form-control form-control-static f1">Rental Area</div>
+                                                    <div class="form-control form-control-static f2">Rental Service Charge Area</div>
+                                                    @*<div class="form-control form-control-static f3">Car, Reserved</div>
+                                                        <div class="form-control form-control-static f4">Car-Un-Reserved</div>
+                                                        <div class="form-control form-control-static f5">Motorbike</div>*@
+                                                  
+                                                </div>
+
+                                            </div>
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-1 border-top border-left border-bottom padding-left padding-right">
+
+                                                <div class="form-group form-md-line-input">
+                                                    <label for="form_control_1"><b>Area (M<sup>2</sup>)</b></label>
+                                                    <input type="text" class="form-control" id="c71" readonly disabled placeholder="0" value="">
+                                                    <input type="text" class="form-control" id="c72" readonly disabled placeholder="0" value="">
+                                                    @*<input type="text" class="form-control" id="c81" readonly disabled placeholder="0" value="">
+                                                        <input type="text" class="form-control" id="c82" readonly disabled placeholder="0" value="">
+                                                        <input type="text" class="form-control" id="c83" readonly disabled placeholder="0" value="">
+                                                    <input type="text" class="form-control" id="c9" readonly disabled placeholder="0" value="">*@
+
+                                                </div>
+
+                                            </div>
+                                          
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-1 border-top border-left border-bottom padding-left padding-right">
+                                               
+                                                <div class="form-group form-md-line-input">
+                                                    <label for="form_control_1"><b>Duration  (Month)</b></label>
+                                                    <input type="text" class="form-control" id="c712" readonly disabled placeholder="0" value="">
+                                                    <input type="text" class="form-control" id="c722" readonly disabled placeholder="0" value="">
+                                                    @*<input type="text" class="form-control" id="c812" readonly disabled placeholder="0" value="">
+                                                    <input type="text" class="form-control" id="c822" readonly disabled placeholder="0" value="">
+                                                    <input type="text" class="form-control" id="c832" readonly disabled placeholder="0" value="">
+                                                    <input type="text" class="form-control" id="c92" readonly disabled placeholder="0" value="">*@
+                                                </div>                                               
+
+                                            </div>
+
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-1 border-top border-left border-bottom padding-left padding-right">
+                                                <div class="form-group form-md-line-input">
+                                                    <label for="form_control_1"><b>Unit Cost (Rp/M<sup>2</sup>)</b></label>
+                                                    <input type="text" class="form-control" id="c711" readonly disabled placeholder="0" value="">
+                                                    <input type="text" class="form-control" id="c721" readonly disabled placeholder="0" value="">
+                                                     @*<input type="text" class="form-control" id="c811" readonly disabled placeholder="0" value="">
+                                                    <input type="text" class="form-control" id="c821" readonly disabled placeholder="0" value="">
+                                                    <input type="text" class="form-control" id="c831" readonly disabled placeholder="0" value="">
+                                                    <input type="text" class="form-control" id="c91" readonly disabled placeholder="0" value="">*@
+                                                </div>
+                                               
+                                            </div>
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-2 border-top border-left border-right border-bottom padding-left padding-right">
+                                                <div class="form-group form-md-line-input">
+                                                    <label for="form_control_1"><b>Amount  (IDR)</b></label>
+                                                    <input type="text" class="form-control" id="c713" readonly disabled placeholder="0" value="">
+                                                    <input type="text" class="form-control" id="c723" readonly disabled placeholder="0" value="">
+                                                    @*<input type="text" class="form-control" id="c813" readonly disabled placeholder="0" value="">
+                                                        <input type="text" class="form-control" id="c823" readonly disabled placeholder="0" value="">
+                                                        <input type="text" class="form-control" id="c833" readonly disabled placeholder="0" value="">
+                                                    <input type="text" class="form-control" id="c93" readonly disabled placeholder="0" value="">*@
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <br />
+                                    <div class="m-grid m-grid-responsive-md m-grid-demo">
+                                        <div class="m-grid-row">
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-4 border-top border-left border-right border-bottom padding-left padding-right">
+                                                <div class="form-group form-md-line-input">
+                                                    <table style="border-color:#F3F4F6" width="100%">
+                                                        <tr class="border-bottom ">
+                                                            <td colspan="3">Please make Payment by Direct Telegraphic Transfer to :</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="3">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="100px">Bank&nbsp;</td>
+                                                            <td width="5px">:</td>
+                                                            <td>&nbsp;<label id="bank" class="bold"></label></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="100px">Beneficiary&nbsp;</td>
+                                                            <td width="5px">:</td>
+                                                            <td>&nbsp;<label id="beneficiary" class="bold"></label></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="100px">Account No.&nbsp;</td>
+                                                            <td width="5px">:</td>
+                                                            <td>&nbsp;<label id="accNo" class="bold"></label></td>
+                                                        </tr>
+                                                    </table>
+
+                                                    <table style="border-color:#F3F4F6" width="100%">
+                                                        <tr>
+                                                            <td colspan="2">&nbsp;</td>
+                                                        </tr>
+                                                        <tr class="border-bottom ">
+                                                            <td colspan="2"><b>Terms of Payment :</b></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="2">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="30px" valign="top">1.&nbsp;</td>
+                                                            <td>Please make payment by Direct Telegraphic Transfer to Bank Account shown in this Invoice.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="30px" valign="top">2.&nbsp;</td>
+                                                            <td>All payments are considered PAID only with proof of bank transfer and the payment has been received in our account.</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="30px" valign="top">3.&nbsp;</td>
+                                                            <td>For amount overdue an interest of 5% per month compounded daily shall be charged.</td>
+                                                        </tr>
+
+                                                    </table>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-3 border-top border-bottom border-right padding-left padding-right">
+                                                <div class="form-group form-md-line-input">
+                                                    <table style="border-color:#F3F4F6" width="100%">
+                                                        <tr>
+                                                            <td align="right">SUB TOTAL :&nbsp;</td>
+                                                            <td width="160px" align="right">&nbsp;<h3><label id="totalPayment" class="bold"></label></h3></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td align="right"><label id="invTax"></label> % PPN (VAT) :&nbsp;</td>
+                                                            <td width="160px" align="right">&nbsp;<h3><label id="ppnAmount" class="bold"></label></h3></td>
+                                                        </tr>
+                                                        <tr class="border-bottom">
+                                                            <td align="right">Materai :&nbsp;</td>
+                                                            <td width="160px" align="right">&nbsp;<h3><label id="materaiAmount" class="bold"></label></h3></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td align="right"><b>GRAND TOTAL</b> :&nbsp;</td>
+                                                            <td width="160px" align="right">&nbsp;<h3><label id="grandTotal" class="bold"></label></h3></td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal-footer">
+            <label hidden id="InvNo"></label>
+            <label hidden id="clientId"></label>
+            <label hidden id="clientIssue"></label>
+            <label hidden id="currentDate">@DateTime.Now.ToString("dd-MMM-yyyy")</label>
+            <label hidden id="LooId"></label>
+            <label hidden id="looId"></label>
+            <label hidden id="looIssue"></label>
+            <label hidden id="hdnMaterai"></label>
+            <label hidden id="hdnInvTax"></label>
+            <label hidden id="cfreeTax"></label>
+            <label hidden id="hdnRentPayableAdvanced"></label>
+            <button id="submit" type="submit" value="Save" class="btn green-soft">
+                <i class="fa fa-check"></i> Submit
+            </button>
+            <button type="button" data-dismiss="modal" class="btn dark btn-outline"><i class="fa fa-close"></i> Cancel</button>
+
+        </div>
+    </div>
+
+</form>
+
+<script src="~/Theme/assets/pages/scripts/components-date-time-pickers.min.js" type="text/javascript"></script>
+<script src="~/Theme/assets/pages/scripts/form-validation-md.min.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+
+
+    function formatDisplay(value) {
+        if (value !== '') {
+            return value.substr(0, 4) + '-' + value.substr(4, 4);
+        }
+    }
+
+    function formatCurrency(total) {
+        var neg = false;
+        if (total < 0) {
+            neg = true;
+            total = Math.abs(total);
+        }
+        var cur = (neg ? "-" : '') + parseFloat(total, 10).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString();
+        return cur.substr(0, cur.length - 3);
+    }
+
+    function parseToNum(total) {
+        return Number(total.toString().replace(/[^0-9\.]+/g, ""));
+    }
+
+    function parseJsonDate(jsonDate) {
+        var fullDate = new Date(parseInt(jsonDate.substr(6)));
+        var twoDigitMonth = (fullDate.getMonth() + 1) + ""; if (twoDigitMonth.length == 1) twoDigitMonth = "0" + twoDigitMonth;
+
+        var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+        var twoDigitDate = fullDate.getDate() + ""; if (twoDigitDate.length == 1) twoDigitDate = "0" + twoDigitDate;
+        var currentDate = twoDigitDate + "-" + monthNames[fullDate.getMonth()] + "-" + fullDate.getFullYear();
+        return currentDate;
+    };
+
+
+    var FormInputMask = function () {
+        var handleInputMasks = function () {
+            $('#c71,#c72').inputmask('Regex', { regex: "^[0-9]{1,9}(\\.\\d{1,2})?$" });
+            $('#c712,#c722,#cMemo').inputmask('Regex', { regex: "^[0-9]{1,9}?$" });
+        }
+        return {
+            //main function to initiate the module
+            init: function () {
+                handleInputMasks();
+            }
+        };
+    }();
+
+
+    function setAmount(selectedId) {
+        var id = '#' + $(selectedId).attr('id');
+        if (id == '#undefined') {
+            if (selectedId.substr(0, 1) !== '#')
+                id = '#' + selectedId;
+            else
+                id = selectedId;
+        }
+
+        var idLabel = '';
+        idLabel = id.substr(0, 4);
+
+        var i = parseToNum($(idLabel).val())
+        var i1 = parseToNum($(idLabel + '1').val());
+        var i2 = parseToNum($(idLabel + '2').val());
+
+        if ((i == 'isNan') || (i == ''))
+            i = 0;
+        if ((i1 == 'isNan') || (i1 == ''))
+            i1 = 0;
+        if ((i2 == 'isNan') || (i2 == ''))
+            i2 = 0;
+        $(idLabel + '3').val(formatCurrency(i * i1 * i2));
+    }
+
+
+    function loadLOO(selectedId) {
+        $('#LooId').text(selectedId);
+
+        if (selectedId.length == 10) {
+            $.ajax({
+                url: "/InvoiceRas/GetLooForInvRas",
+                data: { looIssue: selectedId.substr(0, 2), looId: selectedId.substr(2, 8) },
+                type: 'Get',
+                contentType: 'application/json',
+                cache: false,
+                success: function (data) {
+                    $.each(data, function (i, item) {                       
+                        if (i == 'InvRasId') {
+                            $('#invNo').text(formatDisplay(item));
+                            $('#InvNo').text(item);
+                        }
+                        if (i == 'InvRasDate')
+                            $('#cInvDate').val(parseJsonDate(item));
+                        if (i == 'InvRasDueDate')
+                            $('#cPayDue').val(parseJsonDate(item));
+                        if (i == 'InvRasMemoNo')
+                            $('#cMemo').val(item);
+                        if (i == 'InvRasOther')
+                            $('#cOther').val(item);
+                        if (i == 'LooId')
+                            $('#looId').text(item);
+                        if (i == 'LooIssue')
+                            $('#looIssue').text(item);
+                        if (i == 'ClientId')
+                            $('#clientId').text(item);
+                        if (i == 'ClientIssue')
+                            $('#clientIssue').text(item);
+                        if (i == 'Cid')
+                            $('#cid').val(item);
+                        if (i == 'SuiteName')
+                            $('#cSuite').val(item);
+                        if (i == 'Area') {
+                            $('#c71').val(item);
+                            $('#c72').val(item);
+                        }
+                        if (i == 'CompanyName')
+                            $('#c21').val(item);
+                        if (i == 'CompanyAddress')
+                            $('#c22').val(item);
+                        if (i == 'City')
+                            $('#c221').val(item);
+                        if (i == 'ZipCode')
+                            $('#c222').val(item);
+                        if (i == 'Name')
+                            $('#c23').val(item);
+
+                        if (i == 'RentCommencementDate')
+                            $('#cFrom').val(parseJsonDate(item));
+                        if (i == 'LeaseExpiryDate')
+                            $('#cTo').val(parseJsonDate(item));
+
+                        if (i == 'SecurityUnitPrice')
+                            $('#c711').val(formatCurrency(item));
+                        if (i == 'ServiceChargeUnitPrice')
+                            $('#c721').val(formatCurrency(item));
+                                                                     
+                        if (i == 'LeasePeriodYear') {
+                            var m = 12 * parseToNum(item);
+                            $('#c712').val(m);                          
+                            $('#c722').val(m);                           
+                        }
+                        //if (i == 'SecurityDepositDuration') {
+                        //    $('#c712').val(item);
+                        //    setTotalAmount('#c712');
+                        //}
+                        //if (i == 'ServiceChargeDepositDuration') {
+                        //    $('#c722').val(item);
+                        //    setTotalAmount('#c722');
+                        //}
+                        if (i == 'FreeTax')
+                            $('#cfreeTax').text(item);
+                    });
+
+                },
+                complete: function () {
+                    $('#materaiAmount').text($('#hdnMaterai').text());
+                    $('#invTax').text($('#hdnInvTax').text());
+
+                    if ($('#cfreeTax').text() == '1')
+                        $('#invTax').text("0");
+
+                    setAmount('#c712');
+                    setAmount('#c722');
+                    setTotalAmount();
+                },
+                error: function (msg) {
+                    alert("something on INV RAS seems wrong");
+                }
+            });
+
+        }
+        else {           
+            $('#clientId').text("");
+            $('#clientIssue').text("");
+            $('#looIssue').text("");
+            $('#looId').text("");
+                     
+            $('#cid').val("");
+            $('#c21').val("");
+            $('#c22').val("");
+            $('#c221').val("");
+            $('#c222').val("");
+            $('#c23').val("");
+            $('#floor').val("");
+            $('#cSuite').val("");
+            $('#cFrom').val("");
+            $('#cTo').val("");
+
+            $('#c71').val("");
+            $('#c72').val("");
+            $('#c711').val("");
+            $('#c721').val("");
+            $('#c712').val("");
+            $('#c722').val("");
+
+            $('#c713').val("");
+            $('#c723').val("");
+
+            $('#totalPayment').text("0");
+            $('#ppnAmount').text("0");
+            $('#materaiAmount').text("0");
+            $('#grandTotal').text("0");
+
+        }
+    }
+
+    function loadInvRas(selectedId) {
+        $('#InvNo').text(selectedId);
+
+        if (selectedId.length == 8) {
+            $.ajax({
+                url: "/InvoiceRas/GetInvRas",
+                data: { invRasId: selectedId },
+                type: 'Get',
+                contentType: 'application/json',
+                cache: false,
+                success: function (data) {
+                    $.each(data, function (i, item) {
+                        if (i == 'InvRasId') {
+                            $('#invNo').text(formatDisplay(item));
+                            $('#InvNo').text(item);
+                        }
+                        if (i == 'InvRasDate')
+                            $('#cInvDate').val(parseJsonDate(item));
+                        if (i == 'InvRasDueDate')
+                            $('#cPayDue').val(parseJsonDate(item));
+                        if (i == 'InvRasMemoNo')
+                            $('#cMemo').val(item);
+                        if (i == 'InvRasOther')
+                            $('#cOther').val(item);
+                        if (i == 'LooId')
+                            $('#looId').text(item);
+                        if (i == 'LooIssue')
+                            $('#looIssue').text(item);                           
+                            if (i == 'ClientId')
+                                $('#clientId').text(item);
+                            if (i == 'ClientIssue')
+                                $('#clientIssue').text(item);
+                            if (i == 'Cid')
+                                $('#cid').val(item);
+                            if (i == 'SuiteName')
+                                $('#cSuite').val(item);
+                            if (i == 'Area') {
+                                $('#c71').val(item);
+                                $('#c72').val(item);
+                            }
+                            if (i == 'CompanyName')
+                                $('#c21').val(item);
+                            if (i == 'CompanyAddress')
+                                $('#c22').val(item);
+                            if (i == 'City')
+                                $('#c221').val(item);
+                            if (i == 'ZipCode')
+                                $('#c222').val(item);
+                            if (i == 'Name')
+                                $('#c23').val(item);
+
+                            if (i == 'From')
+                                $('#cFrom').val(parseJsonDate(item));
+                            if (i == 'To')
+                                $('#cTo').val(parseJsonDate(item));
+
+                            if (i == 'SecurityUnitPrice')
+                                $('#c711').val(formatCurrency(item));
+                            if (i == 'ServiceChargeUnitPrice')
+                                $('#c721').val(formatCurrency(item));
+
+                            if (i == 'RentPayableAdvanced') {
+                                var m = parseToNum(item);
+                                $('#c712').val(m);
+                                $('#c722').val(m);
+                            }
+                            //if (i == 'LeasePeriodYear') {
+                            //    var m = 12 * parseToNum(item);
+                            //    $('#c712').val(m);                             
+                            //    $('#c722').val(m);
+                            //}
+                            //if (i == 'SecurityDepositDuration') {
+                            //    $('#c712').val(item);
+                            //    setTotalAmount('#c712');
+                            //}
+                            //if (i == 'ServiceChargeDepositDuration') {
+                            //    $('#c722').val(item);
+                            //    setTotalAmount('#c722');
+                            //}                    
+
+                            if (i == 'FreeTax')
+                                $('#cfreeTax').text(item);
+                        });
+
+                },
+                complete: function () {                  
+                    $('#materaiAmount').text($('#hdnMaterai').text());
+                    $('#invTax').text($('#hdnInvTax').text());
+
+                    if ($('#cfreeTax').text() == '1')
+                        $('#invTax').text("0");
+
+                    setAmount('#c712');
+                    setAmount('#c722');
+                    setTotalAmount();
+
+                    //$('#cLoo').val("No. LOO-900-" + $('#looIssue').text() +"-"+ formatDisplay($('#looId').text()));
+                    $('#cLoo').val("No. CTR-900-" + formatDisplay($('#looId').text()));
+                },
+                error: function (msg) {
+                    alert("something on INV RAS seems wrong");
+                }
+            });
+
+        }
+        else {
+            $('#looNo').text(formatDisplay("XXXXXXXX"));
+            $('#clientId').text("");
+            $('#clientIssue').text("");
+            $('#looIssue').text("");
+            $('#looId').text("");
+            $('#cLoo').val("");
+            $('#invNo').text(formatDisplay("XXXXXXXX"));
+            $('#InvNo').text("");
+            $('#cInvDate').val("");
+            $('#cPayDue').val("");
+            $('#cMemo').val("");
+            $('#cOther').val("-");
+            $('#cid').val("");
+            $('#c21').val("");
+            $('#c22').val("");
+            $('#c221').val("");
+            $('#c222').val("");
+            $('#c23').val("");
+            $('#floor').val("");
+            $('#cSuite').val("");
+            $('#cFrom').val("");
+            $('#cTo').val("");
+
+            $('#c71').val("");
+            $('#c72').val("");
+            $('#c711').val("");
+            $('#c721').val("");
+            $('#c712').val("");
+            $('#c722').val("");          
+         
+            $('#c713').val("");
+            $('#c723').val("");         
+
+            $('#totalPayment').text("0");
+            $('#ppnAmount').text("0");
+            $('#materaiAmount').text("0");
+            $('#grandTotal').text("0");                   
+
+        }
+    }
+
+
+    function pad (str, max) {
+        str = str.toString();
+        return str.length < max ? pad(str + " ", max) : str;
+    }
+
+    
+    // Calculate Total 
+    function setTotalAmount() {
+
+        var i = parseToNum($('#c71').val());
+        var i1 = parseToNum($('#c711').val());
+        var i2 = parseToNum($('#c712').val());
+        var i11 = parseToNum($('#c721').val());
+        var i12 = parseToNum($('#c722').val());
+                   
+        if ((i == 'isNan') || (i == ''))
+            i = 0;
+        if ((i1 == 'isNan') || (i1 == ''))
+            i1 = 0;
+        if ((i2 == 'isNan') || (i2 == ''))
+            i2 = 0;
+        if ((i11 == 'isNan') || (i11 == ''))
+            i11 = 0;
+        if ((i12 == 'isNan') || (i12 == ''))
+            i12 = 0;
+                    
+        $('#totalPayment').text(formatCurrency((i * i1 * i2) + (i * i11 * i12) ));
+        $('#ppnAmount').text(formatCurrency(parseToNum(parseToNum($('#invTax').text()) * parseToNum($('#totalPayment').text()) / 100)));
+        $('#grandTotal').text(formatCurrency(parseToNum($('#totalPayment').text()) + parseToNum($('#ppnAmount').text()) + parseToNum($('#materaiAmount').text())));
+
+    }
+
+
+    var id = 0;
+    $(document).ready(function () {
+        App.startPageLoading({ animate: true });
+
+        FormInputMask.init();
+        $('#Loo').show();
+        $('#cInvDate').val($('#currentDate').text());
+        $('#cPayDue').val($('#currentDate').text());
+        $('#invNo').text(formatDisplay("XXXXXXXX"));
+        $('#InvNo').text("");
+        $('#cOther').val("-");
+
+        $('#hdnInvTax').text("0");
+        $('#invTax').text("0");
+        $('#totalPayment').text("0");
+        $('#ppnAmount').text("0");
+        $('#hdnMaterai').text("0");
+        $('#materaiAmount').text("0");
+        $('#grandTotal').text("0");
+        $('#cfreeTax').text("0");
+
+        $.ajax({
+            url: "/LeaseAgreement/GetGlobalOption",
+            type: 'Get',
+            contentType: 'application/json',
+            cache: false,
+            success: function (data) {
+                $('#hdnInvTax').text(data.InvoiceTax*100);
+                $('#hdnMaterai').text(data.Materai);
+                $('#bank').text(data.InvoiceBank);
+                $('#beneficiary').text(data.InvoiceBankName);
+                $('#accNo').text(data.InvoiceBankAcc);
+                $('#addr').text(data.Address);
+
+            },
+            complete: function () {
+            },
+            error: function (msg) {
+                alert("something on load Global Option seems wrong");
+            }
+        });
+
+        var selectedId = $('#tempId').text();
+        if (selectedId.length == 8) {          
+            loadInvRas(selectedId);
+         }       
+
+        if ($('#title').text() == 'Add INV-RAS') {
+            $('#cLoo').hide();
+            $('#ddlLoo').show();
+
+            // Load dll
+            var ddl_loo = "<option value=" + 0 + ">-</option>";
+            $.ajax({
+                url: "/InvoiceRas/ListOfLooForInvRas",
+                type: 'Get',
+                contentType: 'application/json',
+                cache: false,
+                success: function (data) {
+                    $.each(data, function (i, item) {
+                        ddl_loo += "<option value=" + item.LooIssue + item.LooId + ">LOO-900-" + item.LooIssue + "-" + formatDisplay(item.LooId) + "</option>";
+                    });
+                },
+                complete: function () {
+                    $("#ddlLoo").append(ddl_loo);
+                },
+                error: function (msg) {
+                    alert("something on load Inv Ras list seems wrong");
+                }
+            });
+            // end Load dll
+        }
+        else {
+            $('#ddlLoo').hide();
+            $('#cLoo').show();
+        }
+
+        App.stopPageLoading();
+    });
+
+
+
+    $("#submit").click(function () {
+
+        if ($('#looId').text().trim() == '' || $('#looId').text().trim() == 'null') {
+            bootbox.alert("Please select available LOO !");
+            return;
+        }
+
+        if ($('#cInvDate').val().trim() == '') {
+            $("#cInvDate").focus();
+            return;
+        }
+        if ($('#cPayDue').val().trim() == '') {
+            $("#cPayDue").focus();
+            return;
+        }
+
+        App.startPageLoading({ animate: true });
+
+        var model = {
+            LooId: $('#looId').text(),
+            LooIssue: $('#looIssue').text(),
+            InvRasId: $('#InvNo').text(),
+            CreatedDate: $('#currentDate').text(),
+            InvRasDate: $('#cInvDate').val(),
+            InvRasDueDate: $('#cPayDue').val(),
+            InvRasMemoNo: $('#cMemo').val(),
+            InvRasOther: $('#cOther').val(),
+            Status: "WIP"
+        };
+
+        $.ajax({
+            type: "POST",
+            data: JSON.stringify(model),
+            url: "/InvoiceRas/SaveInvRas",
+            contentType: "application/json"
+        }).success(function (res) {
+        }).done(function (res) {
+            App.stopPageLoading();
+            window.location.reload(true);
+        });
+
+    });
+
+
+
+</script>

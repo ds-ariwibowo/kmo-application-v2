@@ -1,0 +1,223 @@
+﻿@model IEnumerable<Kmo.Modules._810_BDC.SuiteAvailabilityStatus.Models.ta_FLOOR1>
+
+@{
+
+    if (ViewBag.Module == "UTLECD")
+    {
+        ViewBag.Title = "Utility : Electricity Consumption Distribution";
+        ViewBag.ModuleHeaderBig = "UTL:ECD";
+        ViewBag.ModuleHeaderSmall = "Utility : Electricity Consumption Distribution";
+        Layout = "~/Views/Shared/DefaultLayout.cshtml";
+        ViewBag.PageTitle = "Utility : Electricity Consumption Distribution";
+    }
+    else
+    {
+        ViewBag.Title = "Suite Availability Status";
+        ViewBag.ModuleHeaderBig = "SAS";
+        ViewBag.ModuleHeaderSmall = "Suite Availability Status";
+        Layout = "~/Views/Shared/DefaultLayout.cshtml";
+        ViewBag.PageTitle = "Suite Availability Status";
+    }    
+
+}
+
+@section PageLevelStyles
+{   
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+        <div class="portlet light bordered">
+
+            <div class="portlet-title">
+                <div class="caption font-dark">
+                    <i class="icon-layers font-blue-dark"></i>
+                  
+                    @if (@ViewBag.Module == "UTLECD")
+                    {  
+                        <span class="caption-subject bold font-blue-dark">
+                        <a class="index" href="/UtlEcd/IndexUtl">
+                            Manage UTL:ECD
+                        </a>
+                        </span>
+                    }
+                    else
+                    {
+                        <span class="caption-subject bold font-blue-dark">Manage SAS</span>
+                    }
+
+                       
+                </div>
+                <div class="actions">
+                    <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;"> </a>
+                </div>
+            </div>
+
+            <div class="portlet-body">
+
+                @if (@ViewBag.Module == "SAS")
+                {
+                <table class="dt-responsive" width="100%">
+                    <tbody>
+                        <tr>                           
+                            <td align="right">
+                                <button id="sum" data-toggle="modal" onclick="showSUMSAS();"  class="btn green-soft sbold"><i class="fa icon-docs"></i> <b>SUM:SAS</b></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                }
+                <br>
+                        
+                    <table class="table table-striped table-bordered table-hover dt-responsive" id="suiteTbl" hidden>
+                        <thead>
+                            <tr>
+                                <th class="all" width="6.5%"><i class="fa fa-gears"></i> Actions</th>
+                                <th class="all" width="15%">Floor Level</th>
+                                <th class="all">Common Area (M<sup>2</sup>)</th>  
+                                <th class="all">Total Area (M<sup>2</sup>)</th>                          
+                            </tr>
+                        </thead>
+                        <tbody id="listSas">
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td width="6.5%">
+                                        <div class="btn-group pull-left">
+                                            <button class="btn btn-block green btn-xs dropdown-toggle" data-toggle="dropdown">
+                                                Actions
+                                                <i class="fa fa-angle-down"></i>
+                                            </button>
+                                            <ul class="dropdown-menu pull-left">  
+                                               @if (@ViewBag.Module == "SAS")
+                                               {
+                                                 <li>
+                                                    <a id="revise" class="manage" onclick="setId('@item.FloorId');" style="background-color:#F3F4F6;">
+                                                        <i class="fa fa-edit"></i> Revise
+                                                    </a>
+                                                </li>
+                                                <li class="divider"> </li>    
+                                               }    
+                                                                                    
+                                                <li>
+                                                    <a class="viewSuites" onclick="setId('@item.FloorId');" href="~/Modules/810-BDC/SuiteAvailabilityStatus/ViewSuites?floorId=@item.FloorId&module=@ViewBag.Module" style="background-color:#F3F4F6;">
+                                                        <i class="fa fa-edit"></i> Manage
+                                                        @if (@ViewBag.Module == "UTLECD")
+                                                        {
+                                                           <label> UTL:ECD Suites</label>
+                                                        }
+                                                        else
+                                                        {
+                                                          <label> Suites</label>
+                                                        }
+
+                                                    </a>
+                                                </li>       
+                                              
+
+                                                @if (@ViewBag.Module == "UTLECD")
+                                                {
+                                                <li class="divider"> </li>
+                                                <li>
+                                                    <a id="floorECD" class="managefloorECD" onclick="setId('@item.FloorId');" href="~/Modules/810-BDC/SuiteAvailabilityStatus/ViewFloorECD?floorId=@item.FloorId" style="background-color:#F3F4F6;">
+                                                        <i class="fa fa-flash"></i> UTL:ECD Floor
+                                                    </a>
+                                                </li>  
+                                                }
+                                            </ul>
+                                        </div>
+                                    </td>
+                                    <td width="15%"><b>@item.FloorId</b></td>
+                                    <td><b>@item.CommonArea</b></td>  
+                                    <td><b>@item.TotalArea</b></td>                                  
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+
+                    <label hidden id="floorId"></label>                  
+                    <input hidden readonly id="holdingCompanyId" type="text" name="HoldingCompanyId" value="@Kmo.Application.DefaultWebHoldingCompanyId" />
+
+</div>
+        </div>
+    </div>
+</div>
+
+
+@section ModalDefinition
+{
+
+<div class="modal fade display-hide" id="full" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-full">
+        <div class="modal-content" id="fullctx">
+
+        </div>
+    </div>
+</div>
+
+}
+
+@section PageLevelPlugins
+{  
+        
+    <script type="text/javascript">
+                         
+
+        jQuery(document).ready(function () {
+          
+            App.startPageLoading({ animate: true });
+            $('#suiteTbl').show();
+            $("input.datepicker, input.date-picker").datepicker({
+                dateFormat: 'dd-M-yyyy',
+                orientation: 'left',
+                todayHighlight: true,
+                autoClose: true
+            });
+            App.stopPageLoading();
+        });
+
+        function setId(value) {
+            if (value !== '') {
+                $('#floorId').text(value);              
+            }
+        }
+
+        $('.manage').click(function () {
+            title = 'Revise Floor level ' + $('#floorId').text();
+
+            App.startPageLoading({ animate: true });
+            $.ajax({
+                url: "/SuiteAvailabilityStatus/ManageFloorPartialView",
+                type: 'Get',
+                success: function (msg) {
+                    $("#fullctx").empty().append(msg);
+                    $("#full").modal('toggle'); //'show' || 'hide'
+                },
+                complete: function () {
+                    App.stopPageLoading();
+                    $('#titleModal').text(title);
+                },
+                error: function () {
+                    alert("something on Floor seems wrong");
+                }
+            });
+        });
+     
+
+        function showSUMSAS() {
+            var holdingCompanyId = $('#holdingCompanyId').val();
+            var pars = [
+                { 'AssemblyQualifiedValueTypeString': 'System.String', 'ParameterName': '@@HoldingCompanyId', 'UseIndex': false, 'ParameterValue': holdingCompanyId }
+                 ];
+            var title = 'SUM:SAS-810';
+            ShowReportWindow('SUMSAS', pars, title, '');
+        }
+
+    </script>
+
+
+}

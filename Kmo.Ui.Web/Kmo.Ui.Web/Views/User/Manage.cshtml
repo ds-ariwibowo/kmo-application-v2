@@ -1,0 +1,296 @@
+﻿
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+    <h4 class="modal-title"><i class="icon-pencil font-dark"></i>&nbsp;<label id="titleModal" type="text" name="TitleModal" /> </h4>
+    <div class="caption font-sm">
+    </div>
+</div>
+        
+    <div class="form-body">
+        <div class="modal-body">
+
+            <div class="portlet light bordered">
+                <div class="portlet-body">
+
+                    <table id="user" class="dt-responsive" width="100%" hidden>
+                        <tbody>
+                            <tr>
+                                <td>
+                                                  
+                                    <div class="m-grid m-grid-responsive-md m-grid-demo">
+                                        <div class="m-grid-row">
+                                            <div class="m-grid-col m-grid-col-middle m-grid-col-left m-grid-col-md-1 border-top border-left border-right border-bottom padding-left padding-right">
+                                                <div class="form-group form-md-line-input">
+                                                    <input type="text" class="form-control bold" id="userId" placeholder="-" value="">
+                                                    <label for="form_control_1"><b>Username</b></label>
+                                                </div>
+                                                <div class="form-group form-md-line-input">
+                                                    <input type="text" class="form-control bold" id="name" placeholder="-" value="">
+                                                    <label for="form_control_1"><b>Full Name</b></label>
+                                                </div>
+                                                <div class="form-group form-md-line-input">
+                                                    <label for="form_control_1"><b>Gender :</b></label>
+                                                    <div class="form-group form-md-checkboxes">
+                                                        <div class="mt-checkbox-list">
+                                                            <label class="mt-checkbox">
+                                                                Male
+                                                                <input type="checkbox" class="cbType" value="0" id="cMale" name="checkboxesLos[]" />
+                                                                <span></span>
+                                                                <span class="check"></span>
+                                                            </label>
+                                                            <label class="mt-checkbox">
+                                                                Female
+                                                                <input type="checkbox" class="cbType" value="0" id="cFemale" name="checkboxesLos[]" />
+                                                                <span></span>
+                                                                <span class="check"></span>
+                                                            </label>
+                                                            <hr />
+                                                            <label class="mt-checkbox">
+                                                                Is Administrator
+                                                                <input type="checkbox" class="cAdmin" value="0" id="cAdmin" />
+                                                                <span></span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group form-md-line-input">
+                                                    <table id="modulesTbl" class="dt-responsive" width="100%">
+                                                        <tr>
+                                                            <td>
+                                                                <label for="form_control_1"><b>User Modules :</b></label>
+                                                                <div class="form-group form-md-checkboxes">
+                                                                    <div class="mt-checkbox-list" id="checkModules">
+
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+
+                                               
+                                            </div> 
+                                        </div>
+                                    </div>                                 
+                                      
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                  
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <label hidden id="type" class="bold"></label> 
+            <label hidden id="checkId" class="bold"></label>
+            <button id="submit" type="submit" value="Save" class="btn green-soft">
+                <i class="fa fa-check"></i> Submit
+            </button>
+            <button type="button" data-dismiss="modal" class="btn dark btn-outline"><i class="fa fa-close"></i> Cancel</button>
+                                      
+           </div>
+        </div>
+
+<script src="~/Theme/assets/pages/scripts/form-validation-md.min.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">         
+
+    //$('.cbType').click(function () {
+    //    id = $(this).attr('id');
+    //    if ($(this).is(":checked")) {
+    //        if (id == 'cMale')
+    //            $("#type").text("M");
+    //        if (id == 'cFemale')
+    //            $("#type").text("F");
+    //        }
+    //});       
+
+    $(".cAdmin").change(function () {
+        $('#modulesTbl').toggle();
+    });
+
+    function setCbValue(value) {
+        if (value == 'M')
+            $("#cMale").prop('checked', true);
+        if (value == 'F')
+            $("#cFemale").prop('checked', true);
+        if (value == true) {
+            $("#cAdmin").prop('checked', true);
+            $('#modulesTbl').toggle();
+        }
+    }
+
+    // make one checked only on group cbLob
+    $(".cbType").change(function () {
+        var checked = $(this).is(':checked');
+        $(".cbType").prop('checked', false);
+        if (checked) {
+            $(this).prop('checked', true);
+        }
+    });
+
+    $(document).ready(function () {
+        App.startPageLoading({ animate: true });
+        $('#userId').val($('#tempId').text());
+        $('#user').show();
+
+        $.ajax({
+            url: "/User/GetWebModules",
+            type: 'Get',
+            contentType: 'application/json',
+            cache: false,
+            success: function (data) {
+                $.each(data, function (i, item) {
+                    $('#checkModules').append('<label class="mt-checkbox"><b>' + item.ModuleName + '</b> ' + item.ModuleDescription + '<input type="checkbox" class="cbModules" id="' + item.WebModuleId + '" /><span></span><span class="check"></span></label>');
+                });
+            },
+            complete: function () {
+                if ($('#userId').val().trim() !== '') {
+                    $.ajax({
+                        url: "/User/GetUserWebModules",
+                        data: { userId: $('#userId').val() },
+                        type: 'Get',
+                        contentType: 'application/json',
+                        cache: false,
+                        success: function (data) {
+                            $.each(data, function (i, item) {
+                                $("#" + item.WebModuleId + "").prop('checked', true);
+                            });
+                        },
+                        complete: function () { },
+                        error: function (msg) {
+                            alert("something on User Web modules seems wrong");
+                        }
+                    });
+                }
+            },
+            error: function (msg) {
+                alert("something on Web modules seems wrong");
+            }
+        });
+
+
+        if ($('#userId').val().trim() !== '') {
+            $.ajax({
+                url: "/User/GetUser",
+                data: { userId: $('#userId').val() },
+                type: 'Get',
+                contentType: 'application/json',
+                cache: false,
+                success: function (data) {
+                    $.each(data, function (col, value) {
+                        if (col == 'FullName')
+                            $('#name').val(value);
+                        if (col == 'UserType')
+                            setCbValue(value);
+                        if (col == 'Admin')
+                            setCbValue(value);
+                    });
+                },
+                complete: function () {
+                    $("#userId").attr('disabled', true);                   
+                },
+                error: function (msg) {
+                    alert("something on User seems wrong");
+                }
+            });
+        }
+       
+        App.stopPageLoading();
+    });
+
+
+
+    $("#submit").click(function () {
+          
+        if ($('#userId').val().trim() == '') {
+            $("#userId").focus();
+            return;
+        }
+        if ($('#name').val().trim() == '') {
+            $("#name").focus();
+            return;
+        } 
+        if (($("#cMale").is(":unchecked")) && ($("#cFemale").is(":unchecked"))) {
+        //if ($('#type').text().trim() == '') {
+            bootbox.alert("Please select gender (Male/Female) !");          
+            return;
+        }
+
+        if ($("#cMale").is(":checked")) 
+            $('#type').text("M");
+        else $('#type').text("F");
+
+        var isAdmin = false;
+        if ($("#cAdmin").is(":checked"))
+            isAdmin = true;
+             
+        $('#checkId').text("");
+        $.ajax({
+            url: "/User/GetUser",
+            data: { userId: $('#userId').val() },
+            type: 'Get',
+            contentType: 'application/json',
+            cache: false,
+            success: function (data) {
+                if (data !== null) {
+                    $.each(data, function (col, value) {
+                        if (col == 'UsersId')
+                            $('#checkId').text(value);
+                    });
+                }
+            },
+            complete: function () {
+
+                if ($('#checkId').text() !== "" && $('#titleModal').text() == 'Add User') {
+                    bootbox.alert("User " + $('#checkId').text() + " already exists !");
+                    return;
+                }
+
+                App.startPageLoading({ animate: true });
+
+                var UserWebModules = [];
+                $(".cbModules").each(function (i, selected) {
+                    id = $(this).attr('id');
+                    if ($(this).is(":checked")) {
+                        var userModules =
+                           {
+                               UserId: $('#userId').val(),
+                               WebModuleId: id
+                           }
+                        UserWebModules.push(userModules);
+                    }
+                });
+                
+                var model = {
+                    header: $('#titleModal').text(),
+                    UsersId: $('#userId').val(),
+                    FullName: $('#name').val(),
+                    UserType: $('#type').text(),
+                    Admin: isAdmin,
+                    Active: true,
+                    ta_Users_WebModules: UserWebModules
+                };
+
+                $.ajax({
+                    type: "POST",
+                    data: JSON.stringify(model),
+                    url: "/User/SubmitUser",
+                    contentType: "application/json"
+                }).done(function (res) {
+                    App.stopPageLoading();
+
+                    window.location.reload(true);
+                });
+
+            },
+            error: function () {}
+        });      
+        
+    });
+
+
+</script>

@@ -1,0 +1,447 @@
+﻿@*@model Kmo.Libs.KmoJsonResult<IEnumerable<Kmo.Modules._800_BDM.ClientFactSheet.Models.ta_CLIENT>>*@
+@model IEnumerable<Kmo.Modules._800_BDM.ClientFactSheet.Models.ta_CLIENT1>
+
+@{
+    ViewBag.Title = "CFS";
+    ViewBag.ModuleHeaderBig = "CFS";
+    ViewBag.ModuleHeaderSmall = "Client Fact Sheet";
+    Layout = "~/Views/Shared/DefaultLayout.cshtml";
+    ViewBag.PageTitle = "";
+}
+
+@section PageLevelStyles
+{   
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+        <div class="portlet light bordered">
+
+            <div class="portlet-title">
+                <div class="caption font-dark">
+                    <i class="icon-layers font-blue-dark"></i>
+                    <span class="caption-subject bold font-blue-dark">Manage CFS</span>
+                </div>
+                <div class="actions">
+                    <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;"> </a>
+                </div>
+            </div>
+
+            <div class="portlet-body">
+                <table class="dt-responsive" width="100%">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="btn-group">
+                                    <a id="add" class="manage btn sbold blue-madison" onclick="setId(0);">
+                                        <i class="fa fa-plus"></i> Add CFS
+                                    </a>
+                                </div>
+                            </td>
+                            <td align="right">
+                                <button id="sum" data-toggle="modal" href="#sumcfs"  class="btn green-soft sbold "><i class="fa icon-docs"></i> <b>SUM:CFS</b></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <table class="table table-striped table-bordered table-hover dt-responsive" id="sample_2" hidden>
+                    <thead>
+                        <tr>
+                            <th width="2%"></th>
+                            <th class="all" width="6.5%"><i class="fa fa-gears"></i> Actions</th>
+                            <th class="all" width="20%">CFS No.</th>
+                            <th class="all" width="19%">CID</th>
+                            <th class="min-phone-l">Client Name</th>
+                            <th class="min-tablet">Address</th>
+                            <th class="min-tablet">Submit On</th>
+                            <th class="none">Email</th>
+                            <th class="none">City</th>
+                            <th class="none">Zip Code</th>
+                            <th class="none">Telp.</th>
+                            <th class="none">Fax</th>
+                            <th class="none">LOB</th>                            
+                            <th class="none">Rent Start</th>
+                            <th class="none">Period</th>
+                            <th class="none">NPWP</th>
+                            <th class="none">Free Tax</th>
+                            <th class="all" width="5%">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listCfs">
+
+                        @*@foreach (var item in Model.Value)*@
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <th width="2%"></th>
+                                <td width="6.5%">
+                                    <div class="btn-group pull-left">
+                                        <button class="btn btn-xs btn-block green dropdown-toggle" data-toggle="dropdown">
+                                            Actions
+                                            <i class="fa fa-angle-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu pull-left">
+                                            <li>
+                                                <a onclick="showCFS('@item.ClientIssue@item.ClientId');" style="background-color:#F3F4F6;">
+                                                    <i class="fa fa-print"></i> CFS-800 Document
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a id="revise" class="manage" onclick="setId('@item.ClientIssue@item.ClientId');" style="background-color:#F3F4F6;">
+                                                    <i class="fa fa-edit"></i> Revise
+                                                </a>
+                                            </li>
+                                            <li class="divider"> </li>
+                                            <li>
+                                                <a id="void" class="void" onclick="setId('@item.ClientIssue@item.ClientId');" style="background-color:#E08283;">
+                                                    <i class="fa fa-trash-o"></i> Void
+                                                </a>
+                                            </li>
+
+
+                                        </ul>
+                                    </div>
+                                </td>
+
+                                <td width="20%">CFS-800-@item.ClientIssue-@item.ClientId.ToString().Insert(4, "-")</td>
+                                <td width="19%">                                   
+                                    <a id="history" class="history" onclick="setId('@item.ClientIssue@item.ClientId');">
+                                        <i class="fa fa-file"></i> CID-@item.Cid
+                                    </a>
+                                </td>
+                                <td>@item.CompanyName</td>
+                                <td>@item.CompanyAddress</td>
+                                <td>@item.CreatedDate.ToString("dd-MMM-yyyy")</td>
+                                <td>@item.CompanyEmail</td>
+                                <td>@item.City</td>
+                                <td>@item.ZipCode</td>
+                                <td>@item.Telephone</td>
+                                <td>@item.Fax</td>
+                                @if (@item.LineOfBusiness == "10")
+                                {
+                                    <td> Banking / Finance</td>
+                                }
+                                else if (@item.LineOfBusiness == "11")
+                                {
+                                    <td>Services / Consultant </td>
+                                }
+                                else if (@item.LineOfBusiness == "12")
+                                {
+                                    <td>IT Related Business</td>
+                                }
+                                else if (@item.LineOfBusiness == "13")
+                                {
+                                    <td>Contractor</td>
+                                }
+                                else if (@item.LineOfBusiness == "14")
+                                {
+                                    <td>Manufacturers</td>
+                                }
+                                else if (@item.LineOfBusiness == "15")
+                                {
+                                    <td>Foods</td>
+                                }
+                                else if (@item.LineOfBusiness == "80")
+                                {
+                                    <td>BUMN</td>
+                                }
+                                else if (@item.LineOfBusiness == "99")
+                                {
+                                    <td>others</td>
+                                }
+                                else
+                                {
+                                    <td>TBD</td>
+                                }                                
+                                <td>@item.RentStartingDate.ToString("dd-MMM-yyyy")</td>
+                                <td>@item.RentPeriod
+                                    @*<table class="table table-striped table-bordered table-hover hidden-print dt-responsive" width="100%" id="sample_1">
+                                            <thead>
+                                                <tr>
+                                                    <th class="all">PIC</th>
+                                                    <th class="all">Position</th>
+                                                    <th class="all">Mobile&nbsp;Phone</th>
+                                                    <th class="all">Email</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var itemChild in item.ta_CLIENTS_PICs)
+                                                {
+                                                <tr>
+                                                    <td>@itemChild.Name</td>
+                                                    <td>@itemChild.Position</td>
+                                                    <td>@itemChild.MobilePhone</td>
+                                                    <td>@itemChild.Email</td>
+                                                </tr>
+                                                }
+                                            </tbody>
+                                        </table>*@
+
+                                </td>
+                                <td>@item.Npwp</td>
+                                <td>
+                                    @if (@item.FreeTax.ToString() == "True")
+                                    {
+                                        <span class="label label-sm label-success"> Yes </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="label label-sm label-info"> No </span>
+                                    }
+                                </td>
+                                <td width="5%" align="center">
+                                    @if (@item.Status == "Void")
+                                    {
+                                        <span class="label label-sm label-danger"> Void </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="label label-sm label-info"> &nbsp;@item.Status&nbsp; </span>
+                                    }
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+                @*<p id="rData"></p>*@
+                @*<input id="tempId" type="text" name="msg" value="" />*@
+
+                <label hidden id="tempId"></label>
+                <input hidden readonly id="holdingCompanyId" type="text" name="HoldingCompanyId" value="@Kmo.Application.DefaultWebHoldingCompanyId" />
+              
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+@section ModalDefinition
+{
+
+    <div class="modal fade display-hide" id="full" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full">
+            <div class="modal-content" id="fullctx">
+
+            </div>
+        </div>
+    </div>
+
+    <div id="sumcfs" class="modal fade" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title">SUM:CFS (Summary Client Fact Sheet)</h4>
+                </div>
+                <div class="modal-body">
+                  
+                    <div class="scroller" style="height:100px" data-always-visible="1" data-rail-visible1="1">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h5>From</h5>                          
+                                <input class="form-control input-small date-picker bold" size="14" type="text" value="@DateTime.Now.ToString("dd-MMM-yyyy")" data-date-format="dd-M-yyyy" id="sumcfsdateFrom" readonly/>
+                            </div>
+                            <div class="col-md-3">
+                                <h5>To</h5>                          
+                                <input class="form-control input-small date-picker bold" size="14" type="text" value="@DateTime.Now.ToString("dd-MMM-yyyy")" data-date-format="dd-M-yyyy" id="sumcfsdateTo" readonly/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn green-soft"  onclick="showSUMCFS();"><i class="fa fa-print" ></i> Preview</button>
+                    <button type="button" data-dismiss="modal" class="btn dark btn-outline"><i class="fa fa-close"></i> Close</button>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+@section PageLevelPlugins
+{  
+        
+    <script type="text/javascript">
+
+        var TableDatatablesResponsive = function () {
+            var e = function () {
+                var e = $("#sample_1"); e.dataTable({
+                    language: { aria: { sortAscending: ": activate to sort column ascending", sortDescending: ": activate to sort column descending" }, emptyTable: "No data available in table", info: "Showing _START_ to _END_ of _TOTAL_ entries", infoEmpty: "No entries found", infoFiltered: "(filtered1 from _MAX_ total entries)", lengthMenu: "_MENU_ entries", search: "Search:", zeroRecords: "No matching records found" },
+                    buttons: [{ extend: "print", className: "btn dark btn-outline hidden" }, { extend: "pdf", className: "btn green btn-outline hidden" }, { extend: "csv", className: "btn purple btn-outline  hidden" }],
+                    responsive: { details: {} }, order: [[0, "asc"]], lengthMenu: [[5, 10, 15, 20, -1], [5, 10, 15, 20, "All"]], pageLength: 10, dom: "<'row' <'col-md-12'B>><'row'<'col-md-6 col-sm-12'l><'col-md-6 col-sm-12'f>r><'table-scrollable't><'row'<'col-md-5 col-sm-12'i><'col-md-7 col-sm-12'p>>"
+                })
+            },
+            t = function () {
+                var e = $("#sample_2"); e.dataTable({
+                    language: { aria: { sortAscending: ": activate to sort column ascending", sortDescending: ": activate to sort column descending" }, emptyTable: "No data available in table", info: "Showing _START_ to _END_ of _TOTAL_ entries", infoEmpty: "No entries found", infoFiltered: "(filtered1 from _MAX_ total entries)", lengthMenu: "_MENU_ entries", search: "Search:", zeroRecords: "No matching records found" },
+                    buttons: [{ extend: "print", className: "btn dark btn-outline hidden" }, { extend: "pdf", className: "btn green btn-outline hidden" }, { extend: "csv", className: "btn purple btn-outline hidden" }],
+                    responsive: { details: {} }, columnDefs: [{ className: "control", orderable: !1, targets: 0 }], order: [1, "asc"], lengthMenu: [[5, 10, 15, 20, -1], [5, 10, 15, 20, "All"]], pageLength: 10, pagingType: "bootstrap_extended", dom: "<'row' <'col-md-12'B>><'row'<'col-md-6 col-sm-12'l><'col-md-6 col-sm-12'f>r><'table-scrollable't><'row'<'col-md-5 col-sm-12'i><'col-md-7 col-sm-12'p>>"
+                }) //details: { type: "column", target: "tr" } 
+            }; return { init: function () { jQuery().dataTable && (e(), t() ) } }
+        }(); 
+
+
+        jQuery(document).ready(function () {
+            TableDatatablesResponsive.init()
+            App.startPageLoading({ animate: true });
+            $('#sample_2').show();
+            $("input.datepicker, input.date-picker").datepicker({
+                dateFormat: 'dd-M-yyyy',
+                orientation: 'left',
+                todayHighlight: true,
+                autoClose: true
+            });
+            App.stopPageLoading();
+        });
+     
+        function formatCfs(value) {
+            if (value !== '') {
+                return value.substr(0, 2) + '-' + value.substr(2, 4) + '-' + value.substr(6, 4);
+            }
+        }
+
+        function setId(value) {
+            if (value !== '') {
+                $('#tempId').text(value);
+                //document.getElementById("tempId").setAttribute("value", value); || $('#tempId').val(value); // use input
+                //document.getElementById("tempId").setAttribute("text", value); || $('#tempId').text(value); // use label
+            }
+        }
+
+        $('.manage').click(function () {            
+            id = $(this).attr('id');
+            var title;
+            if (id == 'add')
+                title = 'Add CFS';
+            else
+                title = 'Revise CFS';
+
+            App.startPageLoading({ animate: true });
+            $.ajax({
+                url: "/ClientFactSheet/ManageCfsPartialView",
+                type: 'Get',
+                success: function (msg) {
+                    $("#fullctx").empty().append(msg);
+                    $("#full").modal('toggle'); //'show' || 'hide'
+                },
+                complete: function () {
+                    App.stopPageLoading();
+                    $('#titleModal').text(title);
+                },
+                error: function () {
+                    alert("something on CFS seems wrong");
+                }
+            });
+        });
+
+        $('.history').click(function () {
+            var selectedId = $('#tempId').text();
+            var title = 'CFS Revision History : CFS-800-XX-' + selectedId.substr(2, 4) + '-' + selectedId.substr(6, 4);
+
+            App.startPageLoading({ animate: true });
+            $.ajax({
+                url: "/ClientFactSheet/CfsLogPartialView",
+                type: 'Get',
+                data: { clientId: selectedId.substr(2, 8) },
+            cache: false,
+                success: function (msg) {
+                    $("#fullctx").empty().append(msg);
+                    $("#full").modal('toggle');
+                },
+                complete: function () {
+                    App.stopPageLoading();
+                    $('#titleModal').text(title);
+                },
+                error: function () {
+                    alert("something on CFS seems wrong");
+                }
+            });
+        });
+        
+               
+        $('.void').click(function () {
+            var selectedId = $('#tempId').text();
+                bootbox.confirm({
+                    message: "Are you sure to void CID-800-" + formatCfs(selectedId) + " ?",
+                    buttons: {
+                        confirm: {
+                            label: 'Yes',
+                        },
+                        cancel: {
+                            label: 'No'
+                        }
+                    },
+                    callback: function (e) {
+                        if (e) {
+                            //alert('Yes!');
+                            App.startPageLoading({ animate: true });
+                            $.ajax({
+                                url: "/ClientFactSheet/VoidCfs",
+                                type: 'Post',
+                                data: { clientIssue: selectedId.substr(0, 2), clientId: selectedId.substr(2, 8) },
+                                cache: false,
+                                success: function (msg) { },
+                                complete: function () {
+                                    App.stopPageLoading();
+                                    window.location.reload(true);
+                                },
+                                error: function () {
+                                    alert("something on CFS seems wrong");
+                                }
+                            });
+                        }
+                        else {
+                            return;
+                        }
+                    }
+                }); 
+            
+        });
+
+
+        function showCFS(cfsNo) {
+            var holdingCompanyId = $('#holdingCompanyId').val();
+            var pars = [
+                { 'AssemblyQualifiedValueTypeString': 'System.String', 'ParameterName': '@@ClientId', 'UseIndex': false, 'ParameterValue': cfsNo.substr(2, 8) },
+                { 'AssemblyQualifiedValueTypeString': 'System.String', 'ParameterName': '@@ClientIssue', 'UseIndex': false, 'ParameterValue': cfsNo.substr(0, 2) },
+                { 'AssemblyQualifiedValueTypeString': 'System.String', 'ParameterName': '@@HoldingCompanyId', 'UseIndex': false, 'ParameterValue': holdingCompanyId }
+            ];
+            var title = 'CFS-800-' + formatCfs(cfsNo);
+            ShowReportWindow('CFS', pars, title, '');
+        }
+        
+        
+        function GetDate(str) {
+            var arr = str.split("-");
+            var months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
+            var month = months.indexOf(arr[1].toLowerCase());
+            return new Date(parseInt(arr[2]), month, parseInt(arr[0]));
+        }
+
+        function showSUMCFS() {
+            var dateFrom = GetDate($('#sumcfsdateFrom').val());
+            var dateTo = GetDate($('#sumcfsdateTo').val());
+            var holdingCompanyId = $('#holdingCompanyId').val();
+            var status = "WIP";
+            var pars = [
+                { 'AssemblyQualifiedValueTypeString': 'System.String', 'ParameterName': '@@HoldingCompanyId', 'UseIndex': false, 'ParameterValue': holdingCompanyId },
+                { 'AssemblyQualifiedValueTypeString': 'System.DateTime', 'ParameterName': '@@DateFrom', 'UseIndex': false, 'ParameterValue': dateFrom.toISOString() },
+                { 'AssemblyQualifiedValueTypeString': 'System.DateTime', 'ParameterName': '@@DateTo', 'UseIndex': false, 'ParameterValue': dateTo.toISOString() },
+                { 'AssemblyQualifiedValueTypeString': 'System.String', 'ParameterName': '@@Status', 'UseIndex': false, 'ParameterValue': status }
+            ];
+            var title = 'SUM:CFS-800 As of ' + $('#sumcfsdateFrom').val() + ' To ' + $('#sumcfsdateTo').val();
+            ShowReportWindow('SUMCFS', pars, title, '');
+        }
+
+    </script>
+
+
+}

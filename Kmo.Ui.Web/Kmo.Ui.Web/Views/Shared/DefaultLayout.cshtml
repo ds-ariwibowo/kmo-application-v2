@@ -1,0 +1,406 @@
+﻿<!DOCTYPE html>
+<!--
+Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.7
+Version: 4.7.1
+Author: KeenThemes
+Website: http://www.keenthemes.com/
+Contact: support@keenthemes.com
+Follow: www.twitter.com/keenthemes
+Dribbble: www.dribbble.com/keenthemes
+Like: www.facebook.com/keenthemes
+Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+Renew Support: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.PageTitle</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="Preview page of Metronic Admin Theme #4 for blank page layout" name="description" />
+    <meta content="" name="author" />
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="~/Theme/assets/global/plugins/google-fonts/google-fonts.css" rel="stylesheet" />
+    <link href="~/Theme/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Theme/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Theme/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Theme/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN PAGE LEVEL STYLES -->
+
+    <link href="~/Theme/assets/global/plugins/datatables/datatables.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Theme/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="~/Theme/assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+      
+    <link href="~/Theme/assets/global/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Theme/assets/global/plugins/jquery-multi-select/css/multi-select.css" rel="stylesheet" type="text/css" />
+    <link href="~/Theme/assets/global/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Theme/assets/global/plugins/select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Theme/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css" rel="stylesheet" type="text/css" />
+   
+
+    @RenderSection("PageLevelStyles", false)
+    <!-- END PAGE LEVEL STYLES -->
+    <!-- BEGIN THEME GLOBAL STYLES -->
+    <link href="~/Theme/assets/global/css/components-md.min.css" rel="stylesheet" id="style_components" type="text/css" />
+    <link href="~/Theme/assets/global/css/plugins-md.min.css" rel="stylesheet" type="text/css" />
+    <!-- END THEME GLOBAL STYLES -->
+    <!-- BEGIN THEME LAYOUT STYLES -->
+    <link href="~/Theme/assets/layouts/layout4/css/layout.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Theme/assets/layouts/layout4/css/themes/default.min.css" rel="stylesheet" type="text/css" id="style_color" />
+    <link href="~/Theme/assets/layouts/layout4/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <!-- END THEME LAYOUT STYLES -->
+    <link rel="shortcut icon" type="image/ico" href="@Url.Content("~/Theme/assets/global/img/favicon.ico")" />   
+ 
+</head>
+<!-- END HEAD -->
+<body class="page-container-bg-solid page-header-fixed page-sidebar-closed-hide-logo page-md">
+    <!-- BEGIN HEADER -->
+    <div class="page-header navbar navbar-fixed-top">
+        <!-- BEGIN HEADER INNER -->
+        <div class="page-header-inner ">
+            <!-- BEGIN LOGO -->
+            <div class="page-logo">
+                <a href="index.html">
+                    <img src="~/Theme/assets/layouts/layout4/img/kmo-logo.png" alt="logo" class="logo-default" style="margin-top:25px" />
+                </a>
+                <div class="menu-toggler sidebar-toggler">
+                    <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
+                </div>
+            </div>
+            <!-- END LOGO -->
+            <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+            <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"> </a>
+            <!-- END RESPONSIVE MENU TOGGLER -->
+            <!-- BEGIN PAGE ACTIONS -->
+            <!-- DOC: Remove "hide" class to enable the page header actions -->
+            <!-- END PAGE ACTIONS -->
+            <!-- BEGIN PAGE TOP -->
+            <div class="page-top">
+                <!-- BEGIN HEADER SEARCH BOX -->
+                <!-- DOC: Apply "search-form-expanded" right after the "search-form" class to have half expanded search box -->
+                <!-- END HEADER SEARCH BOX -->
+                <!-- BEGIN TOP NAVIGATION MENU -->
+                <div class="top-menu">
+                    <ul class="nav navbar-nav pull-right">
+                        <li class="separator hide"></li>
+                        <li class="dropdown dropdown-user dropdown-dark">
+                             <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <span class="username ">@User.Identity.Name </span> @*username-hide-on-mobile*@
+                                <!-- DOC: Do not remove below empty space(&nbsp;) as its purposely used -->
+                                @*<img alt="" class="img-circle" src="~/Theme/assets/layouts/layout4/img/avatar9.jpg" />*@
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-default">
+                                @*<li>
+        <a href="page_user_profile_1.html">
+            <i class="icon-user"></i> My Profile
+        </a>
+    </li>
+    <li>
+        <a href="app_calendar.html">
+            <i class="icon-calendar"></i> My Calendar
+        </a>
+    </li>
+    <li>
+        <a href="app_inbox.html">
+            <i class="icon-envelope-open"></i> My Inbox
+            <span class="badge badge-danger"> 3 </span>
+        </a>
+    </li>
+    <li>
+        <a href="app_todo_2.html">
+            <i class="icon-rocket"></i> My Tasks
+            <span class="badge badge-success"> 7 </span>
+        </a>
+    </li>
+    <li class="divider"> </li>*@
+
+                                <li>
+                                    <a href="~/Account/ChangePassword"><i class="icon-lock"></i> Change password </a>
+                                </li>                               
+
+                                <li>
+                                    <form action="~/Account/LogOff" method="post" id="logoutSystem">
+                                        @Html.AntiForgeryToken()
+                                    </form>
+                                    <a href="javascript:document.getElementById('logoutSystem').submit()">
+                                        <i class="icon-key"></i> Log Out
+                                    </a>
+                                   
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- END USER LOGIN DROPDOWN -->
+                        <!-- BEGIN QUICK SIDEBAR TOGGLER -->
+                        <!-- END QUICK SIDEBAR TOGGLER -->
+                    </ul>
+                </div>
+                <!-- END TOP NAVIGATION MENU -->
+            </div>
+            <!-- END PAGE TOP -->
+        </div>
+        <!-- END HEADER INNER -->
+    </div>
+    <!-- END HEADER -->
+    <!-- BEGIN HEADER & CONTENT DIVIDER -->
+    <div class="clearfix"> </div>
+    <!-- END HEADER & CONTENT DIVIDER -->
+    <!-- BEGIN CONTAINER -->
+    <div class="page-container">
+        <!-- BEGIN SIDEBAR -->
+        <div class="page-sidebar-wrapper">
+            <!-- BEGIN SIDEBAR -->
+            <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+            <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+            <div class="page-sidebar navbar-collapse collapse">
+                <!-- BEGIN SIDEBAR MENU -->
+                @Html.Action("UserMenu", "Account", new { area = string.Empty })                                 
+                <!-- END SIDEBAR MENU -->
+            </div>
+            <!-- END SIDEBAR -->
+        </div>
+        <!-- END SIDEBAR -->
+        <!-- BEGIN CONTENT -->
+        <div class="page-content-wrapper">
+            <!-- BEGIN CONTENT BODY -->
+            <div class="page-content">
+                <!-- Begin Modal Configuration -->
+                @RenderSection("ModalDefinition", false)
+                <!-- End Modal Configuration -->
+                <!-- BEGIN PAGE HEAD-->
+                <div class="page-head">
+                    <!-- BEGIN PAGE TITLE -->
+                    <div class="page-title">
+                        <h1>
+                            @ViewBag.ModuleHeaderBig
+                            <small>@ViewBag.ModuleHeaderSmall</small>
+                        </h1>
+                    </div>
+                    <!-- END PAGE TITLE -->
+                    <!-- BEGIN PAGE TOOLBAR -->
+                    <div class="page-toolbar">
+                        <!-- BEGIN THEME PANEL -->
+                        <div class="btn-group btn-theme-panel">
+                            <a href="javascript:;" class="btn dropdown-toggle" data-toggle="dropdown">
+                                <i class="icon-settings"></i>
+                            </a>
+                            <div class="dropdown-menu theme-panel pull-right dropdown-custom hold-on-click">
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-4 col-xs-12">
+                                        <h3>HEADER</h3>
+                                        <ul class="theme-colors">
+                                            <li class="theme-color theme-color-default active" data-theme="default">
+                                                <span class="theme-color-view"></span>
+                                                <span class="theme-color-name">Dark Header</span>
+                                            </li>
+                                            <li class="theme-color theme-color-light " data-theme="light">
+                                                <span class="theme-color-view"></span>
+                                                <span class="theme-color-name">Light Header</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-8 col-sm-8 col-xs-12 seperator">
+                                        <h3>LAYOUT</h3>
+                                        <ul class="theme-settings">
+                                            <li>
+                                                Layout
+                                                <select class="layout-option form-control input-small input-sm">
+                                                    <option value="fluid" selected="selected">Fluid</option>
+                                                    <option value="boxed">Boxed</option>
+                                                </select>
+                                            </li>
+                                            <li>
+                                                Header
+                                                <select class="page-header-option form-control input-small input-sm">
+                                                    <option value="fixed" selected="selected">Fixed</option>
+                                                    <option value="default">Default</option>
+                                                </select>
+                                            </li>
+                                            <li>
+                                                Top Dropdowns
+                                                <select class="page-header-top-dropdown-style-option form-control input-small input-sm">
+                                                    <option value="light">Light</option>
+                                                    <option value="dark" selected="selected">Dark</option>
+                                                </select>
+                                            </li>
+                                            <li>
+                                                Sidebar Mode
+                                                <select class="sidebar-option form-control input-small input-sm">
+                                                    <option value="fixed">Fixed</option>
+                                                    <option value="default" selected="selected">Default</option>
+                                                </select>
+                                            </li>
+                                            <li>
+                                                Sidebar Menu
+                                                <select class="sidebar-menu-option form-control input-small input-sm">
+                                                    <option value="accordion" selected="selected">Accordion</option>
+                                                    <option value="hover">Hover</option>
+                                                </select>
+                                            </li>
+                                            <li>
+                                                Sidebar Position
+                                                <select class="sidebar-pos-option form-control input-small input-sm">
+                                                    <option value="left" selected="selected">Left</option>
+                                                    <option value="right">Right</option>
+                                                </select>
+                                            </li>
+                                            <li>
+                                                Footer
+                                                <select class="page-footer-option form-control input-small input-sm">
+                                                    <option value="fixed">Fixed</option>
+                                                    <option value="default" selected="selected">Default</option>
+                                                </select>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END THEME PANEL -->
+                    </div>
+                    <!-- END PAGE TOOLBAR -->
+                </div>
+                <!-- END PAGE HEAD-->
+                <!-- BEGIN PAGE BREADCRUMB -->
+                <!-- END PAGE BREADCRUMB -->
+                <!-- BEGIN PAGE BASE CONTENT -->
+                @RenderBody()
+                <!-- END PAGE BASE CONTENT -->
+            </div>
+            <!-- END CONTENT BODY -->
+        </div>
+        <!-- END CONTENT -->
+        <!-- BEGIN QUICK SIDEBAR -->
+               
+        <!-- END QUICK SIDEBAR -->
+    </div>
+    <!-- END CONTAINER -->
+    <!-- BEGIN FOOTER -->
+    <div class="page-footer">
+        <div class="page-footer-inner">
+            2016 &copy; KMO By
+            <a target="www.kmo.co.id" href="http://www.kmo.co.id">Primanusa</a> &nbsp;
+        </div>
+        <div class="scroll-to-top">
+            <i class="icon-arrow-up"></i>
+        </div>
+    </div>
+    <!-- END FOOTER -->
+    <!-- BEGIN QUICK NAV -->
+    <div class="quick-nav-overlay"></div>
+    <!-- END QUICK NAV -->
+    <!--[if lt IE 9]>
+    <script src="~/Theme/assets/global/plugins/respond.min.js"></script>
+    <script src="~/Theme/assets/global/plugins/excanvas.min.js"></script>
+    <script src="~/Theme/assets/global/plugins/ie8.fix.min.js"></script>
+    <![endif]-->
+    <!-- BEGIN CORE PLUGINS -->
+    <script src="~/Theme/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+    <script src="~/Theme/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="~/Theme/assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
+    <script src="~/Theme/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <script src="~/Theme/assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+    <script src="~/Theme/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+    
+    <script src="~/Theme/assets/global/plugins/moment.min.js" type="text/javascript"></script>
+    <script src="~/Theme/assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+    <script src="~/Theme/assets/global/plugins/jquery-validation/js/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="~/Theme/assets/global/plugins/jquery-validation/js/additional-methods.min.js" type="text/javascript"></script>
+    <script src="~/Theme/assets/global/plugins/bootstrap-confirmation/bootstrap-confirmation.min.js" type="text/javascript"></script>
+    <script src="~/Theme/assets/global/plugins/bootbox/bootbox.min.js" type="text/javascript"></script>
+    
+    <script src="~/Theme/assets/global/scripts/datatable.js" type="text/javascript"></script>
+    <script src="~/Theme/assets/global/plugins/datatables/datatables.min.js" type="text/javascript"></script>
+    <script src="~/Theme/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js" type="text/javascript"></script>
+    
+    <script src="~/Theme/assets/global/plugins/bootstrap-sessiontimeout/bootstrap-session-timeout.min.js" type="text/javascript"></script>
+    <script src="~/Theme/assets/global/plugins/jquery-repeater/jquery.repeater.js" type="text/javascript"></script>
+    <script src="~/Theme/assets/global/plugins/jquery-inputmask/jquery.inputmask.bundle.min.js" type="text/javascript"></script>
+    
+    <script src="~/Theme/assets/global/plugins/bootstrap-select/js/bootstrap-select.min.js" type="text/javascript"></script>
+    <script src="~/Theme/assets/global/plugins/jquery-multi-select/js/jquery.multi-select.js" type="text/javascript"></script>
+    <script src="~/Theme/assets/global/plugins/select2/js/select2.full.min.js" type="text/javascript"></script>
+    <script src="~/Theme/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js" type="text/javascript"></script>
+
+   
+     <!-- END CORE PLUGINS -->
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    @RenderSection("PageLevelPlugins", false)
+    <!-- END PAGE LEVEL PLUGINS -->
+    <!-- BEGIN THEME GLOBAL SCRIPTS -->
+    <script src="~/Theme/assets/global/scripts/app.min.js" type="text/javascript"></script>     
+    <script src="~/Theme/assets/pages/scripts/components-date-time-pickers.min.js" type="text/javascript"></script>
+    <script src="~/Theme/assets/pages/scripts/form-validation-md.min.js" type="text/javascript"></script>
+    <script src="~/Theme/assets/pages/scripts/ui-confirmations.min.js" type="text/javascript"></script>
+    <script src="~/Theme/assets/pages/scripts/ui-bootbox.min.js" type="text/javascript"></script>
+   
+    <!-- END THEME GLOBAL SCRIPTS -->
+    <!-- BEGIN THEME LAYOUT SCRIPTS -->
+    <script src="~/Theme/assets/layouts/layout4/scripts/layout.js" type="text/javascript"></script>
+    <script src="~/Theme/assets/layouts/layout4/scripts/demo.js" type="text/javascript"></script>
+    <script src="~/Theme/assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
+    <script src="~/Theme/assets/layouts/global/scripts/quick-nav.min.js" type="text/javascript"></script>
+    <!-- END THEME LAYOUT SCRIPTS -->  
+    <!--BEGIN CUSTOM KMO SCRIPTS-->
+    <script>
+        baseUrl = @Html.Raw(HttpUtility.JavaScriptStringEncode(new Uri(new Uri(this.Context.Request.Url.GetLeftPart(UriPartial.Authority)), Url.Content("~/")).ToString(), true));
+
+        function ShowReportWindow(rptName, rptPars, title, selFormula) {
+            var rptSession = {
+                SessionID: '',
+                ReportName: rptName,
+                Parameters: rptPars,
+                RecordSelectionFormula: selFormula,
+                Title: title
+            };
+
+            App.startPageLoading({ animate: true });
+            $.post('@Url.RouteUrl("Default", new { Controller = "Report", Action = "PrepareReport" })', rptSession).done(function (e) {
+                if (e.success) {
+                    window.open(e.data);
+                }
+                else {
+                    bootbox.alert('Error From Server:<br />' + e.message);
+                }
+            });
+            App.stopPageLoading();
+        }
+
+        var SessionTimeout = function () {
+            var handlesessionTimeout = function () {
+                $.sessionTimeout({
+                    title: 'Session Timeout Notification',
+                    message: 'Your session is about to expire.',
+                    keepAliveUrl: '',
+                    redirUrl:baseUrl + 'Account/Login',
+                    logoutUrl:baseUrl + 'Account/Login',
+                    warnAfter: 900000, //warn after 15 minutes (1 seconds : 1000)
+                    redirAfter: 910000, //redirect after 10 secons,
+                    ignoreUserActivity: true,
+                    countdownMessage: 'Redirecting in {timer} seconds.',
+                    countdownBar: true                   
+                });
+            }
+            return {
+                //main function to initiate the module
+                init: function () {
+                    handlesessionTimeout();
+                }
+            };
+        }();
+
+        $(document).ready(function () {
+            SessionTimeout.init();
+        });
+
+
+    </script>
+    <!--END CUSTOM KMO SCRIPTS-->
+</body>
+</html>

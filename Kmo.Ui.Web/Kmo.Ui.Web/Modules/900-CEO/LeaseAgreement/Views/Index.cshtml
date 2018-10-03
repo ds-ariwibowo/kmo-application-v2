@@ -1,0 +1,380 @@
+﻿
+@model IEnumerable<Kmo.Modules._900_CEO.LeaseAgreement.Models.vi_LOO>
+
+@{
+    ViewBag.Title = "Lease Agreement";
+    ViewBag.ModuleHeaderBig = "CTR";
+    ViewBag.ModuleHeaderSmall = "Lease Agreement";
+    Layout = "~/Views/Shared/DefaultLayout.cshtml";
+    ViewBag.PageTitle = "Lease Agreement";
+}
+
+
+
+@section PageLevelStyles
+{
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+        <div class="portlet light bordered">
+
+            <div class="portlet-title">
+                <div class="caption font-dark">
+                    <i class="icon-layers font-blue-dark"></i>
+                    <span class="caption-subject bold font-blue-dark">Manage CTR</span>
+                </div>
+                <div class="actions">
+                    <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;"> </a>
+                </div>
+            </div>
+
+            <div class="portlet-body">
+                <table class="dt-responsive" width="100%">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="btn-group">
+                                    <a id="add" class="manage btn sbold blue-madison" onclick="setId(0);">
+                                        <i class="fa fa-plus"></i> Add CTR
+                                    </a>
+                                </div>
+                            </td>
+                           
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <table class="table table-striped table-bordered table-hover dt-responsive" id="sample_2" hidden>
+                    <thead>
+                        <tr>
+                            <th width="2%"></th>
+                            <th class="all" width="6.5%"><i class="fa fa-gears"></i> Actions</th>
+                            <th class="all" width="12%">CTR No.</th>
+                            <th class="all" width="12%">LOO No.</th>
+                            <th class="all" width="12%">CID</th>
+                            <th class="min-phone-l">Tenant</th>
+                            <th class="min-tablet">Floor Level</th>
+                            <th class="min-tablet">Suites</th>
+                            <th class="min-tablet">Area M<sup>2</sup></th>
+                            <th class="none">Period</th>
+                            <th class="none">Expired On</th>                           
+                            <th class="all">Lease Agreement</th>                
+                            <th class="all" width="5%">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listLoo">
+                      
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <th width="2%"></th>
+                                <td width="6.5%">                                 
+                                    <div class="btn-group pull-left">
+                                        <button class="btn btn-xs btn-block green dropdown-toggle" data-toggle="dropdown">
+                                          Actions
+                                            <i class="fa fa-angle-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu pull-left">
+                                            <li>
+                                                <a onclick="showCTR('@item.CtrId');" style="background-color:#F3F4F6;">
+                                                    <i class="fa fa-print"></i> CTR-900 Document
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a onclick="showCTRALL1('@item.CtrId');" style="background-color:#F3F4F6;">
+                                                    <i class="fa fa-print"></i> CTR-900 Lease Agreement
+                                                </a>
+                                            </li>  
+                                            <li>
+                                                <a onclick="showCTRALL4('@item.CtrId');" style="background-color:#F3F4F6;">
+                                                    <i class="fa fa-print"></i> CTR-900 Special Condition & Appendices
+                                                </a>
+                                            </li>                                                
+                                            <li>
+                                                <a onclick="showCTRALL2('@item.CtrId');" style="background-color:#F3F4F6;">
+                                                    <i class="fa fa-print"></i> CTR-900 Lease Agreement (A)
+                                                </a>
+                                            </li>      
+                                            <li>
+                                                <a onclick="showCTRALL3('@item.CtrId');" style="background-color:#F3F4F6;">
+                                                    <i class="fa fa-print"></i> CTR-900 Lease Agreement (B)
+                                                </a>
+                                            </li>      
+                                            <li>
+                                                <a onclick="showCTRALL5('@item.CtrId');" style="background-color:#F3F4F6;">
+                                                    <i class="fa fa-print"></i> CTR-900 Lease Agreement (C)
+                                                </a>
+                                            </li>   
+                                            @if (@item.CtrStatus != "Pre-Invoiced")
+                                            {
+                                            <li>
+                                                <a id="revise" class="manage" onclick="setId('@item.CtrId');" style="background-color:#F3F4F6;">
+                                                    <i class="fa fa-edit"></i> Edit Term Condition
+                                                </a>
+                                            </li>       
+                                            }
+                                            // Not used
+                                            @*@if (@item.CtrStatus == "WIP")
+                                            {
+                                            <li>
+                                                <a id="submitted" class="submitted" onclick="setId('@item.CtrId');" style="background-color:#F3F4F6;">
+                                                    <i class="fa fa-envelope-o"></i> Submit
+                                                </a>
+                                            </li>
+                                            }*@
+                                                                                                                                                                  
+                                            @*<li class="divider"> </li>
+                                            <li>
+                                                <a id="void" class="void" onclick="setId('@item.LooIssue@item.LooId');" style="background-color:#E08283">
+                                                    <i class="fa fa-trash-o"></i> Void
+                                                </a>
+                                            </li>*@
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td width="12%">CTR-900-@item.CtrId.ToString().Insert(4, "-")</td>
+                                <td width="12%">LOO-900-@item.LooIssue-@item.LooId.ToString().Insert(4, "-")</td>
+                                <td width="12%">CID-@item.Cid</td>
+                                <td>@item.CompanyName</td>
+                                <td>@item.FloorId</td>
+                                <td>@item.SuiteName</td>
+                                <td>@item.Area</td>
+                                <td>@item.LeasePeriodYear (Year)</td>
+                                <td>@item.LeaseExpiryDate.ToString("dd-MMM-yyyy")</td>                             
+                                <td>
+                                    @if (@item.CtrDate.HasValue)
+                                    {
+                                        @item.CtrDate.Value.ToString("dd-MMM-yyyy")
+                                    }                               
+                                </td>                               
+                                <td width="5%" align="center">
+                                    @if (@item.CtrStatus == "Void")
+                                    {
+                                    <span class="label label-sm label-danger"> Void </span>
+                                    }
+                                    else
+                                    {
+                                    <span class="label label-sm label-info"> &nbsp;@item.CtrStatus&nbsp; </span>
+                                    }
+                                </td>
+                        </tr>
+                        }
+
+                    </tbody>
+                </table>
+              
+                <label hidden id="tempId"></label>
+                <label hidden id="title"></label>
+                <input hidden readonly id="holdingCompanyId" type="text" name="HoldingCompanyId" value="@Kmo.Application.DefaultWebHoldingCompanyId" />
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+@section ModalDefinition
+{
+
+    <div class="modal fade display-hide" id="full" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full">
+            <div class="modal-content" id="fullctx">
+
+            </div>
+        </div>
+    </div>
+       
+}
+
+
+
+@section PageLevelPlugins
+{
+    <script type="text/javascript">
+
+        var TableDatatablesResponsive = function () {
+            var e = function () {
+                var e = $("#sample_1"); e.dataTable({
+                    language: { aria: { sortAscending: ": activate to sort column ascending", sortDescending: ": activate to sort column descending" }, emptyTable: "No data available in table", info: "Showing _START_ to _END_ of _TOTAL_ entries", infoEmpty: "No entries found", infoFiltered: "(filtered1 from _MAX_ total entries)", lengthMenu: "_MENU_ entries", search: "Search:", zeroRecords: "No matching records found" },
+                    buttons: [{ extend: "print", className: "btn dark btn-outline hidden" }, { extend: "pdf", className: "btn green btn-outline hidden" }, { extend: "csv", className: "btn purple btn-outline  hidden" }],
+                    responsive: { details: {} }, order: [[0, "asc"]], lengthMenu: [[5, 10, 15, 20, -1], [5, 10, 15, 20, "All"]], pageLength: 10, dom: "<'row' <'col-md-12'B>><'row'<'col-md-6 col-sm-12'l><'col-md-6 col-sm-12'f>r><'table-scrollable't><'row'<'col-md-5 col-sm-12'i><'col-md-7 col-sm-12'p>>"
+                })
+            },
+            t = function () {
+                var e = $("#sample_2"); e.dataTable({
+                    language: { aria: { sortAscending: ": activate to sort column ascending", sortDescending: ": activate to sort column descending" }, emptyTable: "No data available in table", info: "Showing _START_ to _END_ of _TOTAL_ entries", infoEmpty: "No entries found", infoFiltered: "(filtered1 from _MAX_ total entries)", lengthMenu: "_MENU_ entries", search: "Search:", zeroRecords: "No matching records found" },
+                    buttons: [{ extend: "print", className: "btn dark btn-outline hidden" }, { extend: "pdf", className: "btn green btn-outline hidden" }, { extend: "csv", className: "btn purple btn-outline hidden" }],
+                    responsive: { details: {} }, columnDefs: [{ className: "control", orderable: !1, targets: 0 }], order: [1, "asc"], lengthMenu: [[5, 10, 15, 20, -1], [5, 10, 15, 20, "All"]], pageLength: 10, pagingType: "bootstrap_extended", dom: "<'row' <'col-md-12'B>><'row'<'col-md-6 col-sm-12'l><'col-md-6 col-sm-12'f>r><'table-scrollable't><'row'<'col-md-5 col-sm-12'i><'col-md-7 col-sm-12'p>>"
+                }) //details: { type: "column", target: "tr" } 
+            }; return { init: function () { jQuery().dataTable && (e(), t()) } }
+        }();
+
+
+        jQuery(document).ready(function () {
+            TableDatatablesResponsive.init()
+            App.startPageLoading({ animate: true });
+            $('#sample_2').show();
+            $("input.datepicker, input.date-picker").datepicker({
+                dateFormat: 'dd-M-yyyy',
+                orientation: 'left',
+                todayHighlight: true,
+                autoClose: true
+            });
+            App.stopPageLoading();
+        });
+
+        function formatCtr(value) {
+            if (value !== '') {
+                return value.substr(0, 4) + '-' + value.substr(4, 4);
+            }
+        }
+
+        function setId(value) {
+            if (value !== '') {
+                $('#tempId').text(value);              
+            }
+        }
+
+        $('.manage').click(function () {
+            id = $(this).attr('id');
+            if (id == 'add')
+                $('#title').text('Add CTR');
+            else
+                $('#title').text('Edit CTR');
+            
+            App.startPageLoading({ animate: true });
+            $.ajax({
+                url: "/LeaseAgreement/ManageCtrPartialView",
+                type: 'Get',
+                success: function (msg) {
+                    $("#fullctx").empty().append(msg);
+                    $("#full").modal('toggle');
+                },
+                complete: function () {
+                    App.stopPageLoading();
+                    $('#titleModal').text($('#title').text());
+                },
+                error: function () {
+                    alert("something on CTR seems wrong");
+                }
+            });
+        });     
+
+        // Not used
+        //$('.submitted').click(function () {
+        //    var selectedId = $('#tempId').text();
+
+        //    App.startPageLoading({ animate: true });
+        //    $.ajax({
+        //        url: "/LeaseAgreement/SubmitCtr",
+        //        type: 'Post',
+        //        data: { ctrId: selectedId },
+        //        cache: false,
+        //        success: function (msg) { },
+        //        complete: function () {
+        //            App.stopPageLoading();
+        //            window.location.reload(true);
+        //        },
+        //        error: function () {
+        //            alert("something on CTR seems wrong");
+        //        }
+        //    });
+
+        //});
+
+        //$('.void').click(function () {
+        //    var selectedId = $('#tempId').text();
+        //        bootbox.confirm({
+        //            message: "Are you sure to void CTR-900-" + formatCtr(selectedId) + " ?",
+        //            buttons: {
+        //                confirm: {
+        //                    label: 'Yes',
+        //                },
+        //                cancel: {
+        //                    label: 'No'
+        //                }
+        //            },
+        //            callback: function (e) {
+        //                if (e) {
+        //                    //alert('Yes!');
+        //                    App.startPageLoading({ animate: true });
+        //                    $.ajax({
+        //                        url: "/LeaseAgreement/VoidCtr",
+        //                        type: 'Post',
+        //                        data: { ctrId: selectedId },
+        //                        cache: false,
+        //                        success: function (msg) { },
+        //                        complete: function () {
+        //                            App.stopPageLoading();
+        //                            window.location.reload(true);
+        //                        },
+        //                        error: function () {
+        //                            alert("something on CTR seems wrong");
+        //                        }
+        //                    });
+        //                }
+        //                else {
+        //                    return;
+        //                }
+        //            }
+        //        });
+        //});
+
+
+        function showCTR(ctrNo) {
+            var pars = [
+                { 'AssemblyQualifiedValueTypeString': 'System.String', 'ParameterName': '@@CtrId', 'UseIndex': false, 'ParameterValue': ctrNo }
+            ];
+            var title = 'CTR-900-' + formatCtr(ctrNo);
+            ShowReportWindow('CTR', pars, title, '');
+        }
+        
+        function showCTRALL1(ctrNo) {
+            var pars = [
+                { 'AssemblyQualifiedValueTypeString': 'System.String', 'ParameterName': '@@CtrId', 'UseIndex': false, 'ParameterValue': ctrNo }
+            ];
+            var title = 'Lease Agreement of CTR-900-' + formatCtr(ctrNo);
+            ShowReportWindow('CTRALL1', pars, title, '');
+        }
+
+        function showCTRALL2(ctrNo) {
+            var pars = [
+               { 'AssemblyQualifiedValueTypeString': 'System.String', 'ParameterName': '@@CtrId', 'UseIndex': false, 'ParameterValue': ctrNo }
+            ];
+            var title = 'Lease Agreement (Appendix-A) of CTR-900-' + formatCtr(ctrNo);
+            ShowReportWindow('CTRALL2', pars, title, '');
+        }
+
+        function showCTRALL3(ctrNo) {
+            var pars = [
+               { 'AssemblyQualifiedValueTypeString': 'System.String', 'ParameterName': '@@CtrId', 'UseIndex': false, 'ParameterValue': ctrNo }
+            ];
+            var title = 'Lease Agreement (Appendix-B) of CTR-900-' + formatCtr(ctrNo);
+            ShowReportWindow('CTRALL3', pars, title, '');
+        }
+              
+        function showCTRALL4(ctrNo) {
+            var pars = [
+               { 'AssemblyQualifiedValueTypeString': 'System.String', 'ParameterName': '@@CtrId', 'UseIndex': false, 'ParameterValue': ctrNo }
+            ];
+            var title = 'Lease Agreement (Special Condition & Appendices) of CTR-900-' + formatCtr(ctrNo);
+            ShowReportWindow('CTRALL4', pars, title, '');
+        }
+
+        function showCTRALL5(ctrNo) {
+            var pars = [
+               { 'AssemblyQualifiedValueTypeString': 'System.String', 'ParameterName': '@@CtrId', 'UseIndex': false, 'ParameterValue': ctrNo }
+            ];
+            var title = 'Lease Agreement (Appendix-C) of CTR-900-' + formatCtr(ctrNo);
+            ShowReportWindow('CTRALL5', pars, title, '');
+        }
+
+    </script>
+
+
+}

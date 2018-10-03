@@ -1,0 +1,1542 @@
+﻿
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+    <h4 class="modal-title"><i class="icon-pencil font-dark"></i>&nbsp;<label id="titleModal" type="text" name="TitleModal" /> </h4>
+    <div class="caption font-sm">
+    </div>
+</div>
+        
+<form action="#" id="form_sample_2">
+    <div class="form-body">
+        <div class="modal-body">
+
+            <div class="portlet light bordered">
+                <div class="portlet-body">
+
+                    <table id="ctr" class="dt-responsive" width="100%" hidden>
+                        <tbody>
+                            <tr>
+                                <td>
+
+                                    <div class="m-grid m-grid-responsive-xs m-grid-demo">
+                                        <div class="m-grid-row">
+                                            <div class="m-grid-col m-grid-col-middle m-grid-col-center m-grid-col-md-1 border-top border-left border-right border-bottom padding-left" style="background-color:white">
+                                                <img alt="" class="img-responsive" src="~/Theme/assets/layouts/layout4/img/png.jpg" />
+                                            </div>
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-center m-grid-col-md-3 border-top border-left border-right border-bottom padding-top padding-bottom"><h2><b>CTR</b></h2><p>Lease Agreement</p><hr /><b>No. : CTR-900-<label id="ctrNo" class="bold"></label></b></div>
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-center m-grid-col-md-1 border-top border-left border-right border-bottom padding-top padding-bottom padding-left">
+                                               
+                                              Date<hr />
+                                               <input class="form-control responsive input-small bold center-align " size="14" type="text" value="" id="ctrdate" readonly />
+                                                  
+                                            </div>
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-center m-grid-col-md-1 border-top border-left border-right border-bottom padding-top padding-bottom">Document<hr />Revision<hr />Page</div>
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-center m-grid-col-md-1 border-top border-left border-right border-bottom padding-top padding-bottom">CTR-900<hr /><label id="rev"></label></b><hr />1 of 1</div>
+                                        </div>
+
+                                    </div>
+
+
+                                    <h5><b>1.0 Lease Agreement Date</b></h5>
+                                    <div class="m-grid m-grid-responsive-md m-grid-demo">
+                                        <div class="m-grid-row">
+                                            <div align="left" class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-3 border-top border-left border-right border-bottom padding-top padding-bottom padding-left padding-right">
+                                                <div class="form-group form-md-line-input">
+                                                    <input type="text" class="form-control date-picker" id="c1" name="name" placeholder="dd-MMM-yyyy" data-date-format="dd-M-yyyy">
+                                                    <label for="form_control_1"><b>1.0 Lease Agreement Date</b></label>
+                                                </div>
+                                            </div>
+                                           
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-4 border-top border-left border-right border-bottom padding-top padding-bottom padding-left padding-right">
+                                                <div class="form-group form-md-line-input">
+                                                    <select class="form-control" id="ddlLoo" onchange="loadLOO(this.value);"></select>
+                                                    <input type="text" readonly disabled class="form-control" id="c2" placeholder="-" value="">
+                                                    <label for="form_control_1"><b>1.1 This CTR is based on LOO No.:</b></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                               
+
+                                    <h5><b>2.0 Lessee(Tenant) & 3.0 Lessee's NPWP No.</b></h5>
+                                    <div class="m-grid m-grid-responsive-md m-grid-demo">
+                                        <div class="m-grid-row ">
+                                             
+                                            <div class="m-grid-col m-grid-col-middle m-grid-col-left m-grid-col-md-1 border-top border-left border-right border-bottom">
+
+                                                <div class="m-grid m-grid-responsive-md m-grid-demo">
+
+                                                    <div class="m-grid-row">
+                                                        <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-3 border-right padding-left padding-right padding-top">
+                                                            <div class="form-group form-md-line-input">
+                                                                <input type="text" readonly disabled class="form-control" id="c21" placeholder="-" value="">
+                                                                <label for="form_control_1"><i>2.1 Company Name</i></label>
+                                                            </div>
+                                                            <div class="form-group form-md-line-input">
+                                                                <textarea class="form-control" readonly disabled rows="3" id="c22" placeholder="Address"></textarea>
+                                                                <label for="form_control_1"><i>2.2 Address</i></label>
+                                                                <input type="text" readonly disabled class="form-control static-info col-sm-3" id="c221" placeholder="City">
+                                                                <input type="text" readonly disabled class="form-control static-info col-sm-3" id="c222" placeholder="Zip Code">
+                                                            </div>
+                                                                                                                      
+                                                            <div class="form-group form-md-line-input">
+                                                                CID : <label id="cid" class="bold"></label>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-2 border-left border-right padding-left padding-right padding-top">
+                                                            <div class="form-group form-md-line-input">
+                                                                <input type="text" readonly disabled class="form-control" id="c25" placeholder="-" value="">
+                                                                <label for="form_control_1"><i>2.5 Fax</i></label>
+                                                            </div>
+                                                            <div class="form-group form-md-line-input">
+                                                                <input type="text" readonly disabled class="form-control" id="c26" placeholder="-" value="">
+                                                                <label for="form_control_1"><i>2.6 Telephone, Landline</i></label>
+                                                            </div>
+                                                            <div class="form-group form-md-line-input">
+                                                                <input type="text" readonly disabled class="form-control" id="c27" placeholder="-" value="">
+                                                                <label for="form_control_1"><i>2.7 Telephone, Mobile</i></label>
+                                                            </div>
+                                                            <div class="form-group form-md-line-input">
+                                                                <input type="text" readonly disabled class="form-control" id="c30" placeholder="-" value="">
+                                                                <label for="form_control_1"><i>3.0 Lessee's NPWP No.</i></label>
+                                                            </div>
+
+                                                       </div>
+
+                                                        <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-2 border-left padding-left padding-right padding-top">
+                                                            <div class="form-group form-md-line-input">
+                                                                <input type="text" readonly disabled class="form-control" id="c23" placeholder="-" value="">
+                                                                <label for="form_control_1"><i>2.3 Company Representative</i></label>
+                                                            </div>
+                                                            <div class="form-group form-md-line-input">
+                                                                <input type="text" readonly disabled class="form-control" id="c24" placeholder="-" value="">
+                                                                <label for="form_control_1"><i>2.4 Position</i></label>
+                                                            </div>
+                                                            <div class="form-group form-md-line-input">
+                                                                <input type="text" readonly disabled class="form-control" id="c262p" placeholder="-" value="">
+                                                                <label for="form_control_1"><i>26.2 Phone</i></label>
+                                                            </div>
+                                                            <div class="form-group form-md-line-input">
+                                                                <input type="text" readonly disabled class="form-control" id="c262e" placeholder="-" value="">
+                                                                <label for="form_control_1"><i>26.2 Email</i></label>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <h5><b>1.0 Date of Agreement  |  4.0 Premises  |  5.0 Fitting-Out & Lease Period</b></h5>
+                                    <div class="m-grid m-grid-responsive-md m-grid-demo">
+                                        <div class="m-grid-row">
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-3 border-top border-left border-right border-bottom padding-top padding-left padding-right">                                           
+                                                
+                                                    <div class="form-group form-md-line-input">
+                                                        <input type="text" class="form-control" readonly disabled id="c41" placeholder="-" value="">
+                                                        <label for="form_control_1"><i>4.1 Floor Level</i></label>
+                                                    </div>
+
+                                                    <div class="form-group form-md-line-input">
+                                                        <input type="text" class="form-control" readonly disabled id="c42" placeholder="-" value="">
+                                                        <label for="form_control_1"><i>4.2 Suite Number</i></label>
+                                                    </div>
+
+                                                    <div class="form-group form-md-line-input">
+                                                        <input type="text" class="form-control" readonly disabled id="c43" placeholder="-" value="">
+                                                        <label for="form_control_1"><i>4.3 Total Rental Area (M<sup>2</sup>)</i></label>
+                                                    </div>
+
+                                                    <div class="form-group form-md-line-input">
+                                                        <textarea class="form-control" readonly disabled rows="2" id="c44" placeholder="-"></textarea>
+                                                        <label for="form_control_1"><i>4.4 Condition</i></label>
+                                                    </div>              
+
+                                                </div>
+
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-2 border-top border-left border-right border-bottom padding-top padding-left padding-right">
+                                                <div class="form-group form-md-line-input">
+                                                    <input type="text" class="form-control" readonly disabled id="c51" name="number" placeholder="0">
+                                                    <label for="form_control_1"><i>5.1 Lease Period (Year)</i></label>
+                                                </div>
+                                                <div class="form-group form-md-line-input">
+                                                    <input type="text" class="form-control date-picker" readonly disabled  id="c52" name="name" placeholder="dd-MMM-yyyy" data-date-format="dd-M-yyyy">
+                                                    <label for="form_control_1"><i>5.2 Hand-over date for Fitting Out</i></label>
+                                                </div>
+                                                <div class="form-group form-md-line-input">
+                                                    <input type="text" class="form-control" readonly disabled id="c53" name="number" placeholder="0">
+                                                    <label for="form_control_1"><i>5.3 Fitting-Out Period (Week, Free Rent)</i></label>
+                                                </div>
+                                            </div>
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-2 border-top border-left border-right border-bottom padding-top padding-left padding-right">
+                                                <div class="form-group form-md-line-input">
+                                                    <input type="text" class="form-control date-picker" readonly disabled id="c54" placeholder="dd-MMM-yyyy" data-date-format="dd-M-yyyy">
+                                                    <label for="form_control_1"><i>5.4 Lease Agreement Commencement Date</i></label>
+                                                </div>
+                                                <div class="form-group form-md-line-input">
+                                                    <input type="text" class="form-control date-picker" readonly disabled id="c55" placeholder="dd-MMM-yyyy" data-date-format="dd-M-yyyy">
+                                                    <label for="form_control_1"><i>5.5 Rent Commencement Date</i></label>
+                                                </div>
+                                                <div class="form-group form-md-line-input">
+                                                    <input type="text" class="form-control date-picker" readonly disabled id="c56" placeholder="dd-MMM-yyyy" data-date-format="dd-M-yyyy">
+                                                    <label for="form_control_1"><i>5.6 Service charge Commencement Date</i></label>
+                                                </div>
+                                                <div class="form-group form-md-line-input">
+                                                    <input type="text" class="form-control date-picker" readonly disabled id="c57" placeholder="dd-MMM-yyyy" data-date-format="dd-M-yyyy">
+                                                    <label for="form_control_1"><i>5.7 Lease expiry Date</i></label>
+                                                </div>
+                                            </div>
+                                                                                      
+                                        </div>
+                                    </div>
+
+                                    <h5><b>6.0 Rent & Service Charge</b></h5>
+                                    <div class="m-grid m-grid-responsive-md m-grid-demo">
+                                        <div class="m-grid-row">
+                                            <div align="left" class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-3 border-top border-left border-right border-bottom padding-top padding-bottom padding-left padding-right">
+                                               <div class="form-group form-md-line-input">
+                                                   <input type="text" class="form-control" readonly disabled id="c61" placeholder="0">
+                                                   <label for="form_control_1"><i>6.1 Rental Rate, Per Sq. Meter Per Month (PSPM)</i></label>
+                                                   <div align="right">*&nbsp;<i><label id="l61">Zero</label></i></div> 
+                                               </div>                                               
+                                            </div>
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-2 border-top border-left border-right border-bottom padding-top padding-bottom padding-left padding-right">
+                                                <div class="form-group form-md-line-input">
+                                                    <input type="text" class="form-control" readonly disabled id="c62" placeholder="0">
+                                                    <label for="form_control_1"><i>6.2 Rent Payable in Advance</i></label>
+                                                </div>                                            
+                                            </div>
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-2 border-top border-left border-right border-bottom padding-top padding-bottom padding-left padding-right">
+                                                <div class="form-group form-md-line-input">
+                                                    <input type="text" class="form-control" readonly disabled id="c63" placeholder="0">
+                                                    <label for="form_control_1"><i>6.3 Service Charge (PSPM)</i></label>
+                                                    <div align="right">*&nbsp;<i><label id="l63">Zero</label></i></div> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                                    
+
+                                    <h5><b>7.0 Security Deposit</b></h5>
+                                    <div class="m-grid m-grid-responsive-md m-grid-demo">
+                                        <div class="m-grid-row">
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-3 border-top border-left border-bottom padding-left padding-right">
+                                               
+                                                <div class="form-group form-md-line-input">
+                                                    <label for="form_control_1"><b>Description</b></label>
+                                                    <div class="form-control form-control-static">7.1 Rental Deposit</div>
+                                                    <div class="form-control form-control-static">7.2 Rental Service Charge Deposit</div>
+                                                </div>
+
+                                            </div>
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-1 border-top border-left border-bottom padding-left padding-right">
+                                               
+                                                <div class="form-group form-md-line-input">
+                                                    <label for="form_control_1"><b>Quantity (M<sup>2</sup>)</b></label>
+                                                    <input type="text" class="form-control" id="c71" readonly disabled placeholder="0" value="">
+                                                    <input type="text" class="form-control" id="c72" readonly disabled placeholder="0" value="">
+                                                </div>
+                                              
+                                            </div>
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-2 border-top border-left border-bottom padding-left padding-right">
+                                                
+                                                <div class="form-group form-md-line-input">
+                                                    <label for="form_control_1"><b>Unit Price</b></label>
+                                                    <input type="text" class="form-control" id="c711" readonly disabled placeholder="0" value="">
+                                                    <input type="text" class="form-control" id="c721" readonly disabled placeholder="0" value="">
+                                                </div>
+                                            </div>
+
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-1 border-top border-left border-bottom padding-left padding-right">
+                                                <div class="form-group form-md-line-input">
+                                                    <label for="form_control_1"><b>Unit</b></label>
+                                                    <div class="form-control form-control-static">PSPM</div>
+                                                    <div class="form-control form-control-static">PSPM</div>
+                                                </div>
+                                               
+                                            </div>
+
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-1 border-top border-left border-bottom padding-left padding-right">
+
+                                                <div class="form-group form-md-line-input">
+                                                    <label for="form_control_1"><b>Duration  (Mos)</b></label>
+                                                    <input type="text" class="form-control" id="c712" readonly disabled placeholder="0" value="">
+                                                    <input type="text" class="form-control" id="c722" readonly disabled placeholder="0" value="">
+                                                </div>
+                                            </div>
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-2 border-top border-left border-right border-bottom padding-left padding-right">
+                                                <div class="form-group form-md-line-input">
+                                                    <label for="form_control_1"><b>Amount  (IDR)</b></label>
+                                                    <input type="text" class="form-control" id="c713" readonly disabled placeholder="0" value="">
+                                                    <input type="text" class="form-control" id="c723" readonly disabled placeholder="0" value="">
+                                                </div>                                       
+                                               
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <h5><b>8.0 Parking Fees</b></h5>
+                                    <div class="m-grid m-grid-responsive-md m-grid-demo">
+                                        <div class="m-grid-row">
+
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-3 border-top border-left border-bottom padding-left padding-right">
+
+                                                <div class="form-group form-md-line-input">
+                                                    <label for="form_control_1"><b>Description</b></label>
+                                                    <div class="form-control form-control-static">8.1 Car, Reserved</div>
+                                                    <div class="form-control form-control-static">8.2 Car-Un-Reserved</div>
+                                                    <div class="form-control form-control-static">8.3 Motorbike</div>
+                                                </div>
+                                            </div>
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-1 border-top border-left border-bottom padding-left padding-right">
+
+                                                <div class="form-group form-md-line-input">
+                                                    <label for="form_control_1"><b>Quantity</b></label>
+                                                    <input type="text" class="form-control" id="c81" readonly disabled placeholder="0" value="">
+                                                    <input type="text" class="form-control" id="c82" readonly disabled placeholder="0" value="">
+                                                    <input type="text" class="form-control" id="c83" readonly disabled placeholder="0" value="">
+                                                </div>
+
+                                            </div>
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-2 border-top border-left border-bottom padding-left padding-right">
+
+                                                <div class="form-group form-md-line-input">
+                                                    <label for="form_control_1"><b>Unit Price</b></label>
+                                                    <input type="text" class="form-control" id="c811" readonly disabled placeholder="0" value="">
+                                                    <input type="text" class="form-control" id="c821" readonly disabled placeholder="0" value="">
+                                                    <input type="text" class="form-control" id="c831" readonly disabled placeholder="0" value="">
+                                                </div>
+                                            </div>
+
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-1 border-top border-left border-bottom padding-left padding-right">
+                                                <div class="form-group form-md-line-input">
+                                                    <label for="form_control_1"><b>Unit</b></label>
+                                                    <div class="form-control form-control-static">Per Year</div>
+                                                    <div class="form-control form-control-static">Per Year</div>
+                                                    <div class="form-control form-control-static">Per Month</div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-1 border-top border-left border-bottom padding-left padding-right">
+                                                <div class="form-group form-md-line-input">
+                                                    <label for="form_control_1"><b>Duration</b></label>
+                                                    <input type="text" class="form-control" id="c812" readonly disabled placeholder="0" value="">
+                                                    <input type="text" class="form-control" id="c822" readonly disabled placeholder="0" value="">
+                                                    <input type="text" class="form-control" id="c832" readonly disabled placeholder="0" value="">
+                                                </div>
+                                            </div>
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-2 border-top border-left border-right border-bottom padding-left padding-right">
+                                                <div class="form-group form-md-line-input">
+                                                    <label for="form_control_1"><b>Amount (IDR)</b></label>
+                                                    <input type="text" class="form-control" id="c813" readonly disabled placeholder="0" value="">
+                                                    <input type="text" class="form-control" id="c823" readonly disabled placeholder="0" value="">
+                                                    <input type="text" class="form-control" id="c833" readonly disabled placeholder="0" value="">
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                    <h5><b>9.0 Telephone Deposit</b></h5>
+                                    <div class="m-grid m-grid-responsive-md m-grid-demo">
+                                        <div class="m-grid-row">
+
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-3 border-top border-left border-bottom padding-left padding-right">
+
+                                                <div class="form-group form-md-line-input">
+                                                    <label for="form_control_1"><b>Description</b></label>
+                                                    <div class="form-control form-control-static">9.1 Telephone Deposit</div>
+                                                </div>
+                                            </div>
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-1 border-top border-left border-bottom padding-left padding-right">
+
+                                                <div class="form-group form-md-line-input">
+                                                    <label for="form_control_1"><b>Quantity</b></label>
+                                                    <input type="text" class="form-control" id="c9" readonly disabled placeholder="0" value="">
+                                                </div>
+
+                                            </div>
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-2 border-top border-left border-bottom padding-left padding-right">
+
+                                                <div class="form-group form-md-line-input">
+                                                    <label for="form_control_1"><b>Unit Price</b></label>
+                                                    <input type="text" class="form-control" id="c91" readonly disabled placeholder="0" value="">
+                                                </div>
+                                            </div>
+
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-1 border-top border-left border-bottom padding-left padding-right">
+                                                <div class="form-group form-md-line-input">
+                                                    <label for="form_control_1"><b>Unit</b></label>
+                                                    <div class="form-control form-control-static">Per Line</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-1 border-top border-left border-bottom padding-left padding-right">
+
+                                                <div class="form-group form-md-line-input">
+                                                    <label for="form_control_1"><b>Duration</b></label>
+                                                    <input type="text" class="form-control" id="c92" readonly disabled placeholder="0" value="">
+                                                </div>
+                                            </div>
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-2 border-top border-left border-right border-bottom padding-left padding-right">
+                                                <div class="form-group form-md-line-input">
+                                                    <label for="form_control_1"><b>Amount (IDR)</b></label>
+                                                    <input type="text" class="form-control" id="c93" readonly disabled placeholder="0" value="">
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    
+                                    <h5><b>Total Deposit Amount </b>(Rent, Service Charge & Phone Line) :</h5><h3>Rp. <label id="totalPayment" class="bold"></label></h3>
+                                    <div class="m-grid m-grid-responsive-md m-grid-demo">
+                                        <div class="m-grid-row">
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-1 border-top border-left border-bottom padding-left padding-right">
+                                                <div class="form-group form-md-line-input">
+                                                    <label for="form_control_1"><b>No.</b></label>
+                                                    <div class="form-control form-control-static">1</div>
+                                                    <div class="form-control form-control-static">2</div>
+                                                    <div class="form-control form-control-static">3</div>
+                                                    <div class="form-control form-control-static">4</div>
+                                                    <div class="form-control form-control-static">5</div>
+                                                </div>
+                                            </div>
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-2 border-top border-left border-bottom padding-left padding-right">
+
+                                                <div class="form-group form-md-line-input">
+                                                    <label for="form_control_1"><b>Due Date of Payment</b></label>
+                                                    <input type="text" class="form-control date-picker" id="cD1" readonly disabled placeholder="dd-MMM-yyyy" data-date-format="dd-M-yyyy">
+                                                    <input type="text" class="form-control date-picker" id="cD2" readonly disabled placeholder="dd-MMM-yyyy" data-date-format="dd-M-yyyy">
+                                                    <input type="text" class="form-control date-picker" id="cD3" readonly disabled placeholder="dd-MMM-yyyy" data-date-format="dd-M-yyyy">
+                                                    <input type="text" class="form-control date-picker" id="cD4" readonly disabled placeholder="dd-MMM-yyyy" data-date-format="dd-M-yyyy">
+                                                    <input type="text" class="form-control date-picker" id="cD5" readonly disabled placeholder="dd-MMM-yyyy" data-date-format="dd-M-yyyy">
+                                                </div>
+                                            </div>
+
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-4 border-top border-left border-right border-bottom padding-left padding-right">
+                                                <div class="form-group form-md-line-input">
+                                                    <label for="form_control_1"><b>Amount</b></label>
+                                                    <input type="text" class="form-control" id="cP1" readonly disabled placeholder="0" value="">
+                                                    <input type="text" class="form-control" id="cP2" readonly disabled placeholder="0" value="">
+                                                    <input type="text" class="form-control" id="cP3" readonly disabled placeholder="0" value="">
+                                                    <input type="text" class="form-control" id="cP4" readonly disabled placeholder="0" value="">
+                                                    <input type="text" class="form-control" id="cP5" readonly disabled placeholder="0" value="">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <h5><b>28 Special Conditions (Additional Terms)</b></h5>
+                                    <div class="m-grid m-grid-responsive-md m-grid-demo">
+                                        <div class="m-grid-row">
+
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-1 border-top border-left border-bottom padding-left padding-right">
+
+                                                <div class="form-group form-md-line-input">
+                                                    <label for="form_control_1"><b>Term Number</b></label>
+                                                    <textarea class="form-control" rows="2" id="c2811" placeholder="???" style="font-weight:bold"></textarea>
+                                                    <textarea class="form-control" rows="2" id="c2812" placeholder="???" style="font-weight:bold"></textarea>
+                                                    <textarea class="form-control" rows="2" id="c2813" placeholder="???" style="font-weight:bold"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-2 border-top border-left border-bottom padding-left padding-right">
+
+                                                <div class="form-group form-md-line-input">
+                                                    <label for="form_control_1"><b>Subject</b></label>
+                                                    <textarea class="form-control" rows="2" id="c2821" placeholder="???"></textarea>
+                                                    <textarea class="form-control" rows="2" id="c2822" placeholder="???"></textarea>
+                                                    <textarea class="form-control" rows="2" id="c2823" placeholder="???"></textarea>
+                                                </div>
+                                            </div>
+                                           
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-4 border-top border-left border-right border-bottom padding-left padding-right">
+                                                <div class="form-group form-md-line-input">
+                                                    <label for="form_control_1"><b>Description</b></label>
+                                                    <textarea class="form-control" rows="2" id="c2831" placeholder="???"></textarea>
+                                                    <textarea class="form-control" rows="2" id="c2832" placeholder="???"></textarea>
+                                                    <textarea class="form-control" rows="2" id="c2833" placeholder="???"></textarea>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                    <h5><b>28 Special Conditions (Amendments)</b></h5>
+                                    <div class="m-grid m-grid-responsive-md m-grid-demo">
+                                        <div class="m-grid-row">
+
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-1 border-top border-left border-bottom padding-left padding-right">
+
+                                                <div class="form-group form-md-line-input">
+                                                    <label for="form_control_1"><b>Term Number</b></label>
+                                                    <textarea class="form-control" rows="2" style="font-style:italic;text-decoration:underline;font-weight:bold" id="c2911" name="name" placeholder="Was"></textarea>
+                                                    <textarea class="form-control" rows="2" style="font-style:italic;font-weight:bold" id="c2912" name="name" placeholder="Now"></textarea>
+                                                    <textarea class="form-control" rows="2" style="font-style:italic;text-decoration:underline;font-weight:bold" id="c2913" name="name" placeholder="Was"></textarea>
+                                                    <textarea class="form-control" rows="2" style="font-style:italic;font-weight:bold" id="c2914" name="name" placeholder="Now"></textarea>
+
+													<textarea class="form-control" rows="2" style="font-style:italic;text-decoration:underline;font-weight:bold" id="c2915" name="name" placeholder="Was"></textarea>
+                                                    <textarea class="form-control" rows="2" style="font-style:italic;font-weight:bold" id="c2916" name="name" placeholder="Now"></textarea>
+													<textarea class="form-control" rows="2" style="font-style:italic;text-decoration:underline;font-weight:bold" id="c2917" name="name" placeholder="Was"></textarea>
+                                                    <textarea class="form-control" rows="2" style="font-style:italic;font-weight:bold" id="c2918" name="name" placeholder="Now"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-2 border-top border-left border-bottom padding-left padding-right">
+
+                                                <div class="form-group form-md-line-input">
+                                                    <label for="form_control_1"><b>Subject</b></label>
+                                                    <textarea class="form-control" rows="2" id="c2921" placeholder="???"></textarea>
+                                                    <textarea class="form-control" rows="2" id="c2922" placeholder="???"></textarea>
+                                                    <textarea class="form-control" rows="2" id="c2923" placeholder="???"></textarea>
+                                                    <textarea class="form-control" rows="2" id="c2924" placeholder="???"></textarea>
+													
+													<textarea class="form-control" rows="2" id="c2925" placeholder="???"></textarea>
+                                                    <textarea class="form-control" rows="2" id="c2926" placeholder="???"></textarea>
+                                                    <textarea class="form-control" rows="2" id="c2927" placeholder="???"></textarea>
+                                                    <textarea class="form-control" rows="2" id="c2928" placeholder="???"></textarea>
+                                                </div>
+                                            </div>
+
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-4 border-top border-left border-right border-bottom padding-left padding-right">
+                                                <div class="form-group form-md-line-input">
+                                                    <label for="form_control_1"><b>Description</b></label>
+                                                    <textarea class="form-control" rows="2" id="c2931" placeholder="???"></textarea>
+                                                    <textarea class="form-control" rows="2" id="c2932" placeholder="???"></textarea>
+                                                    <textarea class="form-control" rows="2" id="c2933" placeholder="???"></textarea>
+                                                    <textarea class="form-control" rows="2" id="c2934" placeholder="???"></textarea>
+													
+													<textarea class="form-control" rows="2" id="c2935" placeholder="???"></textarea>
+                                                    <textarea class="form-control" rows="2" id="c2936" placeholder="???"></textarea>
+                                                    <textarea class="form-control" rows="2" id="c2937" placeholder="???"></textarea>
+                                                    <textarea class="form-control" rows="2" id="c2938" placeholder="???"></textarea>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                      <br />                                              
+                                    <div class="m-grid m-grid-responsive-md m-grid-demo">
+                                        <div class="m-grid-row">
+                                            <div class="m-grid-col m-grid-col-middle m-grid-col-left m-grid-col-md-3 border-top border-left border-right border-bottom padding-left padding-right">
+                                                <div class="form-group form-md-line-input">
+                                                    <label for="form_control_1"><b>Appendix C</b></label>
+                                                </div>
+                                            </div>
+                                            <div class="m-grid-col m-grid-col-top m-grid-col-left m-grid-col-md-4 border-top border-left border-right border-bottom padding-top padding-bottom padding-left padding-right">
+                                                <div class="form-group form-md-line-input">
+                                                    <label for="form_control_1"><b>Drawing Floor Plan</b></label>
+                                                    <label style="font-weight:bold" id="fileExist"></label>
+                                                </div>                                              
+                                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                    <div class="input-group input-large">
+                                                        <div class="form-control uneditable-input input-fixed input-medium" data-trigger="fileinput">
+                                                            <i class="fa fa-file fileinput-exists"></i>&nbsp;
+                                                            <span class="fileinput-filename"> </span>
+                                                        </div>
+                                                        <span class="input-group-addon btn default btn-file">
+                                                            <span class="fileinput-new"> Select file </span>
+                                                            <span class="fileinput-exists"> Change </span>
+                                                            <input type="file" id="attachFile" name="..." value="???" >
+                                                        </span>
+                                                        <a href="javascript:;" class="input-group-addon btn red fileinput-exists" data-dismiss="fileinput"> Remove </a>
+                                                    </div>
+                                                </div>
+                                            
+                                             </div>
+                                                                                                                                                                              
+                                        </div>
+                                    </div>
+
+                                    
+                                </td>
+                            </tr>                                                    
+
+                        </tbody>
+                    </table>
+                  
+                </div>
+            </div>
+        </div>
+
+
+            <div class="modal-footer">
+                <label hidden id="id"></label>   
+                <label hidden id="issue"></label>    
+                <label hidden id="clientId"></label>
+                <label hidden id="clientIssue"></label>
+                <label hidden id="currentDate">@DateTime.Now.ToString("dd-MMM-yyyy")</label>             
+                <label hidden id="looId"></label>     
+            
+                <button id="submit" type="submit" value="Save" class="btn green-soft">
+                <i class="fa fa-check"></i> Submit
+                </button>
+                <button type="button" data-dismiss="modal" class="btn dark btn-outline"><i class="fa fa-close"></i> Cancel</button>
+
+            </div>
+        </div>
+
+</form>
+
+<script src="~/Theme/assets/pages/scripts/components-date-time-pickers.min.js" type="text/javascript"></script>
+<script src="~/Theme/assets/pages/scripts/form-validation-md.min.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+
+
+    function formatDisplay(value) {
+        if (value !== '') {
+            return value.substr(0, 4) + '-' + value.substr(4, 4);
+        }
+    }
+
+    function formatCurrency(total) {
+        var neg = false;
+        if (total < 0) {
+            neg = true;
+            total = Math.abs(total);
+        }
+        var cur = (neg ? "-" : '') + parseFloat(total, 10).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString();
+        return cur.substr(0, cur.length - 3);
+    }
+
+    function parseToNum(total) {
+        return Number(total.toString().replace(/[^0-9\.]+/g, ""));
+    }
+
+    function parseJsonDate(jsonDate) {
+        var fullDate = new Date(parseInt(jsonDate.substr(6)));
+        var twoDigitMonth = (fullDate.getMonth() + 1) + ""; if (twoDigitMonth.length == 1) twoDigitMonth = "0" + twoDigitMonth;
+
+        var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+        var twoDigitDate = fullDate.getDate() + ""; if (twoDigitDate.length == 1) twoDigitDate = "0" + twoDigitDate;
+        var currentDate = twoDigitDate + "-" + monthNames[fullDate.getMonth()] + "-" + fullDate.getFullYear();
+        return currentDate;
+    };
+
+
+    var FormInputMask = function () {
+        var handleInputMasks = function () {
+            $('#c71,#c72').inputmask('Regex', { regex: "^[0-9]{1,9}(\\.\\d{1,2})?$" });
+            $('#c51,#c53,#c62,#c712,#c722,#c81,#c812,#c82,#c822,#c83,#c82,#c9,#c92').inputmask('Regex', { regex: "^[0-9]{1,9}?$" });
+        }
+        return {
+            //main function to initiate the module
+            init: function () {
+                handleInputMasks();
+            }
+        };
+    }();
+
+
+
+    function setValueCurr(selectedId) {
+        var id = '#' + $(selectedId).attr('id');
+        if (id == '#undefined') {
+            if (selectedId.substr(0, 1) !== '#')
+                id = '#' + selectedId;
+            else
+                id = selectedId;
+        }
+        //format to currency (string)
+        $(id).val(formatCurrency($(id).val()));
+
+        setTotalAmount(id);
+    }
+
+    function setValueCurrFromTo(from, to) {
+        //set to label amount word
+        var idLabel = from.replace('c', 'l');
+        $(idLabel).text("");
+        $(idLabel).text(toWords($(from).val()) + 'rupiahs');
+
+        //format to currency (string)
+        var curr = formatCurrency($(from).val());
+        $(from).val(curr);
+        $(to).val(curr);
+
+        setTotalAmount(to);
+    }
+
+    function setDuration() {
+        $('#c712').val($('#c62').val());
+        setTotalAmount('#c712');
+        $('#c722').val($('#c62').val());
+        setTotalAmount('#c722');
+    }
+
+    function setTotalAmount(selectedId) {
+        var id = '#' + $(selectedId).attr('id');
+        if (id == '#undefined') {
+            if (selectedId.substr(0, 1) !== '#')
+                id = '#' + selectedId;
+            else
+                id = selectedId;
+        }
+
+        var idLabel = '';
+        if (id.substr(0, 3) == '#c9')
+            idLabel = id.substr(0, 3);
+        else
+            idLabel = id.substr(0, 4);
+
+        var i = parseToNum($(idLabel).val())
+        var i1 = parseToNum($(idLabel + '1').val());
+        var i2 = parseToNum($(idLabel + '2').val());
+
+        if ((i == 'isNan') || (i == ''))
+            i = 0;
+        if ((i1 == 'isNan') || (i1 == ''))
+            i1 = 0;
+        if ((i2 == 'isNan') || (i2 == ''))
+            i2 = 0;
+        $(idLabel + '3').val(formatCurrency(i * i1 * i2));
+    }
+
+
+    function viewtotalDeposit(){
+        try {
+            setTotalDepositAmount();
+        }
+        catch (err) { }
+
+        //reset property value
+        $('#cD1').val(""); $('#cD2').val(""); $('#cD3').val(""); $('#cD4').val(""); $('#cD5').val("");
+        $('#cP1').val(""); $('#cP2').val(""); $('#cP3').val(""); $('#cP4').val(""); $('#cP5').val("");
+        //retrieve LOO payment
+        $.ajax({
+            url: "/LetterOfOffer/GetLooPayments",
+            data: { looIssue: $('#issue').text(), looId: $('#id').text() },
+            type: 'Get',
+            contentType: 'application/json',
+            cache: false,
+            success: function (data) {
+                $.each(data, function (i, item) {
+                    var seqId = i + 1;
+                    $('#cD' + seqId).val(parseJsonDate(item.DueDate));
+                    $('#cP' + seqId).val(formatCurrency(item.Amount));
+                });
+            },
+            complete: function () { },
+            error: function (msg) {
+                alert("something on LOO Payments seems wrong");
+            }
+        });
+    }
+
+
+    function loadLOO(selectedId) {
+        $('#looId').text(selectedId);
+
+        if (selectedId.length == 10) {
+            $('#ctrNo').text(formatDisplay(selectedId.substr(2, 8)));
+
+            $.ajax({
+                url: "/LeaseAgreement/GetLoo",
+                data: { looId: selectedId },
+                type: 'Get',
+                contentType: 'application/json',
+                cache: false,
+                success: function (e) {
+                    if (e.success) {
+                        $.each(e.data, function (i, item) {
+                            if (i == 'LooId')
+                                $('#id').text(item);
+                            if (i == 'LooIssue')
+                                $('#issue').text(item);
+                            if (i == 'ClientId')
+                                $('#clientId').text(item);
+                            if (i == 'ClientIssue')
+                                $('#clientIssue').text(item);
+                            if (i == 'Cid')
+                                $('#cid').text(item);
+                            if (i == 'FloorId')
+                                $('#c41').val(item);
+                            if (i == 'SuiteName')
+                                $('#c42').val(item);
+                            if (i == 'Area') {
+                                $('#c43').val(item);
+                                $('#c71').val(item);
+                                $('#c72').val(item);
+                            }
+                            if (i == 'FloorCondition')
+                                $('#c44').val(item);
+                            if (i == 'CompanyName')
+                                $('#c21').val(item);
+                            if (i == 'CompanyAddress')
+                                $('#c22').val(item);
+                            if (i == 'City')
+                                $('#c221').val(item);
+                            if (i == 'ZipCode')
+                                $('#c222').val(item);
+                            if (i == 'Name')
+                                $('#c23').val(item);
+                            if (i == 'Position')
+                                $('#c24').val(item);
+                            if (i == 'Fax')
+                                $('#c25').val(item);
+                            if (i == 'Telephone')
+                                $('#c26').val(item);
+                            if (i == 'MobilePhone') {
+                                $('#c262p').val(item);
+                                $('#c27').val(item);
+                            }
+                            if (i == 'Email')
+                                $('#c262e').val(item);
+                            if (i == 'Npwp')
+                                $('#c30').val(item);
+
+                            if (i == 'LeasePeriodYear')
+                                $('#c51').val(item);
+                            if (i == 'FittingOutDate')
+                                $('#c52').val(parseJsonDate(item));
+                            if (i == 'FittingOutPeriodWeeks')
+                                $('#c53').val(item);
+
+                            if (i == 'AgreementCommencementDate')
+                                $('#c54').val(parseJsonDate(item));
+                            if (i == 'RentCommencementDate')
+                                $('#c55').val(parseJsonDate(item));
+                            if (i == 'ServChargeCommencementDate')
+                                $('#c56').val(parseJsonDate(item));
+                            if (i == 'LeaseExpiryDate')
+                                $('#c57').val(parseJsonDate(item));
+
+                            if (i == 'RentalRate')
+                                $('#c61').val(formatCurrency(item));
+                            if (i == 'RentalRateInWord') {
+                                if (item !== null)
+                                    $('#l61').text(item);
+                            }
+                            if (i == 'RentPayableAdvanced')
+                                $('#c62').val(item);
+                            if (i == 'ServiceCharge')
+                                $('#c63').val(formatCurrency(item));
+                            if (i == 'ServiceChargeInWord') {
+                                if (item !== null)
+                                    $('#l63').text(item);
+                            }
+                            if (i == 'SecurityUnitPrice')
+                                $('#c711').val(formatCurrency(item));
+                            if (i == 'ServiceChargeUnitPrice')
+                                $('#c721').val(formatCurrency(item));
+                            if (i == 'SecurityDepositDuration') {
+                                $('#c712').val(item);
+                                setTotalAmount('#c712');
+                            }
+                            if (i == 'ServiceChargeDepositDuration') {
+                                $('#c722').val(item);
+                                setTotalAmount('#c722');
+                            }
+
+                            if (i == 'ParkCarReservedQty')
+                                $('#c81').val(item);
+                            if (i == 'ParkCarReservedPerUnitPrice')
+                                $('#c811').val(formatCurrency(item));
+                            if (i == 'ParkCarReservedDuration') {
+                                $('#c812').val(item);
+                                setTotalAmount('#c812');
+                            }
+                            if (i == 'ParkCarUnreservedQty')
+                                $('#c82').val(item);
+                            if (i == 'ParkCarUnreservedUnitPrice')
+                                $('#c821').val(formatCurrency(item));
+                            if (i == 'ParkCarUnreservedDuration') {
+                                $('#c822').val(item);
+                                setTotalAmount('#c822');
+                            }
+                            if (i == 'ParkMotorbikeQty')
+                                $('#c83').val(item);
+                            if (i == 'ParkMotorbikeUnitPrice')
+                                $('#c831').val(formatCurrency(item));
+                            if (i == 'ParkMotorbikeDuration') {
+                                $('#c832').val(item);
+                                setTotalAmount('#c832');
+                            }
+
+                            if (i == 'TelephoneDepositQty')
+                                $('#c9').val(item);
+                            if (i == 'TelephoneDepositUnitPrice')
+                                $('#c91').val(formatCurrency(item));
+                            if (i == 'TelephoneDepositDuration') {
+                                $('#c92').val(item);
+                                setTotalAmount('#c92');
+                            }
+
+                        });
+                    }
+                    else {
+                        alert(e.message);
+                    }
+                },
+                complete: function () {
+                    viewtotalDeposit();
+                },
+                error: function (msg) {
+                    alert("something on LOO seems wrong");
+                }
+            });
+
+        }
+        else {
+            $('#ctrNo').text(formatDisplay("XXXXXXXX"));
+            $('#clientId').text("");
+            $('#clientIssue').text("");
+            $('#cid').text("");
+            $('#c22').val("");
+            $('#c221').val("");
+            $('#c222').val("");
+            $('#c23').val("");
+            $('#c24').val("");
+            $('#c25').val("");
+            $('#c26').val("");
+            $('#c262p').val("");
+            $('#c27').val("");
+            $('#c262e').val("");
+            $('#c30').val("");
+
+            $('#c41').val("");
+            $('#c42').val("");
+            $('#c43').val("");
+            $('#c44').val("");
+            $('#c71').val("");
+            $('#c72').val("");
+            $('#c51').val("");
+            $('#c52').val("");
+            $('#c53').val("");
+            $('#c54').val("");
+            $('#c55').val("");
+            $('#c56').val("");
+            $('#c57').val("");
+            $('#c61').val("");
+            $('#l61').text("");
+            $('#c62').val("");
+            $('#c63').val("");
+            $('#l63').text("");
+
+            $('#c711').val("");
+            $('#c721').val("");
+            $('#c712').val("");
+            $('#c722').val("");
+            $('#c81').val("");
+            $('#c811').val("");
+            $('#c812').val("");
+            $('#c82').val("");
+            $('#c821').val("");
+            $('#c822').val("");
+            $('#c83').val("");
+            $('#c831').val("");
+            $('#c832').val("");
+            $('#c9').val("");
+            $('#c91').val("");
+            $('#c92').val("");
+
+            $('#c713').val("");
+            $('#c723').val("");
+            $('#c813').val("");
+            $('#c823').val("");
+            $('#c833').val("");
+            $('#c93').val("");
+            $('#totalPayment').text("0");
+            $('#cD1').val("");
+            $('#cD2').val("");
+            $('#cD3').val("");
+            $('#cD4').val("");
+            $('#cD5').val("");
+
+            $('#cP1').val("");
+            $('#cP2').val("");
+            $('#cP3').val("");
+            $('#cP4').val("");
+            $('#cP5').val("");
+
+        }
+    }
+
+
+    function pad (str, max) {
+        str = str.toString();
+        return str.length < max ? pad(str + " ", max) : str;
+    }
+
+    // Calculate Total deposit
+    function setTotalDepositAmount() {
+
+        var i = parseToNum($('#c43').val());
+        var i1 = parseToNum($('#c711').val());
+        var i2 = parseToNum($('#c712').val());
+        var i11 = parseToNum($('#c721').val());
+        var i12 = parseToNum($('#c722').val());
+
+        //var j = parseToNum($('#c81').val());
+        //var j1 = parseToNum($('#c811').val());
+        //var j2 = parseToNum($('#c812').val());
+        //var k = parseToNum($('#c82').val());
+        //var k1 = parseToNum($('#c821').val());
+        //var k2 = parseToNum($('#c822').val());
+        //var l = parseToNum($('#c83').val());
+        //var l1 = parseToNum($('#c831').val());
+        //var l2 = parseToNum($('#c832').val());
+
+        var m = parseToNum($('#c9').val());
+        var m1 = parseToNum($('#c91').val());
+        var m2 = parseToNum($('#c92').val());
+
+        if ((i == 'isNan') || (i == ''))
+            i = 0;
+        if ((i1 == 'isNan') || (i1 == ''))
+            i1 = 0;
+        if ((i2 == 'isNan') || (i2 == ''))
+            i2 = 0;
+        if ((i11 == 'isNan') || (i11 == ''))
+            i11 = 0;
+        if ((i12 == 'isNan') || (i12 == ''))
+            i12 = 0;
+
+        //if ((j == 'isNan') || (j == ''))
+        //    j = 0;
+        //if ((j1 == 'isNan') || (j1 == ''))
+        //    j1 = 0;
+        //if ((j2 == 'isNan') || (j2 == ''))
+        //    j2 = 0;
+        //if ((k == 'isNan') || (k == ''))
+        //    k = 0;
+        //if ((k1 == 'isNan') || (k1 == ''))
+        //    k1 = 0;
+        //if ((k2 == 'isNan') || (k2 == ''))
+        //    k2 = 0;
+        //if ((l == 'isNan') || (l == ''))
+        //    l = 0;
+        //if ((l1 == 'isNan') || (l1 == ''))
+        //    l1 = 0;
+        //if ((l2 == 'isNan') || (l2 == ''))
+        //    l2 = 0;
+
+        if ((m == 'isNan') || (m == ''))
+            m = 0;
+        if ((m1 == 'isNan') || (m1 == ''))
+            m1 = 0;
+        if ((m2 == 'isNan') || (m2 == ''))
+            m2 = 0;
+        $('#totalPayment').text(formatCurrency((i * i1 * i2) + (i * i11 * i12) + (m * m1 * m2)));
+        //(j * j1 * j2) + (k * k1 * k2) + (l * l1 * l2)
+    }
+
+
+    var id = 0;
+    $(document).ready(function () {
+        App.startPageLoading({ animate: true });
+
+        FormInputMask.init();
+        $('#ctr').show();
+        $('#ctrdate').val($('#currentDate').text());
+        $('#c1').val($('#currentDate').text());
+        $('#rev').text(1);
+        $('#ctrNo').text(formatDisplay("XXXXXXXX"));
+        $('#totalPayment').text("0");
+
+        var selectedId = $('#tempId').text();
+
+        if (selectedId.length == 8) {
+            $('#ctrNo').text(formatDisplay(selectedId));
+
+            $.ajax({
+                url: "/LeaseAgreement/GetCtr",
+                data: { ctrId: selectedId },
+                type: 'Get',
+                contentType: 'application/json',
+                cache: false,
+                success: function (data) {
+                    $.each(data, function (i, item) {
+                        if (i == 'LooId')
+                            $('#id').text(item);
+                        if (i == 'LooIssue')
+                            $('#issue').text(item);
+                        if (i == 'ClientId')
+                            $('#clientId').text(item);
+                        if (i == 'ClientIssue')
+                            $('#clientIssue').text(item);
+                        if (i == 'Cid')
+                            $('#cid').text(item);
+                        if (i == 'FloorId')
+                            $('#c41').val(item);
+                        if (i == 'SuiteName')
+                            $('#c42').val(item);
+                        if (i == 'Area') {
+                            $('#c43').val(item);
+                            $('#c71').val(item);
+                            $('#c72').val(item);
+                        }
+                        if (i == 'FloorCondition')
+                            $('#c44').val(item);
+                        if (i == 'CompanyName')
+                            $('#c21').val(item);
+                        if (i == 'CompanyAddress')
+                            $('#c22').val(item);
+                        if (i == 'City')
+                            $('#c221').val(item);
+                        if (i == 'ZipCode')
+                            $('#c222').val(item);
+                        if (i == 'Name')
+                            $('#c23').val(item);
+                        if (i == 'Position')
+                            $('#c24').val(item);
+                        if (i == 'Fax')
+                            $('#c25').val(item);
+                        if (i == 'Telephone')
+                            $('#c26').val(item);
+                        if (i == 'MobilePhone') {
+                            $('#c262p').val(item);
+                            $('#c27').val(item);
+                        }
+                        if (i == 'Email')
+                            $('#c262e').val(item);
+                        if (i == 'Npwp')
+                            $('#c30').val(item);
+
+                        if (i == 'LeasePeriodYear')
+                            $('#c51').val(item);
+                        if (i == 'FittingOutDate')
+                            $('#c52').val(parseJsonDate(item));
+                        if (i == 'FittingOutPeriodWeeks')
+                            $('#c53').val(item);
+
+                        if (i == 'AgreementCommencementDate')
+                            $('#c54').val(parseJsonDate(item));
+                        if (i == 'RentCommencementDate')
+                            $('#c55').val(parseJsonDate(item));
+                        if (i == 'ServChargeCommencementDate')
+                            $('#c56').val(parseJsonDate(item));
+                        if (i == 'LeaseExpiryDate')
+                            $('#c57').val(parseJsonDate(item));
+
+                        if (i == 'RentalRate')
+                            $('#c61').val(formatCurrency(item));
+                        if (i == 'RentalRateInWord') {
+                            if (item !== null)
+                                $('#l61').text(item);
+                        }
+                        if (i == 'RentPayableAdvanced')
+                            $('#c62').val(item);
+                        if (i == 'ServiceCharge')
+                            $('#c63').val(formatCurrency(item));
+                        if (i == 'ServiceChargeInWord') {
+                            if (item !== null)
+                                $('#l63').text(item);
+                        }
+                        if (i == 'SecurityUnitPrice')
+                            $('#c711').val(formatCurrency(item));
+                        if (i == 'ServiceChargeUnitPrice')
+                            $('#c721').val(formatCurrency(item));
+                        if (i == 'SecurityDepositDuration') {
+                            $('#c712').val(item);
+                            setTotalAmount('#c712');
+                        }
+                        if (i == 'ServiceChargeDepositDuration') {
+                            $('#c722').val(item);
+                            setTotalAmount('#c722');
+                        }
+
+                        if (i == 'ParkCarReservedQty')
+                            $('#c81').val(item);
+                        if (i == 'ParkCarReservedPerUnitPrice')
+                            $('#c811').val(formatCurrency(item));
+                        if (i == 'ParkCarReservedDuration') {
+                            $('#c812').val(item);
+                            setTotalAmount('#c812');
+                        }
+                        if (i == 'ParkCarUnreservedQty')
+                            $('#c82').val(item);
+                        if (i == 'ParkCarUnreservedUnitPrice')
+                            $('#c821').val(formatCurrency(item));
+                        if (i == 'ParkCarUnreservedDuration') {
+                            $('#c822').val(item);
+                            setTotalAmount('#c822');
+                        }
+                        if (i == 'ParkMotorbikeQty')
+                            $('#c83').val(item);
+                        if (i == 'ParkMotorbikeUnitPrice')
+                            $('#c831').val(formatCurrency(item));
+                        if (i == 'ParkMotorbikeDuration') {
+                            $('#c832').val(item);
+                            setTotalAmount('#c832');
+                        }
+
+                        if (i == 'TelephoneDepositQty')
+                            $('#c9').val(item);
+                        if (i == 'TelephoneDepositUnitPrice')
+                            $('#c91').val(formatCurrency(item));
+                        if (i == 'TelephoneDepositDuration') {
+                            $('#c92').val(item);
+                            setTotalAmount('#c92');
+                        }
+
+                        if (i == 'CtrDate')
+                            $('#c1').val(parseJsonDate(item));
+
+                    });
+                },
+                complete: function () {
+                    $('#c2').val("LOO-900-" + $('#issue').text() + "-" + formatDisplay($('#id').text()));
+                    $('#looId').text($('#issue').text() + $('#id').text());
+
+                    viewtotalDeposit();
+                },
+                error: function (msg) {
+                    alert("something on LOO seems wrong");
+                }
+            });
+
+
+            $.ajax({
+                url: "/LeaseAgreement/GetCtrSpecialConditions",
+                data: { ctrId: selectedId },
+                type: 'Get',
+                contentType: 'application/json',
+                cache: false,
+                success: function (data) {
+                    $.each(data, function (i, item) {
+                        $.each(item, function (col, value) {
+                            var seqId = i + 1;
+                            var nameId;
+                            if (JSON.parse(value.length != 0)) {
+                                if (col == 'Article')
+                                    nameId = '#c281' + seqId;
+                                if (col == 'Title')
+                                    nameId = '#c282' + seqId;
+                                if (col == 'Content')
+                                    nameId = '#c283' + seqId;
+                                if ((col == 'Article') || (col == 'Title') || (col == 'Content'))
+                                    $(nameId).val(value);
+                            }
+                        });
+                    });
+                },
+                complete: function () { },
+                error: function (msg) {
+                    alert("something on CTR Special Conditions seems wrong");
+                }
+            });
+
+            $.ajax({
+                url: "/LeaseAgreement/GetCtrAmend",
+                data: { ctrId: selectedId },
+                type: 'Get',
+                contentType: 'application/json',
+                cache: false,
+                success: function (data) {
+                    $.each(data, function (i, item) {
+                        $.each(item, function (col, value) {
+                            var seqId = i + 1;
+                            var nameId;
+                            if (JSON.parse(value.length != 0)) {
+                                if (col == 'Article')
+                                    nameId = '#c291' + seqId;
+                                if (col == 'Title')
+                                    nameId = '#c292' + seqId;
+                                if (col == 'Content')
+                                    nameId = '#c293' + seqId;
+                                if ((col == 'Article') || (col == 'Title') || (col == 'Content'))
+                                    $(nameId).val(value);
+                            }
+                        });
+                    });
+                },
+                complete: function () { },
+                error: function (msg) {
+                    alert("something on CTR Amandements seems wrong");
+                }
+            });
+            
+            $.ajax({
+                url: "/LeaseAgreement/GetCtrAttach",
+                data: { ctrId: selectedId },
+                type: 'Get',
+                contentType: 'application/json',
+                cache: false,
+                success: function (data) {
+                    $.each(data, function (i, item) {
+                        if (item.Article != null) 
+                            if (item.Article !== 'null' || item.Article !== 'undefined')
+                                $('#fileExist').text("  ( "+item.Article +" )");
+                    });
+                },
+                complete: function () { },
+                error: function (msg) {
+                    alert("something on CTR Attachment seems wrong");
+                }
+            });
+
+        }
+
+
+
+        if ($('#title').text() == 'Add CTR') {
+            $('#l61').text("Zero");
+            $('#l63').text("Zero");
+            $('#c2').hide();
+            $('#ddlLoo').show();
+            $('#ctrNo').text(formatDisplay("XXXXXXXX"));
+
+            // Load dll
+            var ddl_loo = "<option value=" + 0 + ">-</option>";
+            $.ajax({
+                url: "/LeaseAgreement/GetAvailableLoo",
+                type: 'Get',
+                contentType: 'application/json',
+                cache: false,
+                success: function (data) {
+                    $.each(data, function (i, item) {
+                        ddl_loo += "<option value=" + item.LooIssue + item.LooId + ">LOO-900-" + item.LooIssue + "-" + formatDisplay(item.LooId) + "</option>";
+                    });
+                },
+                complete: function () {
+                    $("#ddlLoo").append(ddl_loo);
+                },
+                error: function (msg) {
+                    alert("something on load LOO list seems wrong");
+                }
+            });
+            // end Load dll
+        }
+        else {
+            $('#ddlLoo').hide();
+            $('#c2').show();
+        }
+
+        App.stopPageLoading();
+    });
+
+
+    var isUpload = "No";
+    $("#attachFile").change(function () {
+        isUpload = "Yes";
+        $('#fileExist').text("");
+    });
+
+
+
+    $("#submit").click(function () {
+
+        if ($('#looId').text().trim() == '' || $('#looId').text().trim() == 'null') {
+            bootbox.alert("Please select available LOO !");
+            return;
+        }
+
+        if ($('#c1').val().trim() == '') {
+            $("#c1").focus();
+            return;
+        }
+
+        var looId = $('#id').text();
+        var looIssue = $('#issue').text();
+        App.startPageLoading({ animate: true });
+
+        var validArticle = [];
+        var article;
+        var listSpecialCon = [];
+        for (var i = 1; i <= 3; i++) {
+            var articleId = '#c281' + i;
+            var titleId = '#c282' + i;
+            var contentId = '#c283' + i;
+            article = $(articleId).val().trim();
+            if (article !== '') {
+                var idx = validArticle.indexOf(article);
+                if (idx >= 0) {
+                    App.stopPageLoading();
+                    bootbox.alert("Term Number " + article + " (Additional Terms) is duplicated !");
+                    return;
+                }
+                else
+                    validArticle.push(article);
+
+                var sp =
+                {
+                    CtrId: looId,
+                    LooId: looId,
+                    LooIssue: looIssue,
+                    Article: article,
+                    Title: $(titleId).val(),
+                    Content: $(contentId).val(),
+                    Order: i
+                }
+                listSpecialCon.push(sp);
+            }
+        }
+
+
+        validArticle = [];
+        article = "";
+        var title = "";
+        var content = "";
+        var listAmend = [];
+        for (var i = 1; i <= 8; i++) {
+            var articleId = '#c291' + i;
+            var titleId = '#c292' + i;
+            var contentId = '#c293' + i;
+
+            article = $(articleId).val().trim();
+            title = $(titleId).val().trim();
+            content = $(contentId).val().trim();
+            if (article + title + content !== '') {
+                var idx = validArticle.indexOf(article + title + content);
+                if (idx >= 0) {
+                    App.stopPageLoading();
+                    bootbox.alert("Term Number " + article + " (Amendments) is have duplicate value !");
+                    return;
+                }
+                else
+                    validArticle.push(article + title + content);
+
+                var amend =
+                {
+                    CtrId: looId,
+                    LooId: looId,
+                    LooIssue: looIssue,
+                    Article: article,
+                    Title: title,
+                    Content: content,
+                    Order: i
+                }
+                listAmend.push(amend);
+            }
+        }
+
+        var files;
+        var file;
+
+        if (isUpload == 'Yes') {
+
+            if ($('#attachFile').val().length == 0) {
+                App.stopPageLoading();
+                bootbox.alert("Please select Drawing floor plan image file !");
+                return;
+            }
+            files = document.getElementById('attachFile').files;
+            file = files[0];
+
+            // Only process image files.
+            if (!file.type.match('image.*')) {
+                App.stopPageLoading();
+                bootbox.alert("Please select Image only !");
+                return;
+            }
+        }
+
+        ////var reader = new FileReader();
+        ////reader.onload = function (e) {
+        ////    var typeImage = reader.result.toString().substr(0,reader.result.toString().indexOf("base64,") + 6);
+        ////    var binImage = reader.result.toString().substr(reader.result.toString().indexOf("base64,")+7);
+        ////}
+        ////reader.readAsDataURL(file);
+
+        var data = new FormData();       
+
+        if (isUpload == 'Yes') {
+            if (files.length > 0) {
+                data.append("Header", $('#title').text());
+                data.append("Id", looId);
+                data.append("Issue", looIssue);
+                data.append("FileName", file.name);
+                data.append("Images", file);
+            }
+        }
+
+
+        var model = {
+            header: $('#title').text(),
+            CtrId: looId,
+            LooId: looId,
+            LooIssue: looIssue,
+            CreatedDate: $('#ctrdate').val(),
+            CtrDate: $('#c1').val(),
+            Status: "WIP",
+            ta_CTR_SpecialConditions: listSpecialCon,
+            ta_CTR_Amandements: listAmend
+        };
+
+        $.ajax({
+            type: "POST",
+            data: JSON.stringify(model),
+            url: "/LeaseAgreement/SaveCtr",
+            contentType: "application/json"
+        }).success(function (res) {
+
+            if (isUpload == 'Yes') {
+                $.ajax({
+                    url: "/LeaseAgreement/UploadFile",
+                    type: "POST",
+                    processData: false,
+                    contentType: false,
+                    data: data,
+                    success: function (response) { },
+                    error: function (er) {
+                        alert(er);
+                    }
+                });
+            }
+        }).done(function (res) {
+            App.stopPageLoading();
+            window.location.reload(true);
+        });
+
+    });
+
+
+    // American Numbering System
+    var th = ['', 'thousand', 'million', 'billion', 'trillion'];
+    var dg = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+    var tn = ['ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
+    var tw = ['twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+
+    function toWords(s) {
+        s = s.toString();
+        s = s.replace(/[\, ]/g, '');
+        if (s != parseFloat(s)) return 'not a number';
+        var x = s.indexOf('.');
+        if (x == -1) x = s.length;
+        if (x > 15) return 'too big';
+        var n = s.split('');
+        var str = '';
+        var sk = 0;
+        for (var i = 0; i < x; i++) {
+            if ((x - i) % 3 == 2) {
+                if (n[i] == '1') {
+                    str += tn[Number(n[i + 1])] + ' ';
+                    i++;
+                    sk = 1;
+                } else if (n[i] != 0) {
+                    str += tw[n[i] - 2] + ' ';
+                    sk = 1;
+                }
+            } else if (n[i] != 0) {
+                str += dg[n[i]] + ' ';
+                if ((x - i) % 3 == 0) str += 'hundred ';
+                sk = 1;
+            }
+            if ((x - i) % 3 == 1) {
+                if (sk) str += th[(x - i - 1) / 3] + ' ';
+                sk = 0;
+            }
+        }
+        // point not included
+        //if (x != s.length) {
+        //    var y = s.length;
+        //    str += 'point ';
+        //    for (var i = x + 1; i < y; i++) str += dg[n[i]] + ' ';
+        //}
+        return str.replace(/\s+/g, ' ');
+
+    }
+
+
+</script>

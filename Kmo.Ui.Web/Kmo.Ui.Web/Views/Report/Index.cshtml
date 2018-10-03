@@ -1,0 +1,177 @@
+﻿
+@{
+    Layout = null;
+
+    string sessionID = ViewBag.SessionID;
+    bool invalidReport = ViewBag.InvalidReport;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/Theme/assets/global/plugins/google-fonts/google-fonts.css" rel="stylesheet" />
+    <link href="~/Theme/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Theme/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Theme/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Theme/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="~/Theme/assets/global/css/components-md.min.css" rel="stylesheet" id="style_components" type="text/css" />
+    <link href="~/Theme/assets/global/css/plugins-md.min.css" rel="stylesheet" type="text/css" />
+    <!-- END THEME GLOBAL STYLES -->
+    <!-- BEGIN THEME LAYOUT STYLES -->
+    <link href="~/Theme/assets/layouts/layout4/css/layout.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Theme/assets/layouts/layout4/css/themes/default.min.css" rel="stylesheet" type="text/css" id="style_color" />
+    <link href="~/Theme/assets/layouts/layout4/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <!-- END THEME LAYOUT STYLES -->
+    <link rel="shortcut icon" type="image/ico" href="@Url.Content("~/Theme/assets/global/img/favicon.ico")" />
+    
+    <meta name="viewport" content="width=device-width" />
+    <title>Report: @ViewBag.Title</title>
+</head>
+<body style="background:#F3F5F9;">
+    
+    <form action="#" id="form_sample_2">
+        <div class="form-body" >
+
+                        <table  class="dt-responsive " width="100%">
+                            <tbody>
+                                <tr>
+                                    <td align="center" style="position:fixed;background:#F3F5F9;" width="100%">
+                                        <h3>@ViewBag.Title</h3>
+                                        @*<hr style="color:#5E738B;background-color: #5E738B;height:1px" />*@
+                                        @if (invalidReport)
+                                        {
+                                            <p>
+                                                <h2>Error Loading Report</h2>
+                                                <h3>Report Message: @ViewBag.InvalidMessage</h3>
+                                            </p>
+                                        }
+                                        else
+                                        {
+                                            <p>
+                                                <button id="prePageButton" type="button" class="btn blue btn-xs" onclick="PreviousPage();"><i class="fa fa-arrow-circle-left"></i>&nbsp;Prev Pages</button>
+                                                <button id="savePdfButton" type="button" class="btn red btn-xs" onclick="SavePDF();"><i class="fa fa-file-pdf-o"></i>&nbsp;Save PDF</button>
+                                                <button id="nextPageButton" type="button" class="btn blue btn-xs" onclick="NextPage();">Next Pages&nbsp;<i class="fa fa-arrow-circle-right"></i></button>
+                                            </p>
+                                        }
+                                    </td>
+                                </tr>
+                                <tr id="cfsRpt">
+                                    @*#5E738B  #2C3E50 *@
+                                            @if (!invalidReport)
+                                            {
+                                                <td align="center" class="btn-block" style="padding:140px 4% 2.5% 4%;background:#2C3E50;" width="100%">
+
+                                                    @*<iframe id="reportImage" width="100%" height="315"  frameborder="0" src="" allowfullscreen>*@
+                                                    <div class="m-grid m-grid-responsive-xs m-grid-demo">
+                                                        <div class="m-grid-row">
+                                                            <div class="m-grid-col m-grid-col-middle m-grid-col-center m-grid-col-md-1">
+                                                                <img alt="" class="img-responsive" id="reportImage" style="width:100%;margin-left:auto;margin-right:auto;background-color:#F3F5F9;border:none;" src="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    @*</iframe>*@
+                                                </td>
+                                            }
+                                   
+                                </tr>
+
+                            </tbody>
+                        </table>
+        </div>
+    </form>
+  
+    <script src="~/Theme/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+    <script src="~/Theme/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="~/Theme/assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
+    <script src="~/Theme/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <script src="~/Theme/assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+    <script src="~/Theme/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+    <!-- END CORE PLUGINS -->
+    <!-- BEGIN THEME GLOBAL SCRIPTS -->
+    <script src="~/Theme/assets/global/scripts/app.min.js" type="text/javascript"></script>
+    <!-- END THEME GLOBAL SCRIPTS -->
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+    <script src="~/Theme/assets/pages/scripts/ui-blockui.min.js" type="text/javascript"></script>
+    <!-- END PAGE LEVEL SCRIPTS -->
+    <!-- BEGIN THEME LAYOUT SCRIPTS -->
+    <script src="~/Theme/assets/layouts/layout4/scripts/layout.min.js" type="text/javascript"></script>
+    <script src="~/Theme/assets/layouts/layout4/scripts/demo.min.js" type="text/javascript"></script>
+    <script src="~/Theme/assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
+    <script src="~/Theme/assets/layouts/global/scripts/quick-nav.min.js" type="text/javascript"></script>
+
+   
+    <script>
+        @if (invalidReport)
+        {
+        <text>var sessionID = '';</text>
+        }
+        else
+        {
+        <text>var sessionID = '@sessionID';</text>
+        }
+
+        var currentData = {
+            CurrentPage: 0,
+            TotalPage: 0,
+            PageData: '',
+            SessionID: '',
+        };
+
+        $(document).ready(function () {
+            if (sessionID != '') {
+                $('#cfsRpt').hide();
+                App.startPageLoading({ animate: true });
+                $.get('@Url.Action("ReadReport")', { sessionID: sessionID }).done(function (e) {
+                  
+                    if (e.success) {
+                        currentData = e.data;
+                        $('#reportImage').attr('src', 'data:image/png;base64,' + currentData.PageData);
+                        $('#cfsRpt').show();
+                        App.stopPageLoading();
+                    }
+                    else
+                        App.stopPageLoading();
+
+                });                
+            }
+        });
+
+        function PreviousPage() {
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Action("PrevPage")',
+                data: { sessionID: sessionID },
+                cache: false,
+                contentType: "application/json; charset=utf-8",
+                dataType: "text",
+                success: function (e) {
+                    $('#reportImage').attr('src', 'data:image/png;base64,' + e);
+                }, error: function (jqXHR, textStatus, errorThrown) {
+                    console.log(errorThrown);
+                }
+            });
+        }
+
+        function NextPage() {
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Action("NextPage")',
+                data: { sessionID: sessionID },
+                cache: false,
+                contentType: "application/json; charset=utf-8",
+                dataType: "text",
+                success: function (e) {
+                    $('#reportImage').attr('src', 'data:image/png;base64,' + e);
+                }, error: function (jqXHR, textStatus, errorThrown) {
+                    console.log(errorThrown);
+                }
+            });
+        }
+
+        function SavePDF() {
+            window.location = "@Url.Action("savePdf", new { sessionID = sessionID })";
+        }
+    </script>
+</body>
+</html>
